@@ -1,0 +1,177 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+}
+body {
+    line-height: 1.5;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+ul,
+li {
+    padding: 0;
+    margin: 0;
+}
+
+/* ------------------------------------------------ */
+
+body {
+    background-color: gainsboro;
+}
+
+.fixed {
+    color: white;
+    background-color: rgb(50, 50, 50);
+    width: 970px;
+    height: 85vh;
+    margin: 0 auto;
+    margin-top: 15px;
+    border-radius: 15px;
+    box-shadow: 5px 10px #8b8b8b;
+}
+
+header {
+    background-color: rgb(122, 134, 184);
+    padding: 0px 30px;
+}
+
+header ul,
+header ul li,
+header img {
+    list-style-type: none;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0px 5px;
+}
+
+header ul li {
+    height: 50px;
+    line-height: 50px;
+}
+
+header .documentation {
+    background-color: rgb(45, 71, 103);
+}
+
+#search-bar {
+    margin-left: 196px;
+}
+
+nav {
+    display: inline-block;
+    padding: 10px 80px;
+    font-size: small;
+}
+.separate {
+    display: inline-block;
+    margin-left: 380px;
+}
+
+.separate a {
+    margin-left: 10px;
+}
+#logo {
+    width: 48px;
+    height: 24px;
+}
+
+#php8 {
+    width: 60px;
+    height: 22px;
+}
+
+main,
+main {
+    background-color: whitesmoke;
+    display: inline-block;
+    color: black;
+    width: 70%;
+    margin-left: 5%;
+    padding: 15px;
+}
+.preferences,
+.contribute {
+    text-align: end;
+}
+
+.contribute {
+    font-size: 12px;
+}
+
+.title,
+.table-contents,
+.notes {
+    margin-top: 20px;
+    border-bottom: 1px dotted rgb(121, 56, 98);
+}
+
+.contents {
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.notes h2 {
+    display: inline-block;
+}
+.notes a {
+    margin-left: 320px;
+    font-size: 12px;
+}
+
+main p {
+    margin-top: 10px;
+}
+
+nav a,
+aside a {
+    color: white;
+}
+
+aside {
+    width: 20%;
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 10px;
+}
+aside a {
+    display: block;
+    margin-top: 15px;
+    border-bottom: 1px dotted rgb(207, 130, 177);
+    text-decoration: none;
+    font-size: smaller;
+}
+
+.tut {
+    color: rgb(207, 130, 177);
+    font-weight: bold;
+}
+
+footer {
+    margin-left: 50px;
+}
+footer ul li {
+    margin-top: 20px;
+    margin-left: 10px;
+    display: inline-block;
+    font-size: small;
+}
