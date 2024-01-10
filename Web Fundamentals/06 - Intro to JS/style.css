@@ -1,0 +1,84 @@
+/* CSS RESET */
+html {
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* CSS RESET */
+
+h2,
+h3,
+h4 {
+    margin: 15px 0px;
+}
+
+p {
+    margin: 10px 0px;
+}
+
+p span {
+    font-style: italic;
+}
+
+nav {
+    display: inline-block;
+    width: 270px;
+    height: 100vh;
+    vertical-align: top;
+    outline: 2px solid rgb(174, 174, 174);
+    background-color: rgb(245, 242, 240);
+    padding: 15px;
+    color: rgb(174, 174, 174);
+}
+main {
+    padding: 10px 40px;
+    display: inline-block;
+    width: 700px;
+    height: 100vh;
+    background-color: white;
+}
+
+.wrapper {
+    outline: 2px solid rgb(245, 242, 240);
+    padding: 5px 12px;
+}
+
+.title {
+    margin-bottom: 15px;
+}
+
+nav .nav-section {
+    margin-bottom: 15px;
+}
+nav li a {
+    text-decoration: none;
+    color: rgb(93, 94, 94);
+}
+
+.comments {
+    margin-top: 15px;
+}

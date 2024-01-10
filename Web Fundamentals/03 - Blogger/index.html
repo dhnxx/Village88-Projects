@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <h1>Welcome to Flavors of the Philippines</h1>
+
+        <div>
+            <p>
+                Embark on a delightful journey through Filipino cuisine, where we explore the unique
+                flavors of the <a href="https://www.google.com">Philippines.</a>
+            </p>
+
+            <h2>Popular Dishes</h2>
+            <p>Discover some of the most beloved Filipino dishes:</p>
+            <ul>
+                <li>
+                    Sinigang
+                    <img src="./sinigang.jpg" alt="Sinigang Dish" />
+                </li>
+                <li>
+                    Adobo
+                    <img src="./adobo.jpg" alt="Adobo Dish" />
+                </li>
+                <li>
+                    Kare-Kare
+                    <img src="./karekare.jpg" alt="Kare Kare Dish" />
+                </li>
+            </ul>
+
+            <h2>Recipes</h2>
+            <p>Try your hand at creating these delectable Filipino dishes at home:</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Dish</th>
+                        <th>Ingredients</th>
+                        <th>Instructions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Sinigang</td>
+                        <td>Tamarind Soup Base, Pork Ribs, Vegetables</td>
+                        <td>
+                            Boil pork ribs in tamarind soup, add vegetables. Simmer until pork is
+                            tender.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Adobo</td>
+                        <td>Chicken or Pork, Soy Sauce, Vinegar, Garlic</td>
+                        <td>
+                            Marinate meat in soy sauce, vinegar, and garlic. Simmer until tender and
+                            flavorful.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Kare-Kare</td>
+                        <td>Oxtail, Tripe, Peanut Sauce, Vegetables</td>
+                        <td>
+                            Cook oxtail and tripe, add peanut sauce and vegetables. Simmer until
+                            rich and creamy.
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2>Survey</h2>
+            <p>Share your thoughts about Filipino cuisine by participating in our survey:</p>
+            <form>
+                <label for="favorite-dish">Favorite Filipino Dish:</label>
+                <input type="text" id="favorite-dish" name="favorite-dish" />
+
+                <label>Which Filipino cuisine do you enjoy the most?</label>
+                <select id="cuisine" name="cuisine">
+                    <option value="sinigang">Sinigang</option>
+                    <option value="adobo">Adobo</option>
+                    <option value="kare-kare">Kare-Kare</option>
+                </select>
+
+                <label>What type of Filipino food events do you prefer?</label>
+                <ul>
+                    <li>
+                        <input
+                            type="checkbox"
+                            id="cooking-classes"
+                            name="events"
+                            value="cooking-classes"
+                        />
+                        Cooking Classes
+                    </li>
+                    <li>
+                        <input
+                            type="checkbox"
+                            id="food-festivals"
+                            name="events"
+                            value="food-festivals"
+                        />
+                        Food Festivals
+                    </li>
+                    <li>
+                        <input
+                            type="checkbox"
+                            id="tasting-events"
+                            name="events"
+                            value="tasting-events"
+                        />
+                        Tasting Events
+                    </li>
+                </ul>
+
+                <label>Do you have any dietary restrictions?</label>
+                <ul>
+                    <li>
+                        <input type="radio" id="yes" name="diet-restrictions" value="yes" /> Yes
+                    </li>
+                    <li><input type="radio" id="no" name="diet-restrictions" value="no" /> No</li>
+                </ul>
+
+                <input type="submit" value="Submit" />
+            </form>
+        </div>
+    </body>
+</html>

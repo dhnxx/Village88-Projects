@@ -1,0 +1,163 @@
+/* CSS RESET */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+    padding: 0;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode",
+        Geneva, Verdana, sans-serif;
+}
+
+ul {
+    list-style-type: none;
+}
+
+/* CSS RESET */
+
+p {
+    margin-bottom: 15px;
+}
+
+.wrapper {
+    background: rgb(199, 211, 223);
+    background: radial-gradient(
+        circle,
+        rgba(199, 211, 223, 1) 0%,
+        rgba(250, 251, 253, 1) 50%,
+        rgba(199, 211, 223, 1) 100%
+    );
+    width: 1000px;
+    margin: 25px;
+    padding: 25px;
+    border-radius: 25px;
+}
+
+header {
+    height: 300px;
+    margin: 10px;
+}
+main {
+    display: block;
+}
+
+.resume-picture {
+    height: 250px;
+    width: 300px;
+}
+
+.personal-details {
+    height: 300px;
+    display: inline-block;
+    vertical-align: top;
+    padding: 40px 5px;
+    width: 620px;
+}
+
+.info {
+    padding: 0px 25px 25px 25px;
+}
+
+.info h1 {
+    font-size: 75px;
+    color: rgb(45, 71, 103);
+}
+
+.info p {
+    font-size: 20px;
+}
+
+.contact {
+    border-top: 3px solid black;
+    padding: 25px 0px;
+}
+
+.contact ul li {
+    display: inline;
+    padding-left: 10px;
+}
+
+article {
+    background: rgb(239, 240, 242);
+    margin: 10px;
+    padding: 10px 20px;
+}
+
+article h2,
+.wrapper2 h2 {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.wrapper2 {
+    margin: 40px 0px;
+}
+
+.tech-stacks {
+    display: inline-block;
+    width: 48%;
+    margin: 5px;
+}
+
+.tech-stacks img {
+    width: 60px;
+}
+
+.tech-stacks .icons {
+    text-align: center;
+    margin: 15px 0px;
+}
+
+.projects {
+    display: inline-block;
+    vertical-align: top;
+    width: 49%;
+    padding: 10px 20px;
+    background: rgb(234, 234, 234);
+    background: radial-gradient(
+        circle,
+        rgba(234, 234, 234, 1) 0%,
+        rgba(250, 252, 251, 1) 50%,
+        rgba(173, 173, 173, 1) 100%
+    );
+    margin: 5px;
+}
+
+.project-1 {
+    margin-bottom: 30px;
+}
+
+footer {
+    height: 50px;
+    text-align: center;
+}
+
+footer img {
+    width: 35px;
+}
+footer ul li {
+    display: inline-block;
+    vertical-align: top;
+    margin: 0px 5px;
+    text-decoration: underline;
+}

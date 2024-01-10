@@ -1,0 +1,95 @@
+/* CSS RESET */
+html {
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul {
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+    list-style: none;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* CSS RESET */
+
+body {
+    background-color: gainsboro;
+}
+
+.wrapper {
+    vertical-align: middle;
+    background-color: white;
+    border-radius: 20px;
+    width: 900px;
+    padding: 100px;
+}
+
+header .head {
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    font-weight: bold;
+    margin: 0px 5px;
+}
+
+header h1 {
+    min-width: 400px;
+}
+
+header img {
+    width: 130px;
+}
+
+.calendar {
+    margin-top: 25px;
+}
+
+.calendar li {
+    display: inline-block;
+    margin: 3px 8px;
+    line-height: 35px;
+    border: 2px solid black;
+    min-width: 80px;
+    min-height: 35px;
+    text-align: center;
+    vertical-align: middle;
+    font-weight: bold;
+}
+
+.sun {
+    background-color: rgb(91, 155, 213);
+}
+.sat {
+    background-color: rgb(169, 208, 142);
+}
+
+.calendar li.blank {
+    background-color: rgb(230, 230, 230);
+    border: none;
+}
