@@ -1,0 +1,36 @@
+body {
+    background-color: whitesmoke;
+}
+.header-img {
+    background: rgb(0, 0, 0);
+    background: linear-gradient(90deg, rgba(0, 0, 0, 1) 41%, rgba(255, 0, 0, 1) 100%);
+    position: relative;
+}
+
+.logo {
+    width: 400px;
+    position: absolute;
+    right: 100px;
+    top: 0;
+}
+
+.navbar {
+    background-color: white;
+    border-bottom: 1px solid rgb(37, 37, 37);
+}
+
+.container {
+    text-align: center;
+}
+
+.list {
+    border-radius: 25px;
+    height: 500px;
+    border: 2px black solid;
+}
+
+.container img {
+    width: 400px;
+
+    object-fit: cover;
+}
