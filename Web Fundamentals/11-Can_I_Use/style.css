@@ -1,0 +1,49 @@
+body {
+    background-color: #f2e9d6;
+}
+
+ul {
+    color: white;
+    background-color: #ebe2cf;
+    height: px;
+    width: 80px;
+    outline: 1px solid red;
+    display: inline-block;
+    vertical-align: top;
+}
+
+ul li {
+    height: 18px;
+    background-color: rebeccapurple;
+    padding: 5px 6px;
+    margin-bottom: 5px;
+    position: relative;
+    text-align: center;
+}
+.title {
+    background-color: #ebe2cf;
+    color: black;
+    border-bottom: 3px solid;
+}
+
+.empty {
+    background-color: #ebe2cf;
+}
+
+span {
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    font-size: 10px;
+    background-color: white;
+    color: black;
+}
+
+.supported {
+}
+
+.partial {
+}
+
+.not-supported {
+}

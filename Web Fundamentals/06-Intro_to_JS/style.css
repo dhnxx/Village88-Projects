@@ -1,84 +1,94 @@
-/* CSS RESET */
 html {
-    box-sizing: border-box;
-    font-size: 16px;
+  box-sizing: border-box;
+  font-size: 16px;
 }
-
-*,
-*:before,
+* {
+  box-sizing: inherit;
+}
+*:before {
+  box-sizing: inherit;
+}
 *:after {
-    box-sizing: inherit;
+  box-sizing: inherit;
 }
-
-body,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-ul {
-    margin: 0;
-    padding: 0;
+body {
+  margin: 0;
+  padding: 0;
 }
-
-img {
-    max-width: 100%;
-    height: auto;
+h1 {
+  margin: 0;
+  padding: 0;
 }
-
-/* CSS RESET */
-
-h2,
-h3,
+h2 {
+  margin: 0;
+  margin: 15px 0px;
+  padding: 0;
+}
+h3 {
+  margin: 0;
+  margin: 15px 0px;
+  padding: 0;
+}
 h4 {
-    margin: 15px 0px;
+  margin: 0;
+  margin: 15px 0px;
+  padding: 0;
 }
-
+h5 {
+  margin: 0;
+  padding: 0;
+}
+h6 {
+  margin: 0;
+  padding: 0;
+}
 p {
-    margin: 10px 0px;
+  margin: 0;
+  margin: 10px 0px;
+  padding: 0;
 }
-
 p span {
-    font-style: italic;
+  font-style: italic;
 }
-
+ul {
+  margin: 0;
+  padding: 0;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
 nav {
-    display: inline-block;
-    width: 270px;
-    height: 100vh;
-    vertical-align: top;
-    outline: 2px solid rgb(174, 174, 174);
-    background-color: rgb(245, 242, 240);
-    padding: 15px;
-    color: rgb(174, 174, 174);
+  display: inline-block;
+  width: 270px;
+  height: 100vh;
+  vertical-align: top;
+  outline: 2px solid #aeaeae;
+  background-color: #f5f2f0;
+  padding: 15px;
+  color: #aeaeae;
 }
-main {
-    padding: 10px 40px;
-    display: inline-block;
-    width: 700px;
-    height: 100vh;
-    background-color: white;
-}
-
-.wrapper {
-    outline: 2px solid rgb(245, 242, 240);
-    padding: 5px 12px;
-}
-
-.title {
-    margin-bottom: 15px;
-}
-
 nav .nav-section {
-    margin-bottom: 15px;
+  margin-bottom: 15px;
 }
 nav li a {
-    text-decoration: none;
-    color: rgb(93, 94, 94);
+  text-decoration: none;
+  color: #5d5e5e;
 }
-
+main {
+  padding: 10px 40px;
+  display: inline-block;
+  width: 700px;
+  height: 100vh;
+  background-color: white;
+}
+.wrapper {
+  outline: 2px solid #f5f2f0;
+  padding: 5px 12px;
+}
+.title {
+  margin-bottom: 15px;
+}
 .comments {
-    margin-top: 15px;
+  margin-top: 15px;
 }
