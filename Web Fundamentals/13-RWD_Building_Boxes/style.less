@@ -1,0 +1,109 @@
+/*CSS reset settings here*/
+* {
+    margin: 0px;
+    padding: 0px;
+}
+#logo {
+    min-height: 130px;
+    width: 260px;
+    background-color: #b97a57;
+}
+#wrapper {
+    background-color: #ffd9b7;
+    margin: 0px auto;
+}
+#navigation {
+    min-height: 130px;
+    width: 655px;
+    background-color: #ff7f27;
+}
+#main_content {
+    min-height: 350px;
+    width: 860px;
+    background-color: #880015;
+}
+#about {
+    display: inline-block;
+    min-height: 250px;
+    width: 650px;
+    background-color: #ffaec9;
+}
+#advertisement {
+    min-height: 200px;
+    width: 155px;
+    background-color: #c8bfe7;
+}
+.sponsors {
+    min-height: 50px;
+    width: 310px;
+    background-color: #ffff88;
+}
+@media screen and (max-width: 480px) {
+    #logo {
+        width: 100%;
+        min-height: 150px;
+    }
+
+    #navigation {
+        min-height: 150px;
+        width: 100%;
+    }
+
+    #main_content {
+        width: 100%;
+        min-height: 300px;
+        margin-bottom: 10%;
+    }
+
+    #about {
+        outline: 2px solid blue;
+        margin: 30px;
+        width: 83%;
+        min-height: 280px;
+    }
+    #advertisement {
+        display: none;
+    }
+    .sponsors {
+        width: 100%;
+        display: block;
+        margin-bottom: 4em;
+    }
+}
+
+@media screen and (min-width: 481px) {
+    #wrapper {
+        width: 100%;
+    }
+    #logo {
+        width: 30%;
+        display: inline-block;
+    }
+    #navigation {
+        width: 69%;
+        display: inline-block;
+    }
+
+    #main_content {
+        outline: 5px solid blue;
+        width: 100%;
+        min-height: 300px;
+    }
+
+    #about {
+        outline: 5px solid blue;
+        width: 60%;
+        display: inline-block;
+        margin: 10% 0 10% 0%;
+    }
+
+    #advertisement {
+       display: none;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    #advertisement {
+        display: inline-block;
+    }
+}
