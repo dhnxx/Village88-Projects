@@ -1,0 +1,30 @@
+body {
+  text-align: center;
+  outline: 5px solid red;
+}
+body button {
+  height: 80px;
+  width: 200px;
+  margin: 5px;
+}
+@media only screen and (max-width: 480px) {
+  button {
+    background-color: yellow;
+    font-size: 12px;
+    width: 100%;
+  }
+}
+@media only screen and (min-width: 481px) {
+  button {
+    background-color: blue;
+    font-size: 18px;
+    width: 50%;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  button {
+    background-color: red;
+    font-size: 30px;
+    width: 100%;
+  }
+}
