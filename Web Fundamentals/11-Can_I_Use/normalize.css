@@ -2,7 +2,7 @@
 
 /* Document
    ========================================================================== */
-* {
+*{
     margin: 0;
     padding: 0;
 }
@@ -347,6 +347,14 @@ summary {
 
 template {
     display: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+input {
+    border:0;
 }
 
 /**

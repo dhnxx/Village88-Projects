@@ -1,49 +1,131 @@
 body {
-    background-color: #f2e9d6;
+    background-image: url(img/background.png);
+    color: white;
 }
 
-ul {
+a {
+    background-color: rgba(255, 255, 255, 0.2);
     color: white;
-    background-color: #ebe2cf;
-    height: px;
-    width: 80px;
-    outline: 1px solid red;
+    padding: 20px 40px;
+    line-height: 70px;
+    font-size: x-large;
+}
+
+header,
+main {
+    padding: 10px 45px;
+}
+main {
+    margin: 0px 45px;
+    min-height: 70vh;
+}
+
+.nav-1,
+.nav-2 {
     display: inline-block;
-    vertical-align: top;
+}
+
+.nav-2 {
+    position: absolute;
+    right: 0px;
+}
+
+header nav {
+    position: relative;
+    height: 80px;
+}
+
+.header-section {
+    background-color: #c84f00;
+    height: 70px;
+    text-align: center;
+    line-height: 70px;
+    font-size: xx-large;
+}
+
+#search {
+    text-align: center;
+    background-color: transparent;
+    border-bottom: 1px solid white;
+    color: white;
+}
+
+main,
+main section {
+    background-color: #f2e9d6;
+    color: black;
+}
+
+main section {
+    padding-bottom: 40px;
+    max-width: 700px;
+}
+
+main section h1 {
+    font-size: 40px;
+}
+
+main p {
+    font-size: 19px;
+}
+
+.title {
+    background-color: #f2e9d6;
+    color: black;
+    border-bottom: 6px solid;
+    height: 55px;
 }
 
 ul li {
-    height: 18px;
-    background-color: rebeccapurple;
+    height: 25px;
     padding: 5px 6px;
     margin-bottom: 5px;
-    position: relative;
     text-align: center;
-}
-.title {
-    background-color: #ebe2cf;
-    color: black;
-    border-bottom: 3px solid;
 }
 
 .empty {
     background-color: #ebe2cf;
 }
 
-span {
+ul {
+    color: white;
+    font-size: x-large;
+    background-color: #ebe2cf;
+    width: 136.6px;
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+}
+
+ul span {
     position: absolute;
-    left: 5px;
-    top: 5px;
-    font-size: 10px;
+    left: 1px;
+    padding: 2px;
+    font-size: 12px;
     background-color: white;
     color: black;
 }
 
+#link {
+    position: absolute;
+    top: 210px;
+    left: 10px;
+    text-align: center;
+    font-size: x-large;
+    background-color: #c84f00;
+    padding: 5px;
+    height: 25px;
+    width: 25px;
+}
+
 .supported {
+    background-color: #258533;
 }
 
 .partial {
+    background-color: #94700c;
 }
 
 .not-supported {
+    background-color: #810000;
 }
