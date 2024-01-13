@@ -1,0 +1,150 @@
+h2 {
+  text-align: center;
+  font-size: 2rem;
+}
+body {
+  background: #c0ccd8;
+  background: radial-gradient(circle, #c0ccd8 0%, #fbfcfe 50%, #b8c8d5 100%);
+}
+header,
+main,
+footer {
+  padding: 0 10%;
+}
+header {
+  padding-top: 10px;
+}
+.resume-picture {
+  width: 350px;
+  height: 250px;
+  width: 29%;
+  object-fit: cover;
+  display: inline-block;
+}
+.personal-details {
+  display: inline-block;
+  vertical-align: top;
+  height: 250px;
+  width: 70%;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+.personal-details .info {
+  padding: 0 0 25px 0;
+}
+.personal-details .info h1 {
+  font-size: 5.5rem;
+  color: #2d4767;
+}
+.personal-details .info p {
+  font-size: 1.5rem;
+}
+.personal-details .contact {
+  border-top: 5px solid #2d4767;
+  padding: 25px 0;
+}
+.personal-details .contact ul li {
+  display: inline-block;
+}
+article {
+  padding: 15px 0;
+}
+article h2 {
+  margin-bottom: 15px;
+}
+.wrapper-2 .tech-stacks,
+.wrapper-2 .projects {
+  width: 49%;
+  display: inline-block;
+}
+.wrapper-2 .tech-stacks .icons {
+  padding: 8px;
+  text-align: center;
+}
+.wrapper-2 .tech-stacks .icons img {
+  width: 15%;
+}
+.wrapper-2 .projects {
+  display: inline-block;
+  vertical-align: top;
+}
+.wrapper-2 .projects .project-1,
+.wrapper-2 .projects .project-2 {
+  text-align: justify;
+  padding: 20px 0px;
+}
+footer {
+  text-align: center;
+  width: 100%;
+}
+footer ul li {
+  display: inline-block;
+  margin: 2%;
+  line-height: 1.5;
+}
+footer ul li img,
+footer ul li p {
+  display: inline-block;
+  vertical-align: middle;
+}
+footer ul li img {
+  width: 50px;
+}
+@media only screen and (max-width: 1200px) {
+  header,
+  main,
+  footer {
+    padding: 0 2%;
+  }
+  header {
+    padding-top: 10px;
+  }
+  article {
+    padding: 20px 40px;
+  }
+}
+@media only screen and (max-width: 870px) {
+  .info h1 {
+    font-size: 4em !important;
+  }
+  .info p {
+    font-size: 1rem !important;
+  }
+  article {
+    padding: 20px 25px;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .resume-picture {
+    text-align: center;
+    display: block;
+    width: 98%;
+  }
+  .personal-details {
+    width: 100%;
+  }
+  .personal-details .info {
+    width: 100%;
+    text-align: center;
+  }
+  .personal-details .info h1 {
+    font-size: 3.5em !important;
+  }
+  .personal-details .info p {
+    font-size: 1rem !important;
+  }
+  .personal-details .contact ul {
+    text-align: center;
+  }
+  .personal-details .contact ul li {
+    display: block;
+  }
+  .wrapper-2 .tech-stacks,
+  .wrapper-2 .projects {
+    width: 100%;
+    padding: 20px 25px;
+  }
+  .wrapper-2 .tech-stacks {
+    display: block;
+  }
+}
