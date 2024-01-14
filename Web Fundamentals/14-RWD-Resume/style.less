@@ -10,6 +10,7 @@
 body {
     background: #c0ccd8;
     background: radial-gradient(circle, #c0ccd8 0%, #fbfcfe 50%, #b8c8d5 100%);
+    font-family: "Nunito", sans-serif;
 }
 
 header {
@@ -24,23 +25,22 @@ header {
     }
     .personal-details {
         padding: 5px;
-        margin-top: 1vh;
+        margin-top: 5px;
         text-align: center;
         h1 {
-            font-family: "Nunito", sans-serif;
-            font-size: 4em;
+            
+            font-size: 2.5em;
             color: @h1;
             font-weight: bold;
             text-transform: uppercase;
         }
         p {
-            font-family: "Nunito", sans-serif;
             display: none;
         }
 
         .contact,
         .contact li {
-            font-family: "Nunito", sans-serif;
+            font-size: 1em;
             display: inline-block;
             padding: 0 6px;
         }
@@ -48,43 +48,43 @@ header {
 }
 
 main {
-    margin-top: 5vh;
-
+    margin-top: 30px;
     article {
         background-color: @primary;
         padding: 20px;
     }
 
     h2 {
+        font-size: 1.5em;
         text-align: center;
     }
     p {
-        margin-top: 3vh;
+        margin-top: 30px;
         text-align: justify;
     }
 
     .tech-stacks {
-        margin-top: 5vh;
+        margin-top: 30px;
         .icons {
             text-align: center;
             margin-top: 2vh;
             width: 100%;
             img {
                 width: 18%;
+                max-width: 100px;
             }
         }
     }
 
     .projects {
-        margin-top: 5vh;
-
+        margin-top: 30px;
         padding: 0 20px;
 
         h2 {
             text-align: center;
         }
         h3 {
-            margin-top: 2vh;
+            margin-top: 30px;
         }
         p,
         ul li {
@@ -97,7 +97,7 @@ main {
 }
 
 footer {
-    margin-top: 5vh;
+    margin-top: 30px;
     width: 100%;
     text-align: center;
     background-color: #e6e9ee;
@@ -122,6 +122,7 @@ footer {
     header {
         margin: 0 auto;
         padding: 0;
+        border: none;
 
         img,
         .personal-details {
@@ -131,7 +132,7 @@ footer {
             object-fit: cover;
             position: relative;
             width: 29%;
-            height: 300px;
+            height: 310px;
             padding-right: 20px;
         }
         .personal-details {
@@ -156,18 +157,21 @@ footer {
                 margin: 0 auto;
             }
             .contact {
-                height: 160px;
+                margin-top: 75px;
+                padding-top: 40px;
+                width: 100%;
+                border-top: 5px solid @h1;
             }
             .contact li {
-                font-size: 1.5em;
-                position: relative;
-                top: 50px;
-                bottom: 50px;
+                font-size: 1em;
             }
         }
     }
 
     main {
+        h2 {
+            font-size: 2.5em;
+        }
         section {
             width: 49%;
             display: inline-block;
@@ -177,7 +181,15 @@ footer {
 }
 
 @media only screen and (min-width: 481px) {
+    header {
+        .personal-details h1 {
+            font-size: 5em;
+        }
+    }
     main {
+        h2 {
+            font-size: 2.5em;
+        }
         section {
             width: 49%;
             display: inline-block;
