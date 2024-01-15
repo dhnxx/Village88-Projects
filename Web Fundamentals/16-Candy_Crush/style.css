@@ -1,0 +1,25 @@
+body {
+  background-image: url(img/900894.jpg);
+  background-size: cover;
+}
+section {
+  margin-top: 5%;
+  text-align: center;
+}
+section div img {
+  background-image: url(900894.jpg);
+  width: 100px;
+  height: 100px;
+  padding: 10px;
+  object-fit: contain;
+  border: 5px solid yellowgreen;
+  background-color: rgba(0, 255, 255, 0.3);
+}
+section button {
+  padding: 10px;
+  background-color: greenyellow;
+  color: black;
+  border: none;
+  font-size: 25px;
+  margin-top: 10px;
+}

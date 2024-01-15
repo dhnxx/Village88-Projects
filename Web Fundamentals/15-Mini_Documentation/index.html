@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Mini-Documentation</title>
+        <link rel="stylesheet" href="normalize.css" />
+        <link rel="stylesheet" href="style.css" />
+        <style>
+            @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;800&display=swap");
+        </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                $(".show img").hide();
+                $(".slide-down img").hide();
+                $(".fade-in img").hide();
+
+                var source = $(".click button").click(function () {
+                    alert("Hello! I am an alert box!!");
+                });
+                $(".hide button").click(function () {
+                    $(".hide img").hide();
+                });
+                $(".show button").click(function () {
+                    $(".show img").show();
+                });
+                $(".toggle button").click(function () {
+                    $(".toggle img").toggle();
+                });
+                $(".slide-down button").click(function () {
+                    $(".slide-down img").slideDown("slow");
+                });
+                $(".slide-up button").click(function () {
+                    $(".slide-up img").slideUp("slow");
+                });
+                $(".slide-toggle button").click(function () {
+                    $(".slide-toggle img").slideToggle("slow");
+                });
+                $(".fade-in button").click(function () {
+                    $(".fade-in img").fadeIn("slow");
+                });
+                $(".fade-out button").click(function () {
+                    $(".fade-out img").fadeOut("slow");
+                });
+                $(".add-class button").click(function () {
+                    $("section.add-class").addClass("change-bg-color");
+                });
+                $(".before button").click(function () {
+                    $(".ghost .ghost-1").before('<img src="./img/Vulnerable-ghost.webp">');
+                });
+                $(".after button").click(function () {
+                    $(".pvz .sunflower").after('<img src="./img/Peashooter.webp">');
+                });
+                $(".append button").click(function () {
+                    $(".append").append("<h1>APPENDED 😄</h1>");
+                });
+                $(".html button").click(function () {
+                    $(".html h2").html("🤖 THE H2 OF THIS CONTAINER IS EDITED 🤖");
+                });
+                $(".attr button").click(function () {
+                    $(".attr img").attr("width", "180px");
+                });
+                $(".val input")
+                    .on("keyup", function () {
+                        var value = $(this).val();
+                        $(".lorem").text(value);
+                    })
+                    .trigger("keyup");
+                var h1 = $("header h1").text();
+                $(".text-placeholder").html(h1);
+            });
+        </script>
+    </head>
+    <body>
+        <header>
+            <img src="./img/jquery.png" alt="" />
+            <h1>My Mini Documentation</h1>
+        </header>
+        <aside>
+            <ul>
+                <li><a href="#click">.click()</a></li>
+                <li><a href="#hide">.hide()</a></li>
+                <li><a href="#show">.show()</a></li>
+                <li><a href="#toggle">.toggle()</a></li>
+                <li><a href="#slide-down">.slideDown()</a></li>
+                <li><a href="#slide-up">.slideUp()</a></li>
+                <li><a href="#slide-toggle">.slideToggle()</a></li>
+                <li><a href="#fade-in">.fadeIn()</a></li>
+                <li><a href="#fade-out">.fadeOut()</a></li>
+                <li><a href="#add-class">.addClass()</a></li>
+                <li><a href="#before">.before()</a></li>
+                <li><a href="#after">.after()</a></li>
+                <li><a href="#append">.append()</a></li>
+                <li><a href="#html">.html()</a></li>
+                <li><a href="#attr">.attr()</a></li>
+                <li><a href="#val">.val()</a></li>
+                <li><a href="#text">.text()</a></li>
+            </ul>
+        </aside>
+        <main>
+            <section id="click" class="click">
+                <h2>.click()</h2>
+                <p>
+                    Binds a function to the click event of the selected elements, allowing you to
+                    define actions when the user clicks on them.
+                </p>
+                <button>CLICK ME</button>
+            </section>
+
+            <section id="hide" class="hide">
+                <h2>.hide()</h2>
+                <p>Hides the selected elements, making them not visible on the webpage.</p>
+                <img src="./img/stitchsit.png" alt="stitch" />
+                <button>CLICK ME</button>
+            </section>
+
+            <section id="show" class="show">
+                <h2>.show()</h2>
+                <p>
+                    Displays the hidden elements that were previously hidden using the `.hide()`
+                    method.
+                </p>
+                <img src="./img/stitchappear.webp" alt="stitch" />
+                <button>CLICK ME</button>
+            </section>
+
+            <section id="toggle" class="toggle">
+                <h2>.toggle()</h2>
+                <p>Toggles between showing and hiding the selected elements.</p>
+                <img src="./img/teemo.webp" alt="teemo" />
+                <button>CLICK ME</button>
+            </section>
+
+            <section id="slide-down" class="slide-down">
+                <h2>.slideDown()</h2>
+                <p>Displays or reveals the selected elements with a sliding-down motion.</p>
+                <img src="./img/Patrick_Star.svg.png" alt="" />
+                <button>CLICK ME</button>
+            </section>
+
+            <section id="slide-up" class="slide-up">
+                <h2>.slideUp()</h2>
+                <p>Hides the selected elements with a sliding-up motion.</p>
+                <img src="./img/Plankton_stock_art.webp" alt="" />
+                <button>CLICK ME</button>
+            </section>
+
+            <section id="slide-toggle" class="slide-toggle">
+                <h2>.slideToggle()</h2>
+                <p>Toggles between sliding down and sliding up for the selected elements.</p>
+                <img src="./img/Mr._Krabs.svg.png" alt="" />
+                <button>CLICK ME</button>
+            </section>
+
+            <section id="fade-in" class="fade-in">
+                <h2>.fadeIn()</h2>
+                <p>Fades in the selected elements, making them gradually visible.</p>
+                <img src="./img/Gargantuar5.webp" alt="" />
+                <button>CLICK ME</button>
+            </section>
+
+            <section id="fade-out" class="fade-out">
+                <h2>.fadeOut()</h2>
+                <p>Fades out the selected elements, gradually making them less visible.</p>
+                <img src="./img/Imagen372.webp" alt="" />
+                <button>CLICK ME</button>
+            </section>
+
+            <section id="add-class" class="add-class">
+                <h2>.addClass()</h2>
+                <p>Adds one or more classes to the selected elements.</p>
+                <p><span>.change-bg-color</span> changes the background color</p>
+                <button>CLICK ME</button>
+            </section>
+
+            <section id="before" class="before">
+                <h2>.before()</h2>
+                <p>Inserts content or elements before the selected elements.</p>
+                <div class="ghost">
+                    <img class="ghost-1" src="./img/Pac_man.webp" alt="" />
+                </div>
+                <button>CLICK ME</button>
+            </section>
+
+            <section id="after" class="after">
+                <h2>.after()</h2>
+                <p>Inserts content or elements after the selected elements.</p>
+                <div class="pvz">
+                    <img class="sunflower" src="./img/Sunflower2009HD.webp" alt="" />
+                </div>
+
+                <button>CLICK ME</button>
+            </section>
+
+            <section id="append" class="append">
+                <h2>.append()</h2>
+                <p>Inserts content or elements at the end of the selected elements.</p>
+                <p>It is currently targeted on this container</p>
+                <p><span>$(".append").append</span></p>
+                <button>CLICK ME</button>
+            </section>
+
+            <section id="html" class="html">
+                <h2>.html()</h2>
+                <p>Gets or sets the HTML content of the selected elements.</p>
+                <p>It is currently targeted on the h2 of this container</p>
+                <p><span>$(".html h2").html</span></p>
+                <button>CLICK ME</button>
+            </section>
+
+            <section id="attr" class="attr">
+                <h2>.attr()</h2>
+                <p>Gets or sets attributes of the selected elements.</p>
+                <img class="sunflower" src="./img/Sunflower2009HD.webp" alt="" width="50px" />
+                <button>CLICK ME</button>
+            </section>
+
+            <section id="val" class="val">
+                <h2>.val()</h2>
+                <p>Gets or sets the value of form elements.</p>
+                <p>
+                    <span class="lorem"></span>
+                </p>
+
+                <input type="text" id="fname" name="fname" placeholder="ENTER A TEXT" />
+            </section>
+
+            <section id="text" class="text">
+                <h2>.text()</h2>
+                <p>Gets or sets the text content of the selected elements.</p>
+                <p>
+                    var h1 = $("header h1").text(); <br />
+                    $(".text-placeholder").html(h1);
+                </p>
+                <h2 class="text-placeholder"></h2>
+            </section>
+        </main>
+    </body>
+</html>

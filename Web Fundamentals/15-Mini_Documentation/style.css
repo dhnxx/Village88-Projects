@@ -1,0 +1,99 @@
+body {
+  background-color: #ffdee9;
+  background-image: linear-gradient(0deg, #b5fffc 0%, #ffdee9 100%);
+  font-family: "Nunito", sans-serif;
+}
+header,
+main {
+  margin: 25px 0 25px 250px;
+}
+header {
+  font-size: 1.5rem;
+  padding: 10px;
+  background-color: white;
+  box-shadow: 5px 5px;
+  width: fit-content;
+  border-radius: 10px;
+}
+header h1,
+header img {
+  display: inline-block;
+}
+header h1 {
+  vertical-align: top;
+  border-radius: 10px;
+  color: black;
+}
+header img {
+  width: 100px;
+}
+aside {
+  background-color: white;
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  padding: 30px;
+  overflow-y: auto;
+}
+aside ul {
+  padding: 0;
+  list-style: none;
+}
+aside ul li {
+  margin: 10px 0;
+}
+main section {
+  max-width: 85%;
+  background-color: white;
+  margin-top: 25px;
+  border-radius: 10px;
+  padding: 20px;
+}
+main section * {
+  padding: 10px 0;
+}
+main section button {
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: slateblue;
+}
+main section img {
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+main section .show img {
+  display: none;
+}
+main section span {
+  font-weight: bold;
+}
+main .before,
+main .after,
+main .val,
+main .text {
+  color: white;
+  background-color: #2d2d2d;
+}
+main .before img,
+main .after img,
+main .val img,
+main .text img {
+  display: inline-block;
+}
+main .before img button,
+main .after img button,
+main .val img button,
+main .text img button {
+  display: block;
+}
+main .val input {
+  display: block;
+  padding-bottom: 10px;
+}
+.change-bg-color {
+  background-color: hotpink;
+}

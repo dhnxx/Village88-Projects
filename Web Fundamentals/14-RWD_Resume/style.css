@@ -7,7 +7,7 @@ header {
   border-bottom: 5px solid #2d4767;
 }
 header p {
-  font-size: 1.5em;
+  font-size: 1.5rem;
 }
 header img {
   width: 100%;
@@ -19,7 +19,7 @@ header .personal-details {
   text-align: center;
 }
 header .personal-details h1 {
-  font-size: 2.5em;
+  font-size: 2.5rem;
   color: #2d4767;
   font-weight: bold;
   text-transform: uppercase;
@@ -29,7 +29,7 @@ header .personal-details p {
 }
 header .personal-details .contact,
 header .personal-details .contact li {
-  font-size: 1em;
+  font-size: 1rem;
   display: inline-block;
   padding: 0 6px;
 }
@@ -41,7 +41,7 @@ main article {
   padding: 20px;
 }
 main h2 {
-  font-size: 1.5em;
+  font-size: 1.5rem;
   text-align: center;
 }
 main p {
@@ -89,7 +89,7 @@ footer li {
   padding: 15px;
 }
 footer li a img {
-  width: 2em;
+  width: 2rem;
 }
 footer li a span {
   vertical-align: top;
@@ -122,10 +122,10 @@ footer li a span {
     text-align: center;
   }
   header .personal-details h1 {
-    font-size: 5em;
+    font-size: 5rem;
   }
   header .personal-details p {
-    font-size: 2em;
+    font-size: 2rem;
     display: block;
   }
   header .personal-details .contact,
@@ -140,10 +140,10 @@ footer li a span {
     border-top: 5px solid #2d4767;
   }
   header .personal-details .contact li {
-    font-size: 1em;
+    font-size: 1rem;
   }
   main h2 {
-    font-size: 2.5em;
+    font-size: 2.5rem;
   }
   main section {
     width: 49%;
@@ -153,10 +153,10 @@ footer li a span {
 }
 @media only screen and (min-width: 481px) {
   header .personal-details h1 {
-    font-size: 5em;
+    font-size: 5rem;
   }
   main h2 {
-    font-size: 2.5em;
+    font-size: 2.5rem;
   }
   main section {
     width: 49%;

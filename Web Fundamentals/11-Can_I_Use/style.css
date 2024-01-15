@@ -90,7 +90,6 @@ ul li {
 ul {
     color: white;
     font-size: x-large;
-    background-color: #ebe2cf;
     width: 136.6px;
     display: inline-block;
     vertical-align: top;
@@ -102,7 +101,6 @@ ul span {
     left: 1px;
     padding: 2px;
     font-size: 12px;
-    background-color: white;
     color: black;
 }
 
