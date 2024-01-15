@@ -1,25 +1,35 @@
 body {
-  background-image: url(img/900894.jpg);
-  background-size: cover;
-}
-section {
-  margin-top: 5%;
+  background-color: #2d2d2d;
+  background-image: url(img/background.jpg);
+  background-size: auto;
+  background-repeat: no-repeat;
+  background-position: center;
   text-align: center;
+  height: 100vh;
 }
-section div img {
-  background-image: url(900894.jpg);
+main {
+  display: block;
+}
+main .grid div {
+  margin-top: 5%;
+  display: inline-block;
+}
+main .grid div img {
+  display: block;
   width: 100px;
   height: 100px;
   padding: 10px;
+  margin: 5px;
   object-fit: contain;
   border: 5px solid yellowgreen;
-  background-color: rgba(0, 255, 255, 0.3);
+  background-color: rgba(45, 45, 255, 0.3);
 }
-section button {
+footer button {
+  position: relative;
   padding: 10px;
   background-color: greenyellow;
   color: black;
   border: none;
   font-size: 25px;
-  margin-top: 10px;
+  margin-top: 75px;
 }

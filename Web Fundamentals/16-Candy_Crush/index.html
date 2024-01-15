@@ -5,38 +5,63 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="normalize.css" />
         <link rel="stylesheet" href="style.css" />
+        <title>Candy Crush</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                let randomStart = [];
+                $(".grid").on("click", "div img", function () {
+                    let random = Math.floor(Math.random() * 4);
+                    let randomBeans = [
+                        '<img src="./img/multicolor_candy.png">',
+                        '<img src="./img/orange_candy.png">',
+                        '<img src="./img/red_candy.png">',
+                        '<img src="./img/yellow_candy.png">',
+                    ];
+                    $(this).parent().prepend(randomBeans[random]);
+                    $(this).remove();
+                });
 
-        <title>Document</title>
+                $("footer button").on("click", function () {
+                    $(".grid").children().remove();
+                    $(".grid").append(
+                        '<div><img alt=""src=./img/multicolor_candy.png> <img alt=""src=./img/red_candy.png> <img alt=""src=./img/multicolor_candy.png> <img alt=""src=./img/yellow_candy.png></div><div><img alt=""src=./img/orange_candy.png> <img alt=""src=./img/multicolor_candy.png> <img alt=""src=./img/red_candy.png> <img alt=""src=./img/orange_candy.png></div><div><img alt=""src=./img/yellow_candy.png> <img alt=""src=./img/orange_candy.png> <img alt=""src=./img/multicolor_candy.png> <img alt=""src=./img/yellow_candy.png></div><div><img alt=""src=./img/orange_candy.png> <img alt=""src=./img/orange_candy.png> <img alt=""src=./img/red_candy.png> <img alt=""src=./img/red_candy.png></div>'
+                    );
+                });
+            });
+        </script>
     </head>
     <body>
         <main>
-            <section>
+            <section class="grid">
                 <div>
-                    <img src="./img/Sunflower2009HD.webp" alt="" />
-                    <img src="./img/Sunflower2009HD.webp" />
-                    <img src="./img/Sunflower2009HD.webp" alt="" />
-                    <img src="./img/Sunflower2009HD.webp" alt="" />
+                    <img src="./img/multicolor_candy.png" alt="" />
+                    <img src="./img/red_candy.png" alt="" />
+                    <img src="./img/multicolor_candy.png" alt="" />
+                    <img src="./img/yellow_candy.png" alt="" />
                 </div>
                 <div>
-                    <img src="./img/Sunflower2009HD.webp" alt="" />
-                    <img src="./img/Sunflower2009HD.webp" alt="" />
-                    <img src="./img/Sunflower2009HD.webp" alt="" />
-                    <img src="./img/Sunflower2009HD.webp" alt="" />
+                    <img src="./img/orange_candy.png" alt="" />
+                    <img src="./img/multicolor_candy.png" alt="" />
+                    <img src="./img/red_candy.png" alt="" />
+                    <img src="./img/orange_candy.png" alt="" />
                 </div>
                 <div>
-                    <img src="./img/Sunflower2009HD.webp" alt="" />
-                    <img src="./img/Sunflower2009HD.webp" alt="" />
-                    <img src="./img/Sunflower2009HD.webp" alt="" />
-                    <img src="./img/Sunflower2009HD.webp" alt="" />
+                    <img src="./img/yellow_candy.png" alt="" />
+                    <img src="./img/orange_candy.png" alt="" />
+                    <img src="./img/multicolor_candy.png" alt="" />
+                    <img src="./img/yellow_candy.png" alt="" />
                 </div>
                 <div>
-                    <img src="./img/Sunflower2009HD.webp" alt="" />
-                    <img src="./img/Sunflower2009HD.webp" alt="" />
-                    <img src="./img/Sunflower2009HD.webp" alt="" />
-                    <img src="./img/Sunflower2009HD.webp" alt="" />
+                    <img src="./img/orange_candy.png" alt="" />
+                    <img src="./img/orange_candy.png" alt="" />
+                    <img src="./img/red_candy.png" alt="" />
+                    <img src="./img/red_candy.png" alt="" />
                 </div>
-                <button>RESET GAME</button>
             </section>
+            <footer>
+                <button>RESET GAME</button>
+            </footer>
         </main>
     </body>
 </html>
