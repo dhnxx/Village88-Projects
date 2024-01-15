@@ -9,22 +9,20 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
         <script>
             $(document).ready(function () {
+                function swapSource(element) {
+                    let temp = $(element).attr("src");
+                    $(element).attr("src", $(element).attr("data-alt-src"));
+                    let customAttr = temp;
+                    $(element).attr("data-alt-src", customAttr);
+                }
                 $(".grid").on(
                     "mouseenter mouseleave",
                     "div img",
                     function () {
-                        let temp = $(this).attr("src");
-                        console.log(temp);
-                        $(this).attr("src", $(this).attr("data-alt-src"));
-                        let customAttr = temp;
-                        $(this).attr("data-alt-src", customAttr);
+                        swapSource($(this));
                     },
                     function () {
-                        let temp = $(this).attr("src");
-                        console.log(temp);
-                        $(this).attr("src", $(this).attr("data-alt-src"));
-                        let customAttr = temp;
-                        $(this).attr("data-alt-src", customAttr);
+                        swapSource($(this));
                     }
                 );
             });
