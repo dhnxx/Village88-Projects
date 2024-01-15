@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Matchy Matchy!</title>
+        <link rel="stylesheet" href="normalize.css" />
+        <link rel="stylesheet" href="style.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                $(".grid").on("click", "div img", function () {
+                    let temp = $(this).attr("src");
+                    $(this).attr("src", $(this).attr("data-alt-src"));
+                    let customAttr = temp;
+                    $(this).attr("data-alt-src", customAttr);
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <main>
+            <section class="grid">
+                <div>
+                    <img
+                        data-alt-src="./img/TeemoSquare.webp"
+                        src="./img/LoL_ping_missing.webp"
+                        alt="teemo"
+                    />
+                    <img
+                        data-alt-src="./img/SkaarlSquare.webp"
+                        src="./img/LoL_ping_missing.webp"
+                        alt="skaarl"
+                    />
+                    <img
+                        data-alt-src="./img/WillumpSquare.webp"
+                        src="./img/LoL_ping_missing.webp"
+                        alt="WillumpSquare"
+                    />
+                    <img
+                        data-alt-src="./img/HecarimSquare.webp"
+                        src="./img/LoL_ping_missing.webp"
+                        alt="HecarimSquare"
+                    />
+                </div>
+                <div>
+                    <img
+                        data-alt-src="./img/DJSonaSquare.webp"
+                        src="./img/LoL_ping_missing.webp"
+                        alt="DJSonaSquare"
+                    />
+                    <img
+                        data-alt-src="./img/AlistarSquare.webp"
+                        src="./img/LoL_ping_missing.webp"
+                        alt="AlistarSquare"
+                    />
+                    <img
+                        data-alt-src="./img/HecarimSquare.webp"
+                        src="./img/LoL_ping_missing.webp"
+                        alt="HecarimSquare"
+                    />
+                    <img
+                        data-alt-src="./img/SkaarlSquare.webp"
+                        src="./img/LoL_ping_missing.webp"
+                        alt="skaarl"
+                    />
+                </div>
+                <div>
+                    <img
+                        data-alt-src="./img/AlistarSquare.webp"
+                        src="./img/LoL_ping_missing.webp"
+                        alt="AlistarSquare"
+                    />
+                    <img
+                        data-alt-src="./img/WillumpSquare.webp"
+                        src="./img/LoL_ping_missing.webp"
+                        alt="WillumpSquare"
+                    />
+                    <img
+                        data-alt-src="./img/DJSonaSquare.webp"
+                        src="./img/LoL_ping_missing.webp"
+                        alt="DJSonaSquare"
+                    />
+                    <img
+                        data-alt-src="./img/TeemoSquare.webp"
+                        src="./img/LoL_ping_missing.webp"
+                        alt="teemo"
+                    />
+                </div>
+            </section>
+        </main>
+    </body>
+</html>
