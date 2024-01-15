@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Fortune Cookie</title>
+        <link rel="stylesheet" href="normalize.css" />
+        <link rel="stylesheet" href="style.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                $(".grid").on(
+                    "mouseenter mouseleave",
+                    "div img",
+                    function () {
+                        let temp = $(this).attr("src");
+                        console.log(temp);
+                        $(this).attr("src", $(this).attr("data-alt-src"));
+                        let customAttr = temp;
+                        $(this).attr("data-alt-src", customAttr);
+                    },
+                    function () {
+                        let temp = $(this).attr("src");
+                        console.log(temp);
+                        $(this).attr("src", $(this).attr("data-alt-src"));
+                        let customAttr = temp;
+                        $(this).attr("data-alt-src", customAttr);
+                    }
+                );
+            });
+        </script>
+    </head>
+    <body>
+        <header>
+            <h1>Fortune Cookie</h1>
+            <p>
+                <span>Directions: </span>Close your eyes then point at this page. Open your eyes and
+                follow the advice your mouse pointer
+            </p>
+        </header>
+        <main>
+            <section class="grid">
+                <div>
+                    <img src="./img/cookie.jpg" alt="" data-alt-src="./img/advice1.png" />
+                    <img src="./img/cookie.jpg" alt="" data-alt-src="./img/advice2.png" />
+                    <img src="./img/cookie.jpg" alt="" data-alt-src="./img/advice3.png" />
+                    <img src="./img/cookie.jpg" alt="" data-alt-src="./img/advice4.png" />
+                    <img src="./img/cookie.jpg" alt="" data-alt-src="./img/advice5.png" />
+                    <img src="./img/cookie.jpg" alt="" data-alt-src="./img/advice6.png" />
+                </div>
+                <div>
+                    <img src="./img/cookie.jpg" alt="" data-alt-src="./img/advice7.png" />
+                    <img src="./img/cookie.jpg" alt="" data-alt-src="./img/advice8.png" />
+                    <img src="./img/cookie.jpg" alt="" data-alt-src="./img/advice9.png" />
+                    <img src="./img/cookie.jpg" alt="" data-alt-src="./img/advice10.png" />
+                    <img src="./img/cookie.jpg" alt="" data-alt-src="./img/advice11.png" />
+                    <img src="./img/cookie.jpg" alt="" data-alt-src="./img/advice12.png" />
+                </div>
+                <div>
+                    <img src="./img/cookie.jpg" alt="" data-alt-src="./img/advice13.png" />
+                    <img src="./img/cookie.jpg" alt="" data-alt-src="./img/advice14.png" />
+                    <img src="./img/cookie.jpg" alt="" data-alt-src="./img/advice15.png" />
+                    <img src="./img/cookie.jpg" alt="" data-alt-src="./img/advice16.png" />
+                    <img src="./img/cookie.jpg" alt="" data-alt-src="./img/advice17.png" />
+                    <img src="./img/cookie.jpg" alt="" data-alt-src="./img/advice18.png" />
+                </div>
+                <div>
+                    <img src="./img/cookie.jpg" alt="" data-alt-src="./img/advice19.png" />
+                    <img src="./img/cookie.jpg" alt="" data-alt-src="./img/advice20.png" />
+                    <img src="./img/cookie.jpg" alt="" data-alt-src="./img/advice21.png" />
+                    <img src="./img/cookie.jpg" alt="" data-alt-src="./img/advice22.png" />
+                    <img src="./img/cookie.jpg" alt="" data-alt-src="./img/advice23.png" />
+                    <img src="./img/cookie.jpg" alt="" data-alt-src="./img/advice24.png" />
+                </div>
+                <div>
+                    <img src="./img/cookie.jpg" alt="" data-alt-src="./img/advice25.png" />
+                    <img src="./img/cookie.jpg" alt="" data-alt-src="./img/advice26.png" />
+                    <img src="./img/cookie.jpg" alt="" data-alt-src="./img/advice27.png" />
+                    <img src="./img/cookie.jpg" alt="" data-alt-src="./img/advice28.png" />
+                    <img src="./img/cookie.jpg" alt="" data-alt-src="./img/advice29.png" />
+                    <img src="./img/cookie.jpg" alt="" data-alt-src="./img/advice30.png" />
+                </div>
+            </section>
+        </main>
+    </body>
+</html>
