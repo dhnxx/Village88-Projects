@@ -4,7 +4,7 @@ It serves as a testament to the web development skills and projects developed du
 
 ## Table of Contents
 
-- [Week 0: Web Fundamentals](./Web%20Fundamentals/)
+- [Week 1-2: Web Fundamentals](./Web%20Fundamentals/)
 
 ## Author/s
 
