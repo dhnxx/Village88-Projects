@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<!-- Declared the document type -->
+<html>
+    <head>
+        <title>jQuery</title>
+        <meta charset="UTF-8" />
+        <link rel="stylesheet" type="text/css" href="bug_fighter.css" />
+        <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+        <script type="text/javascript">
+            //Marks the selected character
+            function highlight(element) {
+                console.log(element);
+                element.siblings().removeClass("chosen");
+                element.addClass("chosen");
+            }
+
+            //Save the chosen character as default, and display in header text
+            function saveSelection(element, name, animated_img) {
+                var user = element.parent().parent().attr("id"); //get section's id (user1 or user2)
+                $("#" + user + "_default")
+                    .value(animated_img) //save the default character for hover out
+                    .$("span#" + user + "_name")
+                    .value(name); //update the top text (Player1 vs. Player2)
+            }
+
+            /*------------------------------------Action Listeners------------------------------------*/
+
+            //Display hovered character. When mouse out, display default.
+            $("nav > img").hover(
+                function () {
+					console.log("hovered")
+                    $(this)
+                        .parent()
+                        .siblings(".picked")
+                        .attr("src", $(this).attr("data-animated-img")); //display new character in action
+                },
+                function () {
+                    var user = $(this).parent().parent().attr("id"); //get section's id (user1 or user2)
+                    $("#" + user + " > .picked")
+                        .attr("src", "#" + user + "_default")
+                        .value();
+                }
+            );
+
+            //Trigger update when new character is selected
+            $("nav > img").click(function () {
+                console.log("clicked");
+                highlight($(this));
+                saveSelection($(this), $(this).attr("name"), $(this).attr("data-animated-img"));
+            });
+
+            //Display the names of chosen characters
+            $("button").click(function () {
+                var character1 = $("#user1_name").value();
+                var character2 = $("#user2_name").value();
+                alert("Battle begins with " + character1 + " and " + character2 + "!");
+            });
+        </script>
+    </head>
+    <body>
+        <div id="wrapper">
+            <h1><span id="user1_name">Chun Li</span> VS <span id="user2_name">Blanka</span></h1>
+            <section id="user1">
+                <img class="picked" src="img/chunli_move.gif" />
+                <nav>
+                    <img
+                        name="Chun Li"
+                        src="img/chunli.png"
+                        data-animated-img="img/chunli_move.gif"
+                        class="chosen"
+                    />
+                    <img name="Guile" src="img/guile.png" data-animated-img="img/guile_move.gif" />
+                    <img name="Vega" src="img/vega.png" data-animated-img="img/vega_move.gif" />
+                    <img
+                        name="Fei Long"
+                        src="img/feilong.png"
+                        data-animated-img="img/feilong_move.gif"
+                    />
+                    <img
+                        name="Blanka"
+                        src="img/blanka.png"
+                        data-animated-img="img/blanka_move.gif"
+                    />
+                </nav>
+                <h2>Player 1</h2>
+            </section>
+            <section id="user2">
+                <img class="picked" src="img/blanka_move.gif" />
+                <nav>
+                    <img
+                        name="Blanka"
+                        src="img/blanka.png"
+                        data-animated-img="img/blanka_move.gif"
+                        class="chosen"
+                    />
+                    <img
+                        name="Fei Long"
+                        src="img/feilong.png"
+                        data-animated-img="img/feilong_move.gif"
+                    />
+                    <img name="Vega" src="img/vega.png" data-animated-img="img/vega_move.gif" />
+                    <img name="Guile" src="img/guile.png" data-animated-img="img/guile_move.gif" />
+                    <img
+                        name="Chun Li"
+                        src="img/chunli.png"
+                        data-animated-img="img/chunli_move.gif"
+                    />
+                </nav>
+                <h2>Player 2</h2>
+            </section>
+            <button>START GAME</button>
+            <input type="hidden" id="user1_default" value="img/chunli_move.gif" />
+            <input type="hidden" id="user2_default" value="img/blanka_move.gif" />
+        </div>
+    </body>
+</html>
