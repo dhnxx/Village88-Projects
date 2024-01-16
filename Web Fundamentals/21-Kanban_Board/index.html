@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Kanban</title>
+        <link rel="stylesheet" href="normalize.css" />
+        <link rel="stylesheet" href="style.css" />
+        <link
+            rel="stylesheet"
+            href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/themes/smoothness/jquery-ui.css"
+        />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                $(function () {
+                    $(".draggable").draggable();
+                });
+                $(function () {
+                    $(".droppable").droppable({
+                        drop: function () {
+                            $(this).addClass("dropped");
+                        },
+                    });
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <main>
+            <section>
+                <ul>
+                    <li class="droppable">
+                        <h1>To-Do</h1>
+                        <p class="draggable">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores,
+                            dolorem.
+                        </p>
+                        <p class="draggable">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores,
+                            dolorem.
+                        </p>
+                        <p class="draggable">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores,
+                            dolorem.
+                        </p>
+                    </li>
+                    <li class="droppable">
+                        <h1>In-Progress</h1>
+                    </li>
+                    <li class="droppable">
+                        <h1>For Approval</h1>
+                    </li>
+                    <li class="droppable">
+                        <h1>Testing</h1>
+                    </li>
+                    <li class="droppable">
+                        <h1>Done</h1>
+                    </li>
+                </ul>
+            </section>
+        </main>
+    </body>
+</html>

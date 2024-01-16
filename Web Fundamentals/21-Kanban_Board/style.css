@@ -1,0 +1,26 @@
+section ul {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+}
+section ul li {
+  display: inline-block;
+  width: 19%;
+  border: 5px solid red;
+  vertical-align: top;
+  height: 100vh;
+}
+section ul li h1 {
+  outline: 5px solid black;
+  margin: 0 0 5vh;
+  height: 15vh;
+}
+section ul li p {
+  border: 5px solid blue;
+  padding: 5vh 0 5vh 0;
+  margin-bottom: 5vh;
+  background-color: whitesmoke;
+}
+.dropped {
+  background-color: aqua;
+}
