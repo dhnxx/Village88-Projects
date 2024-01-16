@@ -18,6 +18,7 @@ section ul li h1 {
   margin: 0 0 5vh;
   height: 15vh;
   background-color: white;
+  line-height: 15vh;
 }
 section ul li p {
   border-radius: 15px;
