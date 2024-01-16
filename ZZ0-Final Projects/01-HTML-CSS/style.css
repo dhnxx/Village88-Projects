@@ -1,0 +1,213 @@
+body {
+    background-color: white;
+    color: black;
+    font-family: sans-serif;
+}
+
+.nav-logo-search {
+    background-color: #1e22a9;
+    padding: 25px 75px;
+    line-height: 25px;
+    width: 100%;
+    display: inline-block;
+}
+.nav-logo-search img {
+    display: inline-block;
+}
+.nav-logo-search form {
+    margin-left: 250px;
+    display: inline-block;
+    vertical-align: middle;
+    padding: 10px 0;
+}
+
+.nav-logo-search form input {
+    width: 500px;
+    height: 40px;
+    padding: 5px;
+}
+.nav-logo-search form button {
+    position: relative;
+    background-color: #1d86ff;
+    background-image: url(/img/1200px-VisualEditor_-_Icon_-_Search-big_-_white.svg.png);
+    background-position: center;
+    background-size: contain;
+    right: 5px;
+    width: 50px;
+    vertical-align: middle;
+    height: 40px;
+    border: 0;
+}
+#abenson {
+    display: inline-block;
+}
+.appliance {
+    padding: 3vh 5vh;
+    font-size: 1.2rem;
+}
+.appliance ul li {
+    display: inline-block;
+    padding-right: 10px;
+    color: #1e22a9;
+    border-right: 1px solid #1e22a9;
+}
+.appliance a {
+    text-decoration: none;
+}
+.promos {
+    background-color: white;
+    padding: 0 5vh 0 5vh;
+    text-align: center;
+}
+.promos #samsung {
+    display: inline-block;
+    width: 825px;
+}
+
+.sameday-bdo {
+    display: inline-block;
+}
+
+.sameday-bdo img {
+    width: 418px;
+}
+
+.radial-image {
+    padding: 4vh 0;
+    text-align: center;
+}
+
+.radial-image ul li {
+    text-align: center;
+    display: inline-block;
+}
+.recommended {
+    padding: 4vh 0;
+    width: 100%;
+    text-align: center;
+    background-color: #1d86ff;
+}
+
+#recommended-header {
+    margin: 0 auto;
+}
+
+.recommended ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.recommended ul li {
+    text-align: left;
+    display: inline-block;
+    vertical-align: top;
+    min-height: 330px;
+    width: 200px;
+    margin-bottom: 20px;
+    background-color: white;
+}
+
+.recommended ul li img {
+    margin: 0 auto;
+    height: auto;
+}
+
+.recommended .item-name {
+    font-weight: bold;
+    line-height: 16px;
+    margin: 10px 0;
+}
+
+.recommended .information {
+    padding: 0 10px;
+}
+
+.information .price {
+    padding: 10px 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #1e22a9;
+}
+
+.information .slashed-price {
+    text-decoration: line-through;
+    color: gray;
+}
+.information .discount {
+    padding: 5px;
+    color: #ff00a9;
+    background-color: #fff1fb;
+}
+
+.information .installment{
+    font-size: 0.8rem;
+    color: #1e22a9;
+}
+
+.featured {
+    padding: 4vh 0;
+    text-align: center;
+    background-color: #e0f6ff;
+}
+
+.featured h2 {
+    text-align: left;
+    padding: 2vh 5vh;
+    font-size: 1.5rem;
+}
+
+.featured img {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+footer {
+    text-align: center;
+    background-color: #1e22a9;
+    color: white;
+    height: 75px;
+    line-height: 75px;
+}
+
+footer ul,footer ul li, .left, .right,  footer p{
+    display: inline-block;
+    color: white;
+}
+footer ul li a{
+    color: white;
+    padding: 0 20px;
+}
+
+.left-links, .right-links{
+    padding: 0 20px;
+}
+
+@media (max-width: 1383px) {
+    .left-links,.right-links{
+        display: none;
+    }
+    .promos {
+        padding: 0;
+        margin: 0;
+    }
+
+    .sameday-bdo {
+        display: inline-block;
+    }
+    .sameday-bdo img {
+        display: inline-block;
+    }
+}
+
+@media (max-width: 1189px) {
+    .nav-logo-search img {
+        display: none;
+    }
+    .nav-logo-search form {
+        margin: 0 auto;
+    }
+    .nav-logo-search form input {
+        width: 700px;
+    }
+}
