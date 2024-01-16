@@ -19,8 +19,12 @@
                 });
                 $(function () {
                     $(".droppable").droppable({
-                        drop: function () {
-                            $(this).addClass("dropped");
+                        drop: function (event, ui) {
+                            let info = $(this).attr("custom-attr").split(",");
+                            let bg = info[0];
+                            let color = info[1];
+                            ui.helper.css("background-color", bg);
+                            ui.helper.css("color", color);
                         },
                     });
                 });
@@ -31,32 +35,27 @@
         <main>
             <section>
                 <ul>
-                    <li class="droppable">
-                        <h1>To-Do</h1>
+                    <li class="droppable" custom-attr="white,black">
+                        <h1 class="todo">To-Do</h1>
+                        <p class="draggable">Clearly define project boundaries and objectives.</p>
                         <p class="draggable">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores,
-                            dolorem.
+                            Explore technologies and analyze challenges.
                         </p>
                         <p class="draggable">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores,
-                            dolorem.
-                        </p>
-                        <p class="draggable">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores,
-                            dolorem.
+                            Develop a small-scale prototype.
                         </p>
                     </li>
-                    <li class="droppable">
-                        <h1>In-Progress</h1>
+                    <li class="droppable" custom-attr="#f39c12,white">
+                        <h1 class="progress">In-Progress</h1>
                     </li>
-                    <li class="droppable">
-                        <h1>For Approval</h1>
+                    <li class="droppable" custom-attr="#c0392b,white">
+                        <h1 class="approval">For Approval</h1>
                     </li>
-                    <li class="droppable">
-                        <h1>Testing</h1>
+                    <li class="droppable" custom-attr="#8e44ad,white">
+                        <h1 class="testing">Testing</h1>
                     </li>
-                    <li class="droppable">
-                        <h1>Done</h1>
+                    <li class="droppable" custom-attr="#34495e,white">
+                        <h1 class="done">Done</h1>
                     </li>
                 </ul>
             </section>

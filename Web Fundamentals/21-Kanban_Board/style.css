@@ -1,3 +1,7 @@
+body {
+  background: #eeaeca;
+  background: radial-gradient(circle, #eeaeca 0%, #94bbe9 100%);
+}
 section ul {
   display: inline-block;
   width: 100%;
@@ -6,21 +10,38 @@ section ul {
 section ul li {
   display: inline-block;
   width: 19%;
-  border: 5px solid red;
   vertical-align: top;
   height: 100vh;
+  background-color: rgba(45, 45, 45, 0.4);
 }
 section ul li h1 {
-  outline: 5px solid black;
   margin: 0 0 5vh;
   height: 15vh;
+  background-color: white;
 }
 section ul li p {
-  border: 5px solid blue;
+  border-radius: 15px;
   padding: 5vh 0 5vh 0;
   margin-bottom: 5vh;
   background-color: whitesmoke;
 }
-.dropped {
-  background-color: aqua;
+.todo {
+  background-color: #1abc9c;
+  color: white;
+}
+.progress {
+  background-color: #f39c12;
+  color: white;
+}
+.approval {
+  background-color: #c0392b;
+  color: white;
+}
+.testing {
+  background-color: #8e44ad;
+  color: white;
+}
+.done {
+  background-color: #34495e;
+  color: white;
 }
