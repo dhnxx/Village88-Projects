@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>E-commerce Product Page</title>
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css"
+        />
+        <link
+            href="https://www.jqueryscript.net/css/jquerysctipttop.css"
+            rel="stylesheet"
+            type="text/css"
+        />
+        <link rel="stylesheet" href="lightboxed.css" />
+        <link rel="stylesheet" href="normalize.css" />
+        <link rel="stylesheet" href="style.css" />
+
+        <!-- jQuery -->
+        <script
+            type="text/javascript"
+            src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        ></script>
+        <script
+            type="text/javascript"
+            src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"
+        ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+        <script src="easyzoom.js"></script>
+        <script src="lightboxed.js"></script>
+        <script src="Nzoom.min.js"></script>
+
+        <script>
+            $(document).ready(function () {
+                $("#buy").on("click", function () {
+                    toastr.success("Purchased Successfully!", "Steam");
+                });
+
+                $("#cart-button").on("click", function () {
+                    toastr.success("Added to Cart!", "Steam");
+                });
+
+                $("a.zoom").easyZoom();
+            });
+        </script>
+    </head>
+    <body>
+        <header>
+            <img id="logo" src="img/Steam_logo.png" alt="" />
+            <input type="search" name="searchbox" id="searchbox" placeholder="Search Products" />
+            <img id="cart" src="img/download.png" alt="" />
+        </header>
+        <main>
+            <section>
+                <div class="product-image zoomArea">
+                    <a href="img/Headset_3-meta-gear.jpg" class="zoom">
+                        <img
+                            id="NZoomImg"
+                            class="lightboxed"
+                            src="img/Headset_3-meta-gear.jpg"
+                            alt=""
+                            rel="group1"
+                        />
+                    </a>
+                    <div class="mini-img">
+                        <a href="#">
+                            <img
+                                src="./img/Quest-3-Consumer-Highlights_Social-Share.jpg"
+                                alt=""
+                                class="lightboxed"
+                                rel="group1"
+                            />
+                        </a>
+                        <a href="#">
+                            <img
+                                src="./img/hero-image.jpg"
+                                alt=""
+                                class="lightboxed"
+                                rel="group1"
+                            />
+                        </a>
+                        <a href="#">
+                            <img
+                                src="./img/meta-quest-3-accessories-lead-cnnu.jpg"
+                                alt=""
+                                class="lightboxed"
+                                rel="group1"
+                            />
+                        </a>
+                        <a href="#">
+                            <img
+                                src="./img/e527ffa0-5c10-11ee-b5cf-83b6640de4d7.jpg"
+                                alt=""
+                                class="lightboxed"
+                                rel="group1"
+                            />
+                        </a>
+                    </div>
+                </div>
+
+                <div class="product-info">
+                    <h1 class="text-light">META QUEST 3</h1>
+                    <div class="product-prices">
+                        <p>
+                            <span class="slashed">₱503 - ₱1,009</span>₱239 - ₱509<span
+                                class="discount"
+                                >52% OFF</span
+                            >
+                        </p>
+                    </div>
+                    <p class="description text-light">
+                        High-resolution OLED displays: Experience stunning visuals with vibrant
+                        colors and deep blacks. Powerful Qualcomm Snapdragon XR2+ processor: Enjoy
+                        smooth gameplay and immersive experiences. Improved hand tracking: Interact
+                        with the virtual world naturally with enhanced hand tracking technology.
+                        Wireless PC VR: Play your favorite PC VR games wirelessly with Meta Air Link
+                        or Oculus Link cable. Extensive library of VR experiences: Explore a vast
+                        collection of games, apps, and social experiences with something for
+                        everyone.
+                    </p>
+                    <button id="cart-button">ADD TO CART</button>
+                    <button id="buy">BUY</button>
+                </div>
+            </section>
+        </main>
+    </body>
+</html>

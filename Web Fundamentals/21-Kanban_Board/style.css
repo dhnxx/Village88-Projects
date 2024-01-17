@@ -1,52 +1,68 @@
 body {
-    background: #eeaeca;
-    background: radial-gradient(circle, #eeaeca 0%, #94bbe9 100%);
+  background: #eeaeca;
+  background: radial-gradient(circle, #eeaeca 0%, #94bbe9 100%);
 }
 section ul {
-    display: inline-block;
-    width: 100%;
-    text-align: center;
+  display: inline-block;
+  width: 100%;
+  text-align: center;
 }
 section ul li {
-    display: inline-block;
-    width: 19%;
-    vertical-align: top;
-    height: 100vh;
-    background-color: rgba(45, 45, 45, 0.4);
-    text-align: center;
+  display: inline-block;
+  width: 19%;
+  vertical-align: top;
+  height: 100vh;
+  background-color: rgba(45, 45, 45, 0.4);
 }
 section ul li h1 {
-    margin: 0 0;
-    height: 15vh;
-    background-color: white;
-    line-height: 15vh;
+  margin: 0 0 5vh;
+  height: 15vh;
+  background-color: white;
+  line-height: 15vh;
 }
-.draggable {
-    border-radius: 15px;
-    padding: 5vh 0 5vh 0;
-    margin: 5vh auto;
-    background-color: whitesmoke;
-    width: 250px;
-    z-index: 100; 
+section ul li .draggable {
+  min-height: 100px;
+  border-radius: 15px;
+  margin-bottom: 5vh;
+  background-color: whitesmoke;
 }
-
+section ul li .draggable p {
+  margin-top: 1vh;
+  text-align: center;
+}
+section ul li .draggable .info {
+  width: 100%;
+  border-radius: 15px 15px 0 0;
+  border-bottom: 2px solid gray;
+  color: black;
+}
+section ul li .draggable .info img {
+  border-radius: 15px;
+  width: 50px;
+  display: inline-block;
+}
+section ul li .draggable .info .name {
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 3vh;
+}
 .todo {
-    background-color: #1abc9c;
-    color: white;
+  background-color: #1abc9c;
+  color: white;
 }
 .progress {
-    background-color: #f39c12;
-    color: white;
+  background-color: #f39c12;
+  color: white;
 }
 .approval {
-    background-color: #c0392b;
-    color: white;
+  background-color: #c0392b;
+  color: white;
 }
 .testing {
-    background-color: #8e44ad;
-    color: white;
+  background-color: #8e44ad;
+  color: white;
 }
 .done {
-    background-color: #34495e;
-    color: white;
+  background-color: #34495e;
+  color: white;
 }

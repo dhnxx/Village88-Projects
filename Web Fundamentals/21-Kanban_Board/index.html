@@ -17,13 +17,14 @@
                 $(function () {
                     $(".sortable").sortable({
                         revert: true,
-                        distance: 10
+                        distance: 10,
+                        connectWith: ".sortable",
                     });
-                    $(".draggable").draggable({
-                        connectToSortable: ".sortable",
-                        helper: "original",
-                        revert: "invalid",
-                    });
+                    // $(".draggable").draggable({
+                    //     connectToSortable: ".sortable",
+                    //     helper: "original",
+                    //     revert: "invalid",
+                    // });
                     $("ul, li").disableSelection();
                 });
 
@@ -46,11 +47,29 @@
         <main>
             <section>
                 <ul>
-                    <li class="droppable" custom-attr="white,black">
+                    <li class="sortable" custom-attr="white,black">
                         <h1 class="todo">To-Do</h1>
-                        <p class="draggable">Clearly define project boundaries and objectives.</p>
-                        <p class="draggable">Explore technologies and analyze challenges.</p>
-                        <p class="draggable">Develop a small-scale prototype.</p>
+                        <div class="draggable">
+                            <div class="info">
+                                <img src="./img/SkaarlSquare.webp" alt="" />
+                                <p class="name">Nunu</p>
+                            </div>
+                            <p>Clearly define project boundaries and objectives.</p>
+                        </div>
+                        <div class="draggable">
+                            <div class="info">
+                                <img src="./img/WillumpSquare.webp" alt="" />
+                                <p class="name">Nunu</p>
+                            </div>
+                            <p>Explore technologies and analyze challenges.</p>
+                        </div>
+                        <div class="draggable">
+                            <div class="info">
+                                <img src="./img/TeemoSquare.webp" alt="" />
+                                <p class="name">Nunu</p>
+                            </div>
+                            <p>Develop a small-scale prototype.</p>
+                        </div>
                     </li>
                     <li class="droppable sortable" custom-attr="#f39c12,white">
                         <h1 class="progress">In-Progress</h1>

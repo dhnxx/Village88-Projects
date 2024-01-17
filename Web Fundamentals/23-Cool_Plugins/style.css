@@ -1,0 +1,127 @@
+body {
+  background: linear-gradient(180deg, #2a475e 0%, #1b2838 80%);
+  color: white;
+}
+body button {
+  border-radius: 2px;
+  border: none;
+  padding: 10px;
+  width: 150px;
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none !important;
+  color: #d2e885 !important;
+  background: #a4d007;
+  background: -webkit-linear-gradient(top, #a4d007 5%, #536904 95%);
+  background: linear-gradient(to bottom, #a4d007 5%, #536904 95%);
+}
+header {
+  background-color: #171d25;
+  padding: 3vh;
+  text-align: center;
+}
+header #logo,
+header #cart {
+  width: 60px;
+  display: inline-block;
+  vertical-align: middle;
+}
+header input {
+  width: 75%;
+  height: 35px;
+  margin-left: 50px;
+  padding: 0 25px;
+}
+header #cart {
+  margin-left: 50px;
+  width: 40px;
+}
+main {
+  margin: 5vh 5vh;
+  background-color: #171d25;
+  border-radius: 15px;
+}
+main section {
+  padding: 5vh;
+}
+main section div {
+  display: inline-block;
+  vertical-align: top;
+}
+main section h1 {
+  margin: 0;
+  font-weight: bold;
+  margin-bottom: 3vh;
+}
+main section .product-image {
+  width: 25%;
+}
+main section .product-image .mini-img {
+  text-align: center;
+}
+main section .product-image .mini-img img {
+  display: inline-block;
+  width: 24%;
+  background-color: black;
+}
+main section .product-prices {
+  background-image: url(img/background_spotlight.jpg);
+}
+main section .product-prices p {
+  margin: 1vh 0;
+}
+main section .product-info {
+  width: 70%;
+  padding: 0 5vh;
+}
+main section .product-info .product-prices {
+  font-size: 2rem;
+  padding: 2vh 1vh;
+  color: #a4d007;
+  margin: 0 auto;
+  border-radius: 10px;
+}
+main section .product-info .product-prices .slashed {
+  color: gray;
+  font-size: 1rem;
+  text-decoration: line-through;
+  margin: 1vh;
+}
+main section .product-info .product-prices .discount {
+  background-color: #a4d007;
+  color: black;
+  font-size: 1rem;
+  margin: 1vh;
+}
+main section .product-info p.description {
+  margin-top: 2vh;
+}
+main section .product-info button {
+  margin: 5vh 0;
+}
+#toast-container {
+  margin: 12vh 0;
+}
+#easy_zoom {
+  width: 600px;
+  height: 400px;
+  border: 5px solid #eee;
+  background: #fff;
+  color: #333;
+  position: absolute;
+  top: 60px;
+  left: 400px;
+  overflow: hidden;
+  -moz-box-shadow: 0 0 10px #777;
+  -webkit-box-shadow: 0 0 10px #777;
+  box-shadow: 0 0 10px #777;
+  /* vertical and horizontal alignment used for preloader text */
+  line-height: 400px;
+  text-align: center;
+}
+#container {
+  /*        text-align: center;*/
+}
+#container img {
+  display: inline-block;
+}

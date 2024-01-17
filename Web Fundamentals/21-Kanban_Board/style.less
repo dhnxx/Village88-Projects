@@ -7,6 +7,7 @@ section {
         display: inline-block;
         width: 100%;
         text-align: center;
+
         li {
             display: inline-block;
             width: 19%;
@@ -19,11 +20,31 @@ section {
                 background-color: white;
                 line-height: 15vh;
             }
-            p {
+            .draggable {
+                min-height: 100px;
                 border-radius: 15px;
-                padding: 5vh 0 5vh 0;
                 margin-bottom: 5vh;
                 background-color: whitesmoke;
+                p {
+                    margin-top: 1vh;
+                    text-align: center;
+                }
+                .info {
+                    width: 100%;
+                    border-radius: 15px 15px 0 0;
+                    border-bottom: 2px solid gray;
+                    color:black;
+                    img {
+                        border-radius: 15px;
+                        width: 50px;
+                        display: inline-block;
+                    }
+                    .name {
+                        display: inline-block;
+                        vertical-align: top;
+                        margin-top: 3vh;
+                    }
+                }
             }
         }
     }
