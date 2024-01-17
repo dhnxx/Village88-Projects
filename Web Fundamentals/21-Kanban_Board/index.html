@@ -15,10 +15,21 @@
         <script>
             $(document).ready(function () {
                 $(function () {
-                    $(".draggable").draggable();
+                    $(".sortable").sortable({
+                        revert: true,
+                        distance: 10
+                    });
+                    $(".draggable").draggable({
+                        connectToSortable: ".sortable",
+                        helper: "original",
+                        revert: "invalid",
+                    });
+                    $("ul, li").disableSelection();
                 });
+
                 $(function () {
                     $(".droppable").droppable({
+                        tolerance: "pointer", // Add this line
                         drop: function (event, ui) {
                             let info = $(this).attr("custom-attr").split(",");
                             let bg = info[0];
@@ -41,16 +52,16 @@
                         <p class="draggable">Explore technologies and analyze challenges.</p>
                         <p class="draggable">Develop a small-scale prototype.</p>
                     </li>
-                    <li class="droppable" custom-attr="#f39c12,white">
+                    <li class="droppable sortable" custom-attr="#f39c12,white">
                         <h1 class="progress">In-Progress</h1>
                     </li>
-                    <li class="droppable" custom-attr="#c0392b,white">
+                    <li class="droppable sortable" custom-attr="#c0392b,white">
                         <h1 class="approval">For Approval</h1>
                     </li>
-                    <li class="droppable" custom-attr="#8e44ad,white">
+                    <li class="droppable sortable" custom-attr="#8e44ad,white">
                         <h1 class="testing">Testing</h1>
                     </li>
-                    <li class="droppable" custom-attr="#34495e,white">
+                    <li class="droppable sortable" custom-attr="#34495e,white">
                         <h1 class="done">Done</h1>
                     </li>
                 </ul>
