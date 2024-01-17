@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Form Validation</title>
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css" />
+        <link rel="stylesheet" href="normalize.css" />
+        <link rel="stylesheet" href="style.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
+
+        <script>
+            $(document).ready(function () {
+                $(function () {
+                    $("#datepicker").datepicker();
+                });
+                $("button").on("click", function () {
+                    if ($("#first-name").val() === "") {
+                        alert("First Name can't be blank");
+                    } else if ($("#last-name").val() === "") {
+                        alert("Last Name can't be blank");
+                    } else if ($("#datepicker").val() === "") {
+                        alert("Date can't be blank");
+                    } else {
+                        alert(
+                            "Success, " +
+                                $("#first-name").val() +
+                                " " +
+                                $("#last-name").val() +
+                                " Your vaccination is reseerved on " +
+                                $("#datepicker").val()
+                        );
+                    }
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <main>
+            <form action="">
+                <label for="first-name">First Name</label>
+                <input id="first-name" type="text" />
+                <label for="last-name">Last Name</label>
+                <input id="last-name" type="text" />
+                <label for="datepicker">Preferred Date</label>
+                <input id="datepicker" type="text" />
+                <button>RESERVE</button>
+            </form>
+        </main>
+    </body>
+</html>

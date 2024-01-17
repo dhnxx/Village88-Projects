@@ -1,0 +1,15 @@
+form {
+  padding: 25px;
+}
+form #first-name,
+form #last-name,
+form #datepicker {
+  display: block;
+  margin: 1vh 0;
+}
+button {
+  background-color: aqua;
+  border: none;
+  padding: 10px;
+  margin-top: 5vh;
+}
