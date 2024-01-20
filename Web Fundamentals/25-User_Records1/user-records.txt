@@ -1,0 +1,80 @@
+Create Table:
+Use the following SQL query to create a new table named 'users' with the specified columns:
+
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    first_name VARCHAR(50),
+    last_name VARCHAR(50),
+    email VARCHAR(100),
+    encrypted_password VARCHAR(255),
+    is_active BOOLEAN DEFAULT 0 NOT NULL
+);
+
+Insert Records:
+Execute the following SQL queries to insert three fake user records into the 'users' table:
+
+INSERT INTO users (first_name, last_name, email, encrypted_password, is_active)
+VALUES ('John', 'Doe', 'john.doe@example.com', 'hashed_password1', 1);
+
+INSERT INTO users (first_name, last_name, email, encrypted_password, is_active)
+VALUES ('Jane', 'Smith', 'jane.smith@example.com', 'hashed_password2', 0);
+
+INSERT INTO users (first_name, last_name, email, encrypted_password, is_active)
+VALUES ('Mike', 'Johnson', 'mike.johnson@example.com', 'hashed_password3', 1);
+
+Update User Record:
+Use the following SQL query to update the user record with id = 1:
+
+UPDATE users
+SET first_name = 'UpdatedFirstName', last_name = 'UpdatedLastName', email = 'updated.email@example.com'
+WHERE id = 1;
+
+
+Update by Last Name:
+Update the encrypted_password for all users with last_name 'Choi' using the following SQL query:
+
+UPDATE users
+SET encrypted_password = 'new_hashed_password'
+WHERE last_name = 'Choi';
+
+Update by IDs:
+Update is_active to 1 for users with IDs 3, 5, 7, 12, and 19 with the following SQL query:
+
+UPDATE users
+SET is_active = 1
+WHERE id IN (3, 5, 7, 12, 19);
+
+Delete User Record:
+Delete the user record where id = 1 using the following SQL query:
+
+DELETE FROM users
+WHERE id = 1;
+
+Delete All Records:
+Delete all records from the 'users' table with the following SQL query:
+
+DELETE FROM users;
+
+Drop Table:
+Drop the entire 'users' table with the following SQL query:
+
+DROP TABLE users;
+
+Alter Email Field:
+Alter the 'email' field to be 'email_address' with VARCHAR(100) using the following SQL query:
+
+ALTER TABLE users
+CHANGE email email_address VARCHAR(100);
+
+Alter ID to BIGINT:
+Alter the 'id' field to BIGINT using the following SQL query:
+
+ALTER TABLE users
+MODIFY COLUMN id BIGINT AUTO_INCREMENT;
+
+Add New Field is_active:
+Add a new field named 'is_active' with BOOLEAN datatype, default value 0, and disallowing NULL values using the following SQL query:
+
+ALTER TABLE users
+ADD COLUMN is_active BOOLEAN DEFAULT 0 NOT NULL;
+
