@@ -1,0 +1,36 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: whitesmoke;
+}
+h1 {
+    font-size: 2rem;
+}
+form,
+.submitted-form-entry {
+    background-color: blanchedalmond;
+    padding: 5vh 10vh;
+    border: 3px solid black;
+    border-radius: 15px;
+    width: 500px;
+    margin: 5vh auto;
+}
+input,
+select,
+label,
+p {
+    display: block;
+    margin-top: 1vh;
+    width: 100%;
+    padding: 10px 0;
+}
+
+#submit {
+    width: 200px;
+}
+
+#user_reason {
+    height: 5vh;
+}
