@@ -1,0 +1,106 @@
+body {
+    height: 100vh;
+    background-image: url("img/6099609.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+header {
+    width: 100%;
+    position: relative;
+    padding: 30px 50px;
+    color: white;
+    h1,
+    form {
+        display: inline-block;
+        margin: 0;
+    }
+    form {
+        position: absolute;
+        right: 50px;
+        padding: 25px;
+
+        input {
+            padding: 20px;
+            outline: 5px solid #d4af37;
+            border-radius: 15px;
+            background-color: black;
+            color:white;
+            font-weight: bold;
+        }
+    }
+    h1 {
+        background-color: black;
+        padding: 25px;
+        outline: 5px solid #d4af37;
+        border-radius: 15px;
+    }
+}
+main {
+    .bet-options {
+        margin: 5vh 0;
+        width: 100%;
+        text-align: center;
+        div {
+            color: white;
+            position: relative;
+            font-weight: bold;
+            background-color: rgba(45, 45, 45, 0.6);
+            h2 {
+                background-color: black;
+                font-size: calc(30px + 0.390625vw);
+                font-family: 'Cinzel Decorative', serif;
+                color: #d4af37;
+                line-height: 4rem;
+                height: 4rem;
+            }
+            display: inline-block;
+            width: 24%;
+            height: 350px;
+            border: 10px solid black;
+            border-radius: 25px;
+
+            form {
+                img {
+                    height: 150px;
+                    margin: 10px auto;
+                }
+                input {
+                    height: 45px;
+                    width: 250px;
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                    bottom: 2vh;
+                    margin: 0 auto;
+                    background-color: black;
+                    color: #d4af37;
+                    border: none;
+                    outline: 3px solid #d4af37;
+                    border-radius: 15px;
+                }
+            }
+        }
+
+    }
+    .game-host-message {
+        margin-top: 2em;
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        background-color: rgba(45, 45, 45, 0.6);
+        h3 {
+            width: 100%;
+            padding: 15px;
+            background-color: black;
+            color: white;
+        }
+        .message {
+            overflow-y: auto;
+            height: 300px;
+            padding: 15px;
+            font-size: 1.8rem;
+        }
+    }
+}
