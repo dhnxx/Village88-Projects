@@ -3,19 +3,20 @@
     padding: 0;
 }
 body {
-    background-color: whitesmoke;
+background: rgb(238,174,202);
+background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
 }
 h1 {
     font-size: 2rem;
 }
 form,
 .submitted-form-entry {
-    background-color: blanchedalmond;
+    background-color: white;
     padding: 5vh 10vh;
-    border: 3px solid black;
     border-radius: 15px;
     width: 500px;
     margin: 5vh auto;
+    box-shadow: 5px 10px black;
 }
 input,
 select,
