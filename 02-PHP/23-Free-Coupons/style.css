@@ -1,0 +1,71 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: white;
+}
+section {
+  text-align: center;
+  width: max-content;
+  margin: 5vh auto;
+}
+.welcome h1 {
+  font-size: 3rem;
+}
+.welcome p {
+  font-size: 1.3rem;
+}
+.welcome p span {
+  font-weight: bold;
+}
+.section-form label,
+.section-form #user_name {
+  display: block;
+  font-size: 1.3rem;
+  margin: 3vh 0;
+}
+.section-form #submit {
+  margin: 3vh 10px 0 10px;
+  padding: 5px;
+  outline: 5px solid black;
+  font-size: 1.2rem;
+  color: white;
+  width: 150px;
+  background-color: #009e0f;
+}
+.coupon {
+  background-color: #ffe599;
+  padding: 25px;
+  border: 7px dashed black;
+  border-radius: 15px;
+  width: 400px;
+  height: max-content;
+}
+.coupon p {
+  margin: 1vh 0;
+  font-weight: bold;
+}
+.coupon .discount {
+  font-size: 1.5rem;
+}
+.coupon .coupon-number {
+  font-size: 3rem;
+}
+.coupon input {
+  margin: 3vh 10px 0 10px;
+  padding: 5px;
+  outline: 5px solid black;
+  font-size: 1.2rem;
+  color: white;
+  width: 150px;
+}
+.coupon #reset {
+  background-color: #cf2a27;
+}
+.coupon #claim {
+  background-color: #009e0f;
+}
+.coupon-none {
+  display: none;
+}
