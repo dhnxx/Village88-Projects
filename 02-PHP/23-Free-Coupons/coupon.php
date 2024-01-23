@@ -15,7 +15,7 @@ if (isset($_POST["submit"])) {
     decreaseCoupon();
     $_SESSION["user_name"] = $_POST["user_name"];
     $_SESSION["coupon_number"] = randomDigits();
-    $_SESSION["coupon_message"] = ($_SESSION["coupon_left"] > 0) ? "for the first {$_SESSION["coupon_left"]} customer(s)" : "";
+    $_SESSION["coupon_message"] =  "";
 }
 
 if (isset($_GET["reset"])) {
