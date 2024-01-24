@@ -1,6 +1,6 @@
 <?php
 
-$url = "http://www.bing.com/search?q=software+engineering";
+$url = "http://www.bing.com/search?q=ruby+on+rails";
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 30);
