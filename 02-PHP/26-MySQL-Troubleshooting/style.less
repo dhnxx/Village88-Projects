@@ -1,0 +1,89 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: rgb(255, 199, 226);
+    background: radial-gradient(circle, rgba(255, 199, 226, 1) 32%, rgba(105, 255, 249, 1) 100%);
+    color: black;
+}
+
+form,
+section,
+table {
+    background-color: white;
+    padding: 5vh 10vh;
+    border-radius: 15px;
+    width: 500px;
+    margin: 5vh auto;
+    box-shadow: 5px 10px black;
+}
+input,
+select,
+label,
+p {
+    box-sizing: border-box;
+    display: block;
+    margin-top: 1vh;
+    width: 100%;
+    padding: 10px 0;
+}
+
+label {
+    font-size: 1.5rem;
+}
+
+.submit {
+    margin-top: 1.5vh;
+    background-color: black;
+    color: white;
+    outline: none;
+    font-size: 1.3rem;
+}
+
+.button-only {
+    padding: 0;
+    margin: 0 auto;
+    width: 300px;
+    box-shadow: none;
+}
+
+///////////////////////////////////////
+
+img,
+input#delete {
+    width: 30px;
+    height: 30px;
+    margin: auto;
+    background-image: url("./img/trash.png");
+    border: none;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+h1 {
+    padding: 25px;
+    color: black;
+    text-align: center;
+}
+
+.added {
+    background-color: rgb(46, 204, 113);
+}
+
+.deleted {
+    background-color: rgb(231, 76, 60);
+}
+
+table {
+    width: 50%;
+    margin-top: 5vh;
+    font-size: 1.4rem;
+    th,
+    tr,
+    td {
+        border: 2px solid black;
+        text-align: center;
+    }
+}

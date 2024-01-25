@@ -1,0 +1,77 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background: #ffc7e2;
+  background: radial-gradient(circle, #ffc7e2 32%, #69fff9 100%);
+  color: black;
+}
+form,
+section,
+table {
+  background-color: white;
+  padding: 5vh 10vh;
+  border-radius: 15px;
+  width: 500px;
+  margin: 5vh auto;
+  box-shadow: 5px 10px black;
+}
+input,
+select,
+label,
+p {
+  box-sizing: border-box;
+  display: block;
+  margin-top: 1vh;
+  width: 100%;
+  padding: 10px 0;
+}
+label {
+  font-size: 1.5rem;
+}
+.submit {
+  margin-top: 1.5vh;
+  background-color: black;
+  color: white;
+  outline: none;
+  font-size: 1.3rem;
+}
+.button-only {
+  padding: 0;
+  margin: 0 auto;
+  width: 300px;
+  box-shadow: none;
+}
+img,
+input#delete {
+  width: 30px;
+  height: 30px;
+  margin: auto;
+  background-image: url("img/trash.png");
+  border: none;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+h1 {
+  padding: 25px;
+  color: black;
+  text-align: center;
+}
+.added {
+  background-color: #2ecc71;
+}
+.deleted {
+  background-color: #e74c3c;
+}
+table {
+  width: 50%;
+  margin-top: 5vh;
+  font-size: 1.4rem;
+}
+table th,
+table tr,
+table td {
+  border: 2px solid black;
+  text-align: center;
+}
