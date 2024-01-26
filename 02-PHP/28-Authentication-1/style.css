@@ -1,0 +1,96 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+}
+body {
+  background: #69ceff;
+  background: radial-gradient(circle, #69ceff 0%, #ffb8f8 100%);
+  color: black;
+  text-align: center;
+}
+form,
+section,
+table {
+  background-color: white;
+  padding: 5vh 10vh;
+  border-radius: 15px;
+  width: 600px;
+  margin: 5vh auto;
+  box-shadow: 5px 10px black;
+}
+input,
+select,
+label,
+p,
+textarea {
+  box-sizing: border-box;
+  display: block;
+  margin-top: 1vh;
+  width: 100%;
+  padding: 5px;
+  border-radius: 10px;
+  font-size: 1rem;
+}
+label {
+  font-size: 1rem;
+}
+.submit {
+  margin-top: 5vh;
+  background-color: black;
+  color: white;
+  outline: none;
+  font-size: 1.3rem;
+}
+.submit-alt {
+  margin-top: 1.5vh;
+  color: black;
+  background-color: white;
+  outline: 3px solid black;
+  font-size: 1.3rem;
+}
+.button-only {
+  margin-right: 0px;
+  margin-left: auto;
+  width: 300px;
+  box-shadow: none;
+}
+table {
+  width: 50%;
+  margin-top: 5vh;
+  font-size: 1.4rem;
+}
+table th,
+table tr,
+table td {
+  border: 2px solid black;
+  text-align: center;
+}
+h1 {
+  font-family: "Satisfy", cursive;
+  color: black;
+  text-align: center;
+  font-size: 3.5rem;
+}
+.multiple-forms {
+  width: 400px;
+  display: inline-block;
+  margin: 25px;
+  min-height: 700px;
+  vertical-align: top;
+  text-align: left;
+}
+.message {
+  padding: 10px;
+  margin: 1.5vh 0;
+  background-color: crimson;
+  max-height: 100px;
+  color: white;
+  overflow-y: auto;
+}
+.have-error {
+  background-color: crimson;
+}
+.no-error {
+  background-color: darkgreen;
+}
