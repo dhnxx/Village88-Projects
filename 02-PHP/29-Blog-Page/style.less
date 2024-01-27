@@ -1,0 +1,143 @@
+@main: #223237;
+@alt: #0b1416;
+@title: #f2f4f5;
+@content: #b8c5c9;
+@border: rgb(82, 82, 82);
+* {
+    font-size: 16px;
+    color: @title;
+    font-family: "Jost", sans-serif;
+    p,
+    label,
+    span.date {
+        color: @content;
+    }
+
+    span.date{
+        font-weight: 200;
+    }
+}
+
+header {
+    background-color: @main;
+    padding: 25px;
+    h1,
+    .right-contents,
+    .right-contents p,
+    a {
+        display: inline-block;
+    }
+
+    .right-contents {
+        position: absolute;
+        right: 25px;
+
+        p {
+            margin-right: 50px;
+        }
+    }
+}
+
+body {
+    background-color: @alt;
+}
+
+main {
+    h1 {
+        line-height: 40px;
+    }
+    padding: 50px 50px;
+    margin: 0 100px;
+    border-left: 1px solid @border;
+    border-right: 1px solid @border;
+
+    .main-content {
+        border: 1px solid @border;
+        padding: 25px;
+        margin: 5vh 0;
+        border-radius: 10px;
+    }
+    .leave-review {
+        textarea {
+            width: 100%;
+            height: 10vh;
+        }
+    }
+}
+
+.review {
+    border: 1px solid @border;
+    padding: 25px;
+    margin: 5vh 0;
+    border-radius: 10px;
+
+  
+}
+
+textarea {
+    border: 2px solid @content;
+    border-radius: 10px;
+    height: 6vh;
+    background-color: @alt;
+    padding: 10px;
+}
+
+input[type="submit"] {
+    background-color: #1870f4;
+    width: 100px;
+    height: 50px;
+    border-radius: 20px;
+    border: none;
+    margin-left: auto;
+    display: block;
+
+    .button {
+        text-align: right;
+        margin-top: 2vh;
+    }
+}
+
+.replies-container {
+    margin-left: 50px;
+    padding: 0 25px;
+}
+
+.auth {
+    width: 100%;
+    text-align: center;
+    .multiple-forms {
+        margin: 50px;
+        display: inline-block;
+        border: 1px solid @border;
+        min-height: 620px;
+        vertical-align: top;
+        width: 400px;
+        padding: 50px;
+        text-align: start;
+        border-radius: 10px;
+        .button {
+            width: 100%;
+            margin-top: 2vh;
+        }
+        input[type="text"],
+        input[type="password"] {
+            background-color: @alt;
+            border: 1px solid @content;
+            border-radius: 8px;
+            height: 30px;
+        }
+        .message {
+            margin: 0;
+            background-color: @alt;
+            border: 1px solid @content;
+            border-radius: 8px;
+        }
+        .have-error {
+            background-color: crimson;
+        }
+
+        .no-error {
+            background-color: darkgreen;
+        }
+    }
+}
