@@ -89,7 +89,7 @@
                 </form>
             </section>
 <?php } ?>
-<?php
+<?php $reviews = fetchReviews();
         foreach ($reviews as $review) { ?>
             <section class="review">
                 <form action="process.php" method="POST">

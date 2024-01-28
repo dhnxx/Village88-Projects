@@ -1,0 +1,12 @@
+form, label, input{
+    display: block;
+}
+
+input[type="submit"]{
+    background-color: blue;
+    color:white;
+    border:none; 
+    margin-top: 2vh;
+    height: 35px;
+}
+
