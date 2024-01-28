@@ -1,8 +1,4 @@
-<?php
-
-require_once("new-connection.php")
-
-?>
+<?php require("process.php") ?>
 
 
 <!DOCTYPE html>
@@ -17,7 +13,7 @@ require_once("new-connection.php")
 
 <body>
     <h1>Register</h1>
-    <form action="process.php" method="post">
+    <form action="process.php" method="POST">
         <label for="email">Email</label>
         <input type="text" name="email" id="email">
         <label for="fname">First Name</label>
@@ -28,16 +24,16 @@ require_once("new-connection.php")
         <input type="password" name="pw" id="pw">
         <label for="confirmpw">Confirm Password</label>
         <input type="password" name="confirmpw" id="confirmpw">
-        <input type="submit" value="Register">
+        <input type="submit" name="register_user" value="Register" id="register">
     </form>
 
     <h1>Login</h1>
-    <form action="process.php" method="post">
+    <form action="process.php" method="POST">
         <label for="email">Email</label>
         <input type="text" name="email" id="email">
         <label for="pw">Password</label>
         <input type="password" name="pw" id="pw">
-        <input type="submit" value="Login">
+        <input type="submit" name="login_user" value="Login user">
     </form>
 </body>
 
