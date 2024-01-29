@@ -1,0 +1,109 @@
+@main: #223237;
+@alt: #0b1416;
+@title: #f2f4f5;
+@content: #b8c5c9;
+@border: rgb(82, 82, 82);
+* {
+    font-size: 16px;
+    color: @title;
+    font-family: "Jost", sans-serif;
+}
+
+header {
+    position: relative;
+    h1 {
+        display: inline-block;
+    }
+    .home {
+        display: inline-block;
+        position: absolute;
+        right: 0;
+        background-color: blueviolet;
+        width: fit-content;
+        height: 35px;
+        border-radius: 5px;
+        padding: 10px;
+        a {
+            text-decoration: none;
+        }
+    }
+}
+
+body {
+    margin: 0 auto;
+    padding: 25px;
+    background-color: @alt;
+    max-width: 80%;
+
+    form,
+    section {
+        border: 2px solid @content;
+        padding: 25px;
+        width: 100%;
+        border-radius: 15px;
+    }
+    form {
+        input[type="file"] {
+            width: 300px;
+            border: none;
+        }
+        input[type="submit"] {
+            display: block;
+            right: 25px;
+            background-color: blueviolet;
+            height: max-content;
+            width: 200px;
+            border: none;
+        }
+    }
+
+    .uploaded-files ul li {
+        margin: 10px 0;
+    }
+
+    .table-container {
+        height: 80vh;
+        overflow: auto;
+        padding: 0;
+        table {
+            margin: 0 auto;
+            thead {
+                position: sticky;
+                top: 0;
+                background-color: blueviolet;
+                th {
+                    outline: 1px solid @content;
+                }
+            }
+            td {
+                border: 1px solid @border;
+                color: @content;
+            }
+        }
+    }
+}
+
+footer {
+    text-align: center;
+    .pages {
+        width: 100%;
+        ul {
+            margin: 0 auto;
+            display: inline-block;
+            list-style: none;
+            li {
+                display: inline-block;
+                margin: 5 10px;
+                background-color: blueviolet;
+                width: 35px;
+                height: 35px;
+                line-height: 35px;
+                border-radius: 5px;
+
+                a {
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}

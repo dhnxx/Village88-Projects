@@ -1,0 +1,95 @@
+* {
+  font-size: 16px;
+  color: #f2f4f5;
+  font-family: "Jost", sans-serif;
+}
+header {
+  position: relative;
+}
+header h1 {
+  display: inline-block;
+}
+header .home {
+  display: inline-block;
+  position: absolute;
+  right: 0;
+  background-color: blueviolet;
+  width: fit-content;
+  height: 35px;
+  border-radius: 5px;
+  padding: 10px;
+}
+header .home a {
+  text-decoration: none;
+}
+body {
+  margin: 0 auto;
+  padding: 25px;
+  background-color: #0b1416;
+  max-width: 80%;
+}
+body form,
+body section {
+  border: 2px solid #b8c5c9;
+  padding: 25px;
+  width: 100%;
+  border-radius: 15px;
+}
+body form input[type="file"] {
+  width: 300px;
+  border: none;
+}
+body form input[type="submit"] {
+  display: block;
+  right: 25px;
+  background-color: blueviolet;
+  height: max-content;
+  width: 200px;
+  border: none;
+}
+body .uploaded-files ul li {
+  margin: 10px 0;
+}
+body .table-container {
+  height: 80vh;
+  overflow: auto;
+  padding: 0;
+}
+body .table-container table {
+  margin: 0 auto;
+}
+body .table-container table thead {
+  position: sticky;
+  top: 0;
+  background-color: blueviolet;
+}
+body .table-container table thead th {
+  outline: 1px solid #b8c5c9;
+}
+body .table-container table td {
+  border: 1px solid #525252;
+  color: #b8c5c9;
+}
+footer {
+  text-align: center;
+}
+footer .pages {
+  width: 100%;
+}
+footer .pages ul {
+  margin: 0 auto;
+  display: inline-block;
+  list-style: none;
+}
+footer .pages ul li {
+  display: inline-block;
+  margin: 5 10px;
+  background-color: blueviolet;
+  width: 35px;
+  height: 35px;
+  line-height: 35px;
+  border-radius: 5px;
+}
+footer .pages ul li a {
+  text-decoration: none;
+}
