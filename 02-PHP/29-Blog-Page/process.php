@@ -72,16 +72,28 @@ if (isset($_SESSION["logged"])) {
 }
 
 //* Submit Review 
-if (isset($_POST["add_review"])) {
-    $review_content = $_POST["review"];
-    insertReview($user_id, $review_content);
-    header("Location: index.php");
+if (isset($_POST["review"])) {
+    if (!empty($_POST["review"])) {
+        $review_content = $_POST["review"];
+        insertReview($user_id, $review_content);
+        header("Location: index.php");
+        die();
+    } else {
+        //! Failed to insert review or null content 
+        header("Location: index.php");
+        die();
+    }
 }
 
 //* Submit Replies 
-if (isset($_POST["add_reply"])) {
-    header("Location: index.php");
-    insertReply($user_id, $_POST["review_id"], $_POST["review_content"]);
+if (isset($_POST["reply_content"])) {
+    if (!empty($_POST["reply_content"])) {
+        insertReply($user_id, $_POST["review_id"], $_POST["reply_content"]);
+        header("Location: index.php");
+        die();
+    } else {
+        //! Failed to insert reply or null content 
+        header("Location: index.php");
+        die();
+    }
 }
-
-

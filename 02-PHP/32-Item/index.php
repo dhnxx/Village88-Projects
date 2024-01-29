@@ -1,10 +1,11 @@
+
 <?php
 
-class Item {
+class item {
 
-    public $name = "Item name";
-    public $price = "0";
-    public $stock = 0;
+    public $name;
+    public $price;
+    public $stock;
     public $sold = 0;
 
     public function __construct($name, $price, $stock) {
@@ -23,21 +24,22 @@ class Item {
 
     public function buy() {
         if ($this->stock <= 0) {
-            echo ("<h2> No stocks left! </h2>");
+            echo ("<h1> No stocks left! </h1");
         } else {
+
             $this->stock -= 1;
             $this->sold += 1;
-            echo ("<h2> Buying $this->name </h2>");
+            echo ("<h1> Buying $this->name </h1>");
         }
     }
 
     public function returnItem() {
         if ($this->sold <= 0) {
-            echo ("<h2> Return Unsuccessful! </h2>");
+            echo ("<h1> Return Unsuccessful! </h1>");
         } else {
             $this->stock += 1;
             $this->sold -= 1;
-            echo ("<h2> Returning </h2>");
+            echo ("<h1> Returning </h1>");
         }
     }
 
@@ -49,11 +51,11 @@ class Item {
 
     public function __set($property, $value) {
         if (property_exists($this, $property)) {
-            $this->$property = $value;
+            $this->property = $value;
         }
         return $this;
     }
-}
+};
 
 $item1 = new Item("Laptop", "$2000", 50);
 $item2 = new Item("Tablet", "$1000", 35);

@@ -13,7 +13,7 @@ $data = curl_exec($ch);
 // Check for cURL errors
 if (curl_errno($ch)) {
     echo 'Curl error: ' . curl_error($ch);
-    exit();
+    die();
 }
 
 curl_close($ch);

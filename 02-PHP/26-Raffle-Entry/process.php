@@ -40,10 +40,10 @@ if (isset($_POST["submit"])) {
                 "class" => "added"
             );
             header("Location: success.php");
-            exit();
+            die();
         } else {
             header("Location: index.php");
-            exit();
+            die();
         }
     }
 }
@@ -62,11 +62,11 @@ if (isset($_POST["delete"])) {
 
     run_mysql_query($delete_query);
     run_mysql_query($auto_increment);
-    exit();
+    die();
 }
 
 //* Add a number
 if (isset($_POST["add_number"])) {
     header("Location: index.php");
-    exit();
+    die();
 }

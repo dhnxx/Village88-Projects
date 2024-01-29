@@ -1,4 +1,5 @@
-<?php require("process.php"); ?>
+<?php require("process.php");
+unset($_SESSION["logged"]) ?>
 
 <!DOCTYPE html>
 <html lang="en">

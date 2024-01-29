@@ -85,7 +85,7 @@
                 <form action="process.php" method="POST">
                     <h2>Leave a Review</h2>
                     <textarea name="review" id="review" cols="30" rows="10" placeholder="Add a review"></textarea>
-                    <div class="button"><input type="submit" name="add_review" value="Post"></div>
+                    <div class="button"><input type="submit" value="Post"></div>
                 </form>
             </section>
 <?php } ?>
@@ -99,7 +99,8 @@
                     <p><?= "{$review["review_content"]} " ?></p>
                     <input type="hidden" name="review_id" value="<?= $review["review_id"] ?>">
                     <div class="replies-container">
-                        <section class="replies"><?php $replies = fetchReplies($review["review_id"]);
+                        <section class="replies">
+<?php $replies = fetchReplies($review["review_id"]);
                             foreach ($replies as $reply) { ?>
 <?php $reply_user = fetchUsers($reply["user_id"]);
                                 $reply_datetime = convertTime($reply["replies_created"]); ?>
@@ -109,8 +110,8 @@
                         </section>
                         <section class="leave-reply">
 <?php if (isset($_SESSION["logged"])) { ?>
-                                <textarea name="review_content" id="review" cols="30" rows="10" placeholder="Reply to this review"></textarea>
-                                <div class="button"><input type="submit" value="Reply" name="add_reply"></div>
+                                <textarea name="reply_content" id="review" cols="30" rows="10" placeholder="Reply to this review"></textarea>
+                                <div class="button"><input type="submit" value="Reply"></div>
                         </section>
 <?php } ?>
                     </div>

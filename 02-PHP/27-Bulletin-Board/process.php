@@ -30,14 +30,14 @@ if (isset($_POST["add"])) {
         //* Run the query
         if (run_mysql_query($add_list)) {
             header("Location: main.php");
-            exit();
+            die();
         } else {
             header("Location: index.php");
-            exit();
+            die();
         }
     } else {
         header("Location: index.php");
-        exit();
+        die();
     }
 }
 

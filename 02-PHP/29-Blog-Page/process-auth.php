@@ -74,7 +74,7 @@ function userLogin($post) {
         $error[] = implode(", ", $empty_fields) . " is missing";
         $_SESSION["messages-login"] = array("message" => $error, "color" => "have-error");
         header("Location: auth.php");
-        exit();
+        die();
     } else {
         $inputted_email = $post["Email"];
         $inputted_password = md5($post["Password"]);
@@ -87,12 +87,12 @@ function userLogin($post) {
             unset($_SESSION["messages-login"]);
             unset($_SESSION["messages-register"]);
             header("Location: index.php");
-            exit();
+            die();
         } else {
             $error[] = "Login Unsuccessfully, Check your Email and Password";
             $_SESSION["messages-login"] = array("message" => $error, "color" => "have-error");
             header("Location: auth.php");
-            exit();
+            die();
         }
     }
 }
@@ -108,10 +108,10 @@ if (isset($_POST["register"])) {
         $_SESSION["messages-register"] = array("message" => array("Successfully Registered"), "color" => "no-error");
         insertUser($_POST);
         header("Location: index.php");
-        exit();
+        die();
     } else {
         header("Location: auth.php");
-        exit();
+        die();
     }
 }
 
@@ -122,5 +122,5 @@ if (isset($_POST["login"])) {
 if (isset($_POST["logout"])) {
     header("Location: auth.php");
     session_destroy();
-    exit();
+    die();
 }
