@@ -24,12 +24,13 @@ class item {
 
     public function buy() {
         if ($this->stock <= 0) {
-            echo ("<h1> No stocks left! </h1");
+            echo ("<h1> No stocks left! </h1>");
         } else {
 
             $this->stock -= 1;
             $this->sold += 1;
             echo ("<h1> Buying $this->name </h1>");
+
         }
     }
 
