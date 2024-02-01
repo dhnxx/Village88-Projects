@@ -1,0 +1,38 @@
+body {
+	background-color: black;
+	color: white;
+}
+
+
+.wrapper{
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	gap: 50px;
+}
+
+.form {
+	border: 1px solid white;
+	width: 10rem;
+	padding: 35px;
+	border-radius: 15px;
+	text-align: center;
+}
+
+.submit {
+	padding: 10px;
+	background-color: rgb(59, 59, 255);
+	color: white;
+	border-radius: 10px;
+	border: none;
+	width: fit-content;
+	font-weight: 700;
+	
+}
+
+.messages{
+	color: white;
+	border: 1px solid white;
+	height: 40vh;
+	overflow:auto; 
+}
