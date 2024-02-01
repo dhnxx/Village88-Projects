@@ -16,8 +16,9 @@ class Main extends CI_Controller {
 		if ($visited === false) {
 			$visited = 0;
 		} else {
-			$data = array("rand" => rand(1000000, 9999999));
+			$data["rand"] = rand(1000000, 9999999);
 			$visited++;
+			$data["message"] = "There are {$visited} lucky winners selected";
 		}
 		$this->session->set_userdata('visited', $visited);
 
@@ -25,7 +26,8 @@ class Main extends CI_Controller {
 		} elseif ($this->input->post("reset")) {
 			$this->session->unset_userdata("visited");
 			$this->session->userdata('visited');
-			$data["rand"] = ""; 
+			$data["rand"] = "";
+			$data["message"] = "0 winner(s)";
 		}
 		var_dump($visited);
 

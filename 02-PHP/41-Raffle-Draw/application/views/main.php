@@ -14,13 +14,13 @@ defined('BASEPATH') or exit('No direct script access allowed');
 <body>
 	<h1>Raffle Draw</h1>
 	<section class="form">
-		<h2>There are <?= $this->session->userdata('visited'); ?> lucky winners selected</h2>
+		<h2><?= $message ?></h2>
 		<p class="number"><?= $rand ?></p>
 		<?= form_open("main/index", array("method" => "post")); ?>
 		<?= form_submit(array("value" => "Pick More", "name" => "pick", "class" => "submit")); ?>
 		<?= form_submit(array("value" => "Reset", "name" => "reset", "class" => "submit")); ?>
 		<?= form_close(); ?>
-		
+
 	</section>
 
 
