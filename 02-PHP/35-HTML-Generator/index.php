@@ -14,8 +14,9 @@ class HTML_Generator {
         foreach ($this->list as $keys => $item) {
 ?> <label for="<?= $keys ?>"><?= $keys ?></label>
             <input type="text" name="<?= $keys ?>" id="<?= $keys ?>" value="<?= $item ?>">
-        <?php
+<?php
         }
+        return $this;
     }
 
     public function render_list($list_type) {
@@ -29,16 +30,16 @@ class HTML_Generator {
         }
         echo ("<{$x}>");
         foreach ($this->list as $item) {
-        ?> <li>$item</li>
+        ?> <li><?=$item?></li>
 <?php }
         echo ("</{$x}>");
+        return $this;
     }
 }
 
 
 $new_list = new HTML_Generator(array("name" => "bag", "price" => "250", "stocks" => "10"));
 $new_list->render_input();
-
 
 $fruits = new HTML_Generator(array("Apple", "Banana", "Cherry"));
 $fruits->render_list("unordered");
