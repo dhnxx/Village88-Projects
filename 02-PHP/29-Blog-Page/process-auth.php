@@ -82,8 +82,8 @@ function userLogin($post) {
         $query = "SELECT first_name FROM users WHERE email = '{$inputted_email}' AND password = '{$inputted_password}'";
 
         if ($result = fetch_record($query)) {
-            $result["email"] =  $inputted_email;
             $_SESSION["logged"] = $result;
+            $_SESSION["logged"]["email"] = $inputted_email;
             unset($_SESSION["messages-login"]);
             unset($_SESSION["messages-register"]);
             header("Location: index.php");

@@ -1,4 +1,6 @@
-<?php require("process.php"); ?>
+<?php require("process.php"); 
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -17,6 +19,7 @@
         <div class="right-contents">
             <p> <?= (!isset($_SESSION["logged"])) ? "To post a review or comment, please log in." : " Welcome {$_SESSION["logged"]["first_name"]}" ?></p>
             <a href="auth.php"><?= (!isset($_SESSION["logged"])) ? "Login/Register" : "Logout" ?> </a>
+            <p><?= var_dump($_SESSION["logged"]); ?></p>
         </div>
     </header>
     <main>

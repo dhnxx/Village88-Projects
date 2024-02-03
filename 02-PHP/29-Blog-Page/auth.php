@@ -23,8 +23,10 @@ unset($_SESSION["logged"]) ?>
     <div class="auth">
         <form class="multiple-forms" action="process-auth.php" method="post">
             <h1>Register</h1>
+            
 <?php if (isset($_SESSION["messages-register"])) { ?>
                 <div class="message <?= $_SESSION["messages-register"]["color"] ?>">
+                
 <?php foreach ($_SESSION["messages-register"]["message"] as $message) { ?>
                         <p><?= $message ?></p>
 <?php } ?>
