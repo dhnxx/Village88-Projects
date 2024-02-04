@@ -3,41 +3,37 @@ body {
 	color: white;
 }
 
-h1,
-h2,
-p {
+.actions {
+	display: flex;
+	gap: 10px;
+	justify-content: center;
+	align-items: center;
 	text-align: center;
 }
 
-.label {
-	font-size: 1.3rem;
+.actions form {
+	margin: 0;
 }
 
-.form {
-	border: 1px solid white;
-	width: max-content;
-	margin: 0 auto;
-	padding: 35px;
-	border-radius: 15px;
+input[type="submit"] {
+	margin: 0;
 }
-.form * {
+
+table tr,
+th,
+td {
+	border: 1px solid white;
+}
+
+a {
+	color: white;
+}
+
+form * {
 	display: block;
 	margin: 10px 0;
 }
 
-.submit {
-	padding: 10px;
-	background-color: rgb(59, 59, 255);
-    color:white;
-	border-radius: 10px;
-	border: none;
-    width: 100%;
-	margin: 2vh auto;
-    font-weight: 700;
-}
-
-.form p {
-	font-size: 5rem;
-	color: orange;
-	font-weight: 700;
+.error {
+	color: red;
 }
