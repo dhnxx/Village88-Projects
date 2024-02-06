@@ -69,7 +69,8 @@ main {
 	display: flex;
 	flex-wrap: wrap;
 	width: 100%;
-	min-height: 95.2vh;
+	height: 95.2vh;
+	overflow: auto;
 	justify-content: center;
 	align-content: start;
 	background-color: rgba(45, 45, 45, 0.8);
@@ -92,3 +93,11 @@ main {
 	margin: 5px 0 0;
 	color:white;
 }
+
+.sport-list{
+	
+	display:flex; 
+
+	justify-content: space-between;
+}
+

@@ -22,24 +22,41 @@ defined('BASEPATH') or exit('No direct script access allowed');
         <label for="sports">Choose Sports</label>
         <div class="sports">
             <div class="sport-list">
-                <input type="checkbox" name="basketball" id="basketball" value="1">
-                <label for="basketball">Basketball</label>
+                <div>
+                    <input type="checkbox" name="basketball" id="basketball" value="1">
+                    <label for="basketball">Basketball</label>
+                </div>
+                <label class="number" for="basketball">1</label>
             </div>
             <div class="sport-list">
-                <input type="checkbox" name="volleyball" id="volleyball" value="2">
-                <label for="volleyball">Volleyball</label>
+                <div>
+                    <input type="checkbox" name="volleyball" id="volleyball" value="2">
+                    <label for="volleyball">Volleyball</label>
+                </div>
+                <label class="number" for="volleyball">2</label>
             </div>
             <div class="sport-list">
-                <input type="checkbox" name="baseball" id="baseball" value="3">
-                <label for="baseball">Baseball</label>
+                <div>
+                    <input type="checkbox" name="baseball" id="baseball" value="3">
+                    <label for="baseball">Baseball</label>
+                </div>
+                <label class="number" for="baseball">3</label>
+
             </div>
             <div class="sport-list">
-                <input type="checkbox" name="soccer" id="soccer" value="4">
-                <label for="soccer">Soccer</label>
+                <div>
+                    <input type="checkbox" name="soccer" id="soccer" value="4">
+                    <label for="soccer">Soccer</label>
+                </div>
+                <label class="number" for="soccer">4</label>
+
             </div>
             <div class="sport-list">
-                <input type="checkbox" name="football" id="football" value="5">
-                <label for="football">Football</label>
+                <div>
+                    <input type="checkbox" name="football" id="football" value="5">
+                    <label for="football">Football</label>
+                </div>
+                <label class="number" for="football">5</label>
             </div>
             <input type="submit" value="Search">
             <?= form_close(); ?>

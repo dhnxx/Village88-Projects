@@ -3,11 +3,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Players extends CI_Controller {
 
-	private $players;
-
 	public function __construct() {
 		parent::__construct();
-		$this->output->enable_profiler(TRUE);
+		//$this->output->enable_profiler(TRUE);
 		$this->load->model("player");
 		$this->players = $this->player->get_player_info();
 		$this->filter_get =

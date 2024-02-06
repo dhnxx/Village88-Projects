@@ -8,11 +8,11 @@ class Player extends CI_Model {
 
     public function fetch_filter($filter_get) {
 
-        $sport_list = array(); 
+        $sport_list = array();
         $this->db->select("players.name AS Name, players.image_url AS image_url, GROUP_CONCAT(player_sports.sport_id) AS sport_ids")
             ->from("player_sports")
             ->join("players", "players.id = player_sports.user_id")
-            ->group_by("players.name");
+            ->group_by("Name");
 
         if (!empty($filter_get["name"])) {
             $this->db->where("players.name", $filter_get["name"]);
@@ -33,15 +33,19 @@ class Player extends CI_Model {
             }
         }
 
-        //* Check if any sports were selected
         if ($sport_list) {
             //* Construct the HAVING clause to filter by selected sports
-            $having_condition = 'GROUP_CONCAT(`player_sports`.`sport_id` ORDER BY `player_sports`.`sport_id`) = ' . $this->db->escape(implode(",", $sport_list));
+            $having_conditions = [];
+            foreach ($sport_list as $sport) {
+                $having_conditions[] = 'sport_ids LIKE "%' . $this->db->escape_like_str($sport) . '%"';
+            }
+
+            //* Combine the HAVING conditions with AND
+            $having_condition = '(' . implode(' AND ', $having_conditions) . ')';
 
             //* Apply the HAVING condition to the query
             $this->db->having($having_condition);
         }
-
 
         $complete_query = $this->db->get();
         return $complete_query->result_array();
