@@ -1,39 +1,87 @@
 body {
-	background-color: black;
-	color: white;
-}
-
-.actions {
-	display: flex;
-	gap: 10px;
-	justify-content: center;
-	align-items: center;
-	text-align: center;
-}
-
-.actions form {
 	margin: 0;
+	padding: 0;
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+	background-color: black;
+	padding: 20px;
+	display: flex;
+}
+
+aside {
+	min-width: 200px;
+	max-width: 300px;
+	background-color: #2b2b2b;
+	padding: 25px;
+	border-radius: 10px;
+	color: #fff;
+	font-size: 1.2rem;
+}
+
+label {
+	margin-bottom: 10px;
+	display: inline-block;
+}
+
+input[type="text"],
+input[type="checkbox"],
+input[type="submit"] {
+	margin-bottom: 10px;
+	padding: 8px;
+	width: auto;
+	border: none;
+	border-radius: 5px;
+	background-color: #fff;
+}
+
+.text {
+	width: 100%;
+	display: flex;
+}
+
+.text input {
+	flex: 1;
+	padding: 8px;
+	border: none;
+	border-radius: 5px;
+	background-color: #fff;
+}
+
+.sports {
+	margin-bottom: 10px;
 }
 
 input[type="submit"] {
-	margin: 0;
-}
-
-table tr,
-th,
-td {
-	border: 1px solid white;
-}
-
-a {
+	background-color: #4caf50;
 	color: white;
+	cursor: pointer;
+	width: 100%;
 }
 
-form * {
-	display: block;
-	margin: 10px 0;
+input[type="submit"]:hover {
+	background-color: #45a049;
 }
 
-.error {
-	color: red;
+main {
+	display: flex;
+	flex-wrap: wrap;
+	width: auto;
+	justify-content: center;
+	background-color: gainsboro;
+	font-weight: 500;
+}
+.player {
+	margin: 10px;
+	text-align: center;
+}
+
+.player img {
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	border: 5px solid #4caf50;
+}
+
+.player p {
+	margin: 5px 0 0;
+	color: #333;
 }
