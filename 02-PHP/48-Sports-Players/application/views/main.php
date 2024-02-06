@@ -7,7 +7,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 <body>
     <aside>
-        <?= form_open("players/filter", array("method" => "get")); ?>
+        <?= form_open("/", array("method" => "get")); ?>
         <label for="name">Search Players</label>
         <div class="text">
             <input type="text" name="name" id="name" placeholder="Enter player name...">
@@ -26,19 +26,19 @@ defined('BASEPATH') or exit('No direct script access allowed');
                 <label for="basketball">Basketball</label>
             </div>
             <div class="sport-list">
-                <input type="checkbox" name="volleyball" id="volleyball" value="1">
+                <input type="checkbox" name="volleyball" id="volleyball" value="2">
                 <label for="volleyball">Volleyball</label>
             </div>
             <div class="sport-list">
-                <input type="checkbox" name="baseball" id="baseball" value="1">
+                <input type="checkbox" name="baseball" id="baseball" value="3">
                 <label for="baseball">Baseball</label>
             </div>
             <div class="sport-list">
-                <input type="checkbox" name="soccer" id="soccer" value="1">
+                <input type="checkbox" name="soccer" id="soccer" value="4">
                 <label for="soccer">Soccer</label>
             </div>
             <div class="sport-list">
-                <input type="checkbox" name="football" id="football" value="1">
+                <input type="checkbox" name="football" id="football" value="5">
                 <label for="football">Football</label>
             </div>
             <input type="submit" value="Search">
@@ -47,8 +47,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
     <main>
         <?php foreach ($players as $player) { ?>
             <div class="player">
-                <img src="<?= $player["image_url"] ?>" alt="<?= $player["name"] ?>">
-                <p><?= $player["name"] ?></p>
+                <img src="<?= $player["image_url"] ?>" alt="<?= $player["Name"] ?>">
+                <p><?= $player["Name"] ?></p>
+                <p><?= $player["sport_ids"] ?></p>
             </div>
         <?php } ?>
     </main>

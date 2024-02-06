@@ -5,6 +5,10 @@ body {
 	background-color: black;
 	padding: 20px;
 	display: flex;
+	background-image: url("../images/bg.jpg");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
 }
 
 aside {
@@ -64,10 +68,13 @@ input[type="submit"]:hover {
 main {
 	display: flex;
 	flex-wrap: wrap;
-	width: auto;
+	width: 100%;
+	min-height: 95.2vh;
 	justify-content: center;
-	background-color: gainsboro;
+	align-content: start;
+	background-color: rgba(45, 45, 45, 0.8);
 	font-weight: 500;
+	
 }
 .player {
 	margin: 10px;
@@ -83,5 +90,5 @@ main {
 
 .player p {
 	margin: 5px 0 0;
-	color: #333;
+	color:white;
 }
