@@ -103,7 +103,7 @@ class Users extends CI_Controller {
         }
     }
 
-    public function test(){
-        echo "test"; 
+    public function test() {
+        echo "hello";
     }
 }

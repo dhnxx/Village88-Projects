@@ -33,11 +33,13 @@ class Message extends CI_Model {
     /*  DOCU: This function inserts new message from a user to the database.
         Owner: Karen
     */
-    public function add_message() {
-        $query = 'INSERT INTO Messages(user_id, message) VALUES (?, ?)';
+    public function add_message($post) {
+        $query = 'INSERT INTO Messages(user_id, message, created_at, updated_at) VALUES (?, ?, ?, ?)';
         $values = array(
             $this->security->xss_clean($this->session->userdata('user_id')), 
-            $this->security->xss_clean($post['message_input'])); 
+            $this->security->xss_clean($post['message_input']),
+            date("Y-m-d, H:i:s"),
+            date("Y-m-d, H:i:s"),);
         
         $this->db->query($query, $values);
     }

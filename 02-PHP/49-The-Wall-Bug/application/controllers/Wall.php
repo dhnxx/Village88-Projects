@@ -13,8 +13,9 @@ class Wall extends CI_Controller {
         $inbox = array();
         foreach ($user_messages as $user_message) {
             $comments = $this->comment->get_comments_from_message_id($user_message['message_id']);
-            $user_message["comments"] = $comments;
+            $user_message["comments"] = $comments; 
             $inbox[] = $user_message;
+            
         }
         $param = array("first_name" => $this->session->userdata('first_name'), "inbox" => $inbox);
 

@@ -23,8 +23,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://v88-phptrack-repo/49-The-Wall-Bug/';
-
+$config['base_url'] = 'http://v88-phptrack-repo/';
 /*
 |--------------------------------------------------------------------------
 | Index File

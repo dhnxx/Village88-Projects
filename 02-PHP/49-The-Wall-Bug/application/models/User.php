@@ -50,7 +50,7 @@ class User extends CI_Model {
     {
         $hash_password = $this->security->xss_clean($password);
 
-        if($user && $user['password'] == $hash_password) {
+        if($user && $user['password'] == md5($hash_password)) {
             return "success";
         }
         else {
