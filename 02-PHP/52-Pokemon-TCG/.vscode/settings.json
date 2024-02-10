@@ -1,0 +1,21 @@
+{
+	"files.exclude": {
+		"application\\third_party": true,
+		"application\\logs": true,
+		"application\\libraries": true,
+		"application\\language": true,
+		"application\\hooks": true,
+		"application\\helpers": true,
+		"application\\core": true,
+		"application\\.htaccess": true,
+		"application\\index.html": true,
+		"system": true,
+		".editorconfig": true,
+		".gitignore": true,
+		".htaccess": true,
+		"composer.json": true,
+		"index.php": true,
+		"license.txt": true,
+		"readme.rst": true
+	}
+}
