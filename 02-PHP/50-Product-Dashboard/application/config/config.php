@@ -23,7 +23,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://v88-phptrack-repo/Z1-CodeIgniter/';
+$config['base_url'] = 'http://v88-phptrack-repo/50-Product-Dashboard/';
 
 /*
 |--------------------------------------------------------------------------
@@ -462,7 +462,7 @@ $config['csrf_token_name'] = 'csrf_test_name';
 $config['csrf_cookie_name'] = 'csrf_cookie_name';
 $config['csrf_expire'] = 7200;
 $config['csrf_regenerate'] = TRUE;
-$config['csrf_exclude_uris'] = array();
+$config['csrf_exclude_uris'] = array("dashboard");
 
 /*
 |--------------------------------------------------------------------------

@@ -1,0 +1,32 @@
+{
+    "files.exclude": {
+        "50-Product-Dashboard\\.editorconfig": true,
+        "50-Product-Dashboard\\.gitignore": true,
+        "50-Product-Dashboard\\.htaccess": true,
+        "50-Product-Dashboard\\composer.json": true,
+        "50-Product-Dashboard\\index.php": true,
+        "50-Product-Dashboard\\license.txt": true,
+        "50-Product-Dashboard\\readme.rst": true,
+        "50-Product-Dashboard\\application\\core": true,
+        "50-Product-Dashboard\\application\\helpers": true,
+        "50-Product-Dashboard\\application\\hooks": true,
+        "50-Product-Dashboard\\application\\language": true,
+        "50-Product-Dashboard\\application\\libraries": true,
+        "50-Product-Dashboard\\application\\logs": true,
+        "50-Product-Dashboard\\application\\third_party": true,
+        "50-Product-Dashboard\\application\\.htaccess": true,
+        "50-Product-Dashboard\\application\\index.html": true,
+        "50-Product-Dashboard\\system": true,
+        "50-Product-Dashboard\\application\\config\\user_agents.php": true,
+        "50-Product-Dashboard\\application\\config\\smileys.php": true,
+        "50-Product-Dashboard\\application\\config\\profiler.php": true,
+        "50-Product-Dashboard\\application\\config\\mimes.php": true,
+        "50-Product-Dashboard\\application\\config\\migration.php": true,
+        "50-Product-Dashboard\\application\\config\\memcached.php": true,
+        "50-Product-Dashboard\\application\\config\\index.html": true,
+        "50-Product-Dashboard\\application\\config\\hooks.php": true,
+        "50-Product-Dashboard\\application\\config\\foreign_chars.php": true,
+        "50-Product-Dashboard\\application\\config\\doctypes.php": true,
+        "50-Product-Dashboard\\application\\config\\constants.php": true
+    }
+}

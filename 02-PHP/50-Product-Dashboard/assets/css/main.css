@@ -1,39 +1,119 @@
 body {
-	background-color: black;
-	color: white;
-}
-
-.actions {
-	display: flex;
-	gap: 10px;
-	justify-content: center;
-	align-items: center;
-	text-align: center;
-}
-
-.actions form {
+	font-family: Arial, sans-serif;
 	margin: 0;
-}
-
-input[type="submit"] {
-	margin: 0;
-}
-
-table tr,
-th,
-td {
-	border: 1px solid white;
+	background-color: #333; /* Dark background color */
+	color: #fff; /* Light text color */
 }
 
 a {
 	color: white;
 }
 
-form * {
-	display: block;
-	margin: 10px 0;
+.header {
+	background-color: #000; /* Darker header background color */
 }
 
-.error {
-	color: red;
+.wrapper {
+	padding: 20px;
+}
+
+.header h1 {
+	margin: 0;
+	padding: 20px;
+	display: inline-block;
+}
+
+.header a {
+	text-decoration: none;
+	color: #fff;
+	padding: 10px 20px;
+}
+
+h2,
+h3,
+h4 {
+	margin-top: 3vh;
+	color: #fff; /* Light text color */
+}
+
+p {
+	margin-top: 5px;
+	color: #ccc; /* Lighter text color */
+}
+
+label {
+	margin-top: 10px;
+	display: block;
+}
+
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="submit"] {
+	margin-top: 10px;
+	width: 215px;
+	border: 1px solid #ccc;
+	padding: 8px;
+	box-sizing: border-box;
+	display: block;
+	color: white; /* Darker text color */
+	background-color: #333; /* Light background color */
+}
+
+textarea {
+	height: 100px;
+	resize: none;
+	width: 215px;
+}
+
+.reviews {
+	margin-top: 20px;
+	border-top: 1px solid #ccc;
+	padding-top: 20px;
+}
+
+.comments {
+	padding-left: 30px;
+	margin-top: 10px;
+	border-top: 1px dashed #ccc;
+	padding-top: 10px;
+}
+
+
+input[type="submit"] {
+	background-color: #4caf50;
+	color: white;
+	cursor: pointer;
+}
+
+input[type="submit"]:hover {
+	background-color: #45a049;
+}
+
+/* Styling for the dashboard table */
+table {
+	width: 100%;
+	border-collapse: collapse;
+	margin-top: 20px;
+}
+
+th,
+td {
+	padding: 8px;
+	text-align: center;
+	border-bottom: 1px solid #ddd;
+	color: #fff; /* Light text color */
+}
+
+th {
+	background-color: #555; /* Darker background color */
+}
+
+/* Styling for images in the dashboard */
+img {
+	max-width: 100px;
+	max-height: 100px;
+	display: block;
+	margin: 0 auto;
+	border-radius: 5px; /* Adding some border-radius for rounded corners */
 }
