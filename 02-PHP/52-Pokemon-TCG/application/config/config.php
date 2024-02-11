@@ -23,7 +23,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://v88-phptrack-repo/51-Kittens/';
+$config['base_url'] = 'http://v88-phptrack-repo/52-Pokemon-TCG/';
 
 /*
 |--------------------------------------------------------------------------
