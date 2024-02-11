@@ -26,6 +26,7 @@
 		"application\\logs": true,
 		"application\\third_party": true,
 		"application\\.htaccess": true,
-		"application\\index.html": true
+		"application\\index.html": true,
+		".vscode": true
 	}
 }

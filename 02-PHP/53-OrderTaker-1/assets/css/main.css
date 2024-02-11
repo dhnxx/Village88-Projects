@@ -1,4 +1,66 @@
-body{
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/* Body Styles */
+body {
+	font-family: Arial, sans-serif;
+	padding: 20px;
 	background-color: black;
-	color:white; 
+	color: white; 
+}
+
+/* Header Styles */
+h1 {
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+/* Order Queue Styles */
+ul {
+	list-style-type: none;
+	padding: 0;
+	text-align: center;
+}
+
+li {
+	border: 1px solid #ccc;
+	padding: 10px;
+	margin-bottom: 10px;
+	display:inline-block; 
+	text-align: center;
+	width: 32.5%;
+	min-height: 200px;
+	vertical-align: middle;
+}
+
+h2 {
+	margin-bottom: 5px;
+	font-size: 2rem;
+	font-weight: 700;
+}
+
+/* Form Styles */
+form {
+	text-align: center;
+}
+
+input[type="text"] {
+	padding: 8px;
+	margin-right: 10px;
+	border: 1px solid #ccc;
+}
+
+input[type="submit"] {
+	padding: 8px 20px;
+	background-color: #007bff;
+	color: #fff;
+	border: none;
+	cursor: pointer;
+}
+
+input[type="submit"]:hover {
+	background-color: #0056b3;
 }
