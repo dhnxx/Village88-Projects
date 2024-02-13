@@ -3,26 +3,35 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Main extends CI_Controller {
 
-	public function __construct() {
-		parent::__construct();
-		//? $this->output->enable_profiler(TRUE);
+	public function index() {
+
+		$this->load->view('main');
 	}
 
-	public function index() {
-		$this->load->view('main');
+	public function csrf(){
+
+		$csrf["name"] = $this->security->get_csrf_token_name();
+		$csrf["hash"] = $this->security->get_csrf_hash();
+		echo json_encode($csrf); 
 	}
 
 	public function page_index() {
 		
-		$data["products"] = $this->product->get_all(); 
+		$result = $this->product->filter(array("by_name" => "", "min" => "", "max" => "", "order" => ""), 0);
+		
+		$data["products"] = $result["filtered"];
+		$data["count"] = $result["count"];
+		
 		$this->load->view('partials/table.php', $data);
 	}
 
-	public function filter() {
-
-		$data["products"] = $this->product->filter($this->input->post(NULL, TRUE)); 
-		//? $query = $this->product->filter($this->input->post());
-		//? var_dump($query);
+	public function filter($page) {
+	
+		$result = $this->product->filter($this->input->post(NULL, TRUE), $page);
+		
+		$data["products"] = $result["filtered"];
+		$data["count"] = $result["count"];
+		
 		$this->load->view('partials/table.php', $data);
 	}
 

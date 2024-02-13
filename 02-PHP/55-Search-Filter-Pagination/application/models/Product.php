@@ -4,15 +4,17 @@ class Product extends CI_Model {
 
     public function get_all() {
 
-        return $this->db->query("SELECT * FROM products ORDER BY price")->result_array();
+        return $this->db->query("SELECT * FROM products ORDER BY price LIMIT 5")->result_array();
     }
 
-    public function filter($post) {
+    public function filter($post, $page) {
 
         $post = $this->clean($post);
         $where_temp = array(); 
 
         $where_temp[] = $this->filter_by_name($post["by_name"]);
+
+        //* If either min or max is set otherwise, do not include in the query
 
         if ($post["min"] || $post["max"]) {
             $where_temp[] = $this->filter_by_min_max($post["min"], $post["max"]);
@@ -21,13 +23,18 @@ class Product extends CI_Model {
         $where = " WHERE ";
         $where .= implode(" AND ", $where_temp);
         $order = " ORDER BY price {$post["order"]}, item_name ASC";
+        $limit = " LIMIT 5 OFFSET " . $page * 5; 
 
-        $query = "SELECT * FROM products";
-        $query .= $where; 
-        $query .= $order; 
+        $query = "SELECT * FROM products" . $where . $order . $limit;
+        $count = "SELECT count(id) as count FROM products" . $where . $order;
 
-        return $this->db->query($query)->result_array();
-        //? return $query;  
+        $result["filtered"] = $this->db->query($query)->result_array();
+
+        $count_result = $this->db->query($count)->row_array();
+        $result["count"] = ceil($count_result["count"]/5); 
+
+
+        return $result;
     }
 
     public function filter_by_name($by_name) {
@@ -37,7 +44,7 @@ class Product extends CI_Model {
 
     public function filter_by_min_max($min, $max) {
 
-        //* Set values if one of the post is undefined
+        //* Set values if one of the posts is undefined
         if (!isset($min)) { 
             $min = 0;           
         } 

@@ -14,3 +14,8 @@
     </tr>
 <?php } ?> 
 </table>
+<ul>
+<?php for ($i = 0; $i < $count; $i++) {?>
+    <li><a class="link" id="<?= $i ?>" href="<?= $i ?>"><?= $i + 1 ?></a></li>
+<?php } ?>
+</ul>
