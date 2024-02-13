@@ -1,0 +1,31 @@
+{
+	"files.exclude": {
+		"system": true,
+		".editorconfig": true,
+		".gitignore": true,
+		".htaccess": true,
+		"composer.json": true,
+		"index.php": true,
+		"readme.rst": true,
+		"license.txt": true,
+		"application\\cache": true,
+		"application\\config\\user_agents.php": true,
+		"application\\config\\smileys.php": true,
+		"application\\config\\profiler.php": true,
+		"application\\config\\mimes.php": true,
+		"application\\config\\migration.php": true,
+		"application\\config\\memcached.php": true,
+		"application\\config\\hooks.php": true,
+		"application\\config\\foreign_chars.php": true,
+		"application\\config\\doctypes.php": true,
+		"application\\core": true,
+		"application\\helpers": true,
+		"application\\hooks": true,
+		"application\\language": true,
+		"application\\libraries": true,
+		"application\\logs": true,
+		"application\\third_party": true,
+		"application\\.htaccess": true,
+		"application\\index.html": true
+	}
+}
