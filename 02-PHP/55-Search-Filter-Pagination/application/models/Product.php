@@ -70,4 +70,6 @@ class Product extends CI_Model {
         return $posts;
     }
 
+    
+
 }

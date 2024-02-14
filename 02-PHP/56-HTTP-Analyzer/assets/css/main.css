@@ -2,3 +2,8 @@ body{
 	background-color: black;
 	color:white; 
 }
+
+.result{
+	height: 500px;
+	overflow-x: scroll; 
+}

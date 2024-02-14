@@ -9,6 +9,13 @@ class Main extends CI_Controller {
 	}
 
 	public function index() {
+
 		$this->load->view('main');
 	}
+
+	public function fetch_content() {
+    $content = file_get_contents("https://www.youtube.com/");
+    echo $content;
+}
+
 }
