@@ -5,26 +5,40 @@ class Employees extends CI_Controller {
 
 	public function __construct() {
 		parent::__construct();
-		// $this->output->enable_profiler(TRUE);
 		$this->load->model('employee');
 	}
 
-	public function index($count = 5) {
+	public function index_table() {
 
-		$data["employees"] = $this->employee->fetch_all($count);
-		$data["result"] = $this->employee->fetch_count();
-		$data["count"] = $count;
+		$post["date"] = "";
+		$post["leave_type"] = ""; 
+		$output = $this->employee->filter($post, "result");
+
+		$data["employees"] = $output;
+
+		$this->load->view("partials/table.php", $data); 
+	}
+
+	public function update_table() {
+
+		$output = $this->employee->filter($this->input->post(NULL, TRUE), "result");
+
+		$data["employees"] = $output;
+
+
+		$this->load->view("partials/table.php", $data); 
 		
-		foreach ($data['employees'] as $key => $val) {
+	}
 
-    		$data['employees'][$key]["request_date"] = date("m/d/y", strtotime($val["request_date"]));
+	public function get_count(){
 
-			$data['employees'][$key]["from_date"] = date("m/d/y", strtotime($val["from_date"]));
+		$output = $this->employee->filter($this->input->post(NULL, TRUE), "count");
 
-			$data['employees'][$key]["to_date"] = date("m/d/y", strtotime($val["from_date"]));
-		}
+		echo(json_encode($output));
+	}
 
-		$this->load->view('main', $data);
+	public function index() {
+		$this->load->view('main');
 	}
 
 }
