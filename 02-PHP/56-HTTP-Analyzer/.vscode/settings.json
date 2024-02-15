@@ -27,5 +27,6 @@
 		"application\\third_party": true,
 		"application\\.htaccess": true,
 		"application\\index.html": true
-	}
+	},
+	"liveServer.settings.port": 5501
 }
