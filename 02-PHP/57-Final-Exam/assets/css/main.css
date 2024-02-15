@@ -1,4 +1,45 @@
-body{
-	background-color: black;
-	color:white; 
+body {
+	font-family: sans-serif;
+	margin: 20px;
+}
+
+h1 {
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+.table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+table {
+	margin: 0 auto; 
+}
+
+th,
+td {
+	padding: 10px;
+	text-align: left;
+	border: 1px solid black;
+}
+
+th {
+	background-color: #f2f2f2;
+	font-weight: bold;
+}
+
+
+form {
+	text-align: center;
+	margin-top: 20px;
+}
+
+input[type="submit"] {
+	background-color: #4caf50;
+	color: white;
+	padding: 10px 20px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
 }
