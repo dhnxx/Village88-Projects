@@ -5,6 +5,7 @@ It serves as a testament to the web development skills and projects developed du
 ## Table of Contents
 
 - [Week 1-2: Web Fundamentals](./01-Web%20Fundamentals/)
+- [Week 3-7: PHP Track](./02-PHP/)
 
 ## Author/s
 
