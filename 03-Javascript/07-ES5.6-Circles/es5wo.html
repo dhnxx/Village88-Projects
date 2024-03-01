@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+        color: white;
+    }
+    body {
+        height: 100vh;
+    }
+    #canvas {
+        background-color: whitesmoke;
+        width: 100%;
+        height: 91vh;
+        position: relative;
+    }
+    header {
+        padding: 25px;
+        height: 25px;
+        background-color: wheat;
+    }
+    button {
+        padding: 10px;
+    }
+    #red {
+        background-color: red;
+        display: inline-block;
+    }
+    #blue {
+        background-color: blue;
+        display: inline-block;
+    }
+    #green {
+        background-color: green;
+        display: inline-block;
+    }
+    #reset {
+        background-color: pink;
+        color: black;
+    }
+    .circle {
+        position: absolute;
+        border-radius: 50%;
+        transition: all 1s ease;
+    }
+</style>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        function Circles() {
+            var _this = this;
+            this.container = document.getElementById("canvas");
+            this.resetBtn = document.getElementById("reset");
+            this.colorBtn = document.querySelectorAll(".color");
+            
+            this.changeColor = function (color) {
+                _this.currentColor = color;
+            };
+            
+            this.createCircle = function (x, y) {
+                var size = Math.floor(Math.random() * 200 + 1) + 10;
+                var circle = document.createElement("div");
+                circle.classList.add("circle");
+                circle.style.width = size + "px";
+                circle.style.height = size + "px";
+                circle.style.backgroundColor = _this.currentColor;
+                circle.style.top = y - size / 2 + "px";
+                circle.style.left = x - size / 2 + "px";
+
+                _this.container.appendChild(circle);
+
+                // Shrinking animation
+                setTimeout(function () {
+                    circle.style.width = "0";
+                    circle.style.height = "0";
+                    circle.style.top = y + "px";
+                    circle.style.left = x + "px";
+                    setTimeout(function () {
+                        circle.remove(); // Remove circle from DOM after
+                    }, 1000);
+                }, 1000);
+            };
+        }
+
+        var obj1 = new Circles();
+        obj1.currentColor = "green";
+
+        obj1.container.addEventListener("click", function (event) {
+            obj1.createCircle(event.pageX, event.pageY);
+            console.log("Canvas clicked");
+        });
+
+        obj1.resetBtn.addEventListener("click", function () {
+            obj1.container.innerHTML = "";
+        });
+
+        obj1.colorBtn.forEach(function (btn) {
+            btn.addEventListener("click", function () {
+                obj1.changeColor(btn.getAttribute("id"));
+            });
+        });
+    });
+</script>
+<body>
+<header>
+    <button id="red" class="color">RED</button>
+    <button id="blue" class="color">BLUE</button>
+    <button id="green" class="color">GREEN</button>
+    <button id="reset" class="color">RESET</button>
+</header>
+<div id="canvas"></div>
+</body>
+</html>
