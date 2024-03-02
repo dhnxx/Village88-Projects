@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>JS Circle Demo</title>
+		<style>
+			* {
+				padding: 0;
+				margin: 0;
+				color: white;
+			}
+			.container {
+				margin: 25px;
+				background-color: lightyellow;
+				border: 5px solid #454545;
+				border-radius: 15px;
+				overflow: hidden;
+			}
+			#canvas {
+				height: 90vh;
+				position: relative;
+			}
+			.circle {
+				position: absolute;
+				border-radius: 50%;
+				transition: all 1s ease;
+			}
+		</style>
+		<script src="./es6.js"></script>
+		<!-- <script src="./es5wo.js"></script> -->
+		<!-- <script src="./es5w.js"></script> -->
+	</head>
+	<body>
+		<div class="container">
+			<div id="canvas"></div>
+			<script>
+				// initialize cLib (circleLibrary) with 100 circles
+				let cLib = new Circles(100);
+
+				// draw 100 circles on #canvas
+				cLib.draw_circles("canvas");
+				// any other code you need to make this work
+			</script>
+		</div>
+	</body>
+</html>
