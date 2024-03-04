@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<link rel="stylesheet" href="style.css" />
+		<script src="./scripts.js" defer></script>
+	</head>
+	<body>
+		<header>
+			<div class="colors">
+				<p class="label">Colors:</p>
+				<div class="header-circle red color-list" data-color="red"></div>
+				<div class="header-circle blue color-list" data-color="blue"></div>
+				<div class="header-circle green color-list selected" data-color="green"></div>
+			</div>
+			<div class="shapes">
+				<p class="label">Shapes:</p>
+				<div class="header-square shape-list green selected" data-shape="square"></div>
+				<div class="header-circle shape-list white" data-shape="circle"></div>
+				<div class="header-triangle shape-list white" data-shape="triangle"></div>
+			</div>
+			<button id="reset">Reset</button>
+		</header>
+		<main>
+			<div id="canvas"></div>
+		</main>
+	</body>
+</html>
