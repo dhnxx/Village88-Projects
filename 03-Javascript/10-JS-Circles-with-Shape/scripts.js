@@ -50,6 +50,7 @@ document.addEventListener("DOMContentLoaded", function () {
 			shape.style.top = y - size / 2 + "px";
 			shape.style.left = x - size / 2 + "px";
 			shape.style.position = "absolute";
+			shape.style.transition = "all 1s ease";
 
 			setTimeout(() => {
 				shape.style.width = "0";
@@ -93,6 +94,19 @@ document.addEventListener("DOMContentLoaded", function () {
 			shape.style.borderRight = size / 2 + "px solid transparent";
 			shape.style.borderBottom = size + "px solid " + obj.currentColor;
 
+			setTimeout(() => {
+				shape.style.width = "0";
+				shape.style.height = "0";
+				shape.style.borderLeft = "0";
+				shape.style.borderRight = "0";
+				shape.style.borderBottom = "0";
+				shape.style.top = y + size / 2 + "px";
+				shape.style.left = x + size / 2 + "px";
+				setTimeout(() => {
+					shape.remove();
+				}, 1000);
+			}, 1000);
+
 			canvas.appendChild(shape);
 		}
 	}
@@ -120,6 +134,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 	// Get the shape list elements
 	let shapeList = document.getElementsByClassName("shape-list");
+	let resetBtn = document.getElementById("reset");
 
 	for (let i = 0; i < shapeList.length; i++) {
 		// Get the shape type from the dataset attribute
@@ -129,6 +144,10 @@ document.addEventListener("DOMContentLoaded", function () {
 			obj1.changeShape(shapeType, obj1.currentColor);
 		});
 	}
+
+	resetBtn.addEventListener("click", function () {
+		canvas.innerHTML = "";
+	});
 
 	canvas.addEventListener("click", function (event) {
 		handleShapeClick(event.pageX, event.pageY);

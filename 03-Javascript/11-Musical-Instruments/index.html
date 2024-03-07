@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simple Piano</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f0f0f0;
+    }
+
+    .piano {
+        display: flex;
+    }
+
+    .key {
+        width: 60px;
+        height: 200px;
+        border: 1px solid #000;
+        background-color: white;
+        margin: 0 5px;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        cursor: pointer;
+    }
+
+    .key:hover {
+        background-color: #ccc;
+    }
+
+    .key-label {
+        font-size: 20px;
+    }
+</style>
+</head>
+<body>
+<div class="piano">
+    <div class="key">
+        <div class="key-label">C</div>
+    </div>
+    <div class="key">
+        <div class="key-label">D</div>
+    </div>
+    <div class="key">
+        <div class="key-label">E</div>
+    </div>
+    <div class="key">
+        <div class="key-label">F</div>
+    </div>
+    <div class="key">
+        <div class="key-label">G</div>
+    </div>
+    <div class="key">
+        <div class="key-label">A</div>
+    </div>
+    <div class="key">
+        <div class="key-label">B</div>
+    </div>
+</div>
+</body>
+</html>
