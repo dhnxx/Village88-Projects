@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="/css/style.css" />
+		<title><%=`${details["name"]} Exam`%></title>
+	</head>
+	<body>
+		<h1>Details about <%=details["name"]%> Exam</h1>
+		<img src="<%=details["imgsrc"]%>" alt="">
+		<p>Date: <%=details["date"]%></p>
+		<p>Awarded by: <%=details["awarder"]%></p>
+		<p>Technologies:</p>
+		<ul>
+			<% for (let i = 0; i < details["technologies"].length; i++) {%>
+			<li><%= details.technologies[i] %></li>
+			<% } %>
+		</ul>
+	</body>
+</html>

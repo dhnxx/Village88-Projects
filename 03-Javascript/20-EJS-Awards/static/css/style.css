@@ -1,0 +1,19 @@
+.award-list {
+	display: flex;
+	justify-content: space-evenly;
+}
+.awards {
+	text-align: center;
+	min-width: 400px;
+	background-color: bisque;
+	border: 5px solid black;
+	padding: 25px;
+}
+img {
+	height: 150px;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+}
