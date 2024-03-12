@@ -3,16 +3,33 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Virtual Recitation</title>
+		<title>World Chat Game</title>
 		<link rel="stylesheet" href="/style.css" />
 		<script
 			src="https://code.jquery.com/jquery-3.7.1.min.js"
 			integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
 			crossorigin="anonymous"></script>
 		<script type="text/javascript" src="/socket.io/socket.io.js"></script>
-		<script src="/script.js">
+		<script type="text/javascript">
 			$(document).ready(function () {
 				const socket = io();
+
+				socket.on("initial", function (data) {
+					data.logs.forEach(function (messages) {
+						$(".messages").append(
+							`<p class="${messages.status}">${messages.message}</p>`
+						);
+					});
+				});
+				socket.emit("joined");
+
+				socket.on("message", function (data) {
+					$(".messages").append(`<p class="${data.status}">${data.message}</p>`);
+				});
+
+				$("#submit").on("click", function () {
+					socket.emit("raise");
+				});
 			});
 		</script>
 	</head>
@@ -20,10 +37,9 @@
 		<header>
 			<h1>Virtual Recitation</h1>
 		</header>
-		<section class="chat-container" id="chat-container">
+		<section class="chat-container">
 			<div class="messages"></div>
 		</section>
 		<button type="submit" id="submit">👋</button>
-		<script src="script.js"></script>
 	</body>
 </html>

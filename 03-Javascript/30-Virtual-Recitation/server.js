@@ -12,6 +12,22 @@ app.get("/", (request, response) => {
 	response.render("index");
 });
 
-// io.on("connection", function (socket) {
-
-// });
+let logs = [];
+io.on("connection", function (socket) {
+	io.emit("initial", { logs });
+	socket.on("joined", function (data) {
+		let storeData = { message: `Socket ID ${socket.id} is present.`, status: "join" };
+		io.emit("message", storeData);
+		logs.push(storeData);
+	});
+	socket.on("disconnect", () => {
+		let storeData = { message: `Socket ID ${socket.id} left.`, status: "leave" };
+		io.emit("message", storeData);
+		logs.push(storeData);
+	});
+	socket.on("raise", () => {
+		let storeData = { message: `Socket ID ${socket.id} raised hands 👋.`, status: "raise" };
+		io.emit("message", storeData);
+		logs.push(storeData);
+	});
+});
