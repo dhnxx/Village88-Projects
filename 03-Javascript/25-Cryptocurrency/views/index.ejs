@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Cryptocurrency</title>
+		<link rel="stylesheet" href="/style.css" />
+		<script
+			src="https://code.jquery.com/jquery-3.7.1.min.js"
+			integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+			crossorigin="anonymous"></script>
+		<script>
+			$(document).ready(function () {
+				let currentPage = 1;
+				let currentFilter = "exchange";
+				let fetchFilter = function () {
+					$("#spinner, #showTop").toggleClass("none");
+					if (currentPage === "all") {
+						$(".list").empty();
+					}
+					$.get(
+						`/request/${currentFilter}/${currentPage}`,
+						function (data) {
+							if (currentFilter === "exchange") {
+								for (let i = 0; i < data.length; i++) {
+									$(".list").append(
+										`<div class="list-item"> <img src="${data[i].image}" alt="${data[i].name}" /> <p>${data[i].name}</p></div>`
+									);
+								}
+							} else if (currentFilter === "asset_platforms") {
+								let x = 0;
+								if (currentPage !== "all") {
+									x = data.length;
+								} else {
+									x = 100;
+								}
+								for (let i = 0; i < x; i++) {
+									$(".list").append(
+										`<div class="list-item"><p>${i + 1} ${data[i].name}-${
+											data[i].native_coin_id
+										}</p></div>`
+									);
+								}
+							}
+							if (currentPage !== "all") {
+								currentPage++;
+							}
+							$("#spinner, #showTop").toggleClass("none");
+						},
+						"json"
+					);
+				};
+
+				$("#showTop").on("click", function (e) {
+					if (currentPage !== "all") {
+						e.preventDefault;
+						currentPage = "all";
+						$(this).addClass("disabled");
+						fetchFilter();
+					}
+				});
+
+				$(".list").on("scroll", function (e) {
+					if (currentPage !== "all") {
+						let elem = $(this);
+						if (
+							elem.scrollTop() > 0 &&
+							Math.abs(
+								elem.scrollTop() - (elem[0].scrollHeight - elem.outerHeight())
+							) < 1
+						) {
+							fetchFilter();
+							console.log("fetching data...");
+						}
+					}
+				});
+
+				$(".filter").on("click", function (e) {
+					currentFilter = $(this).data("filter-name");
+					console.log(currentFilter);
+					$("#showTop").removeClass("disabled");
+					$(this).siblings().removeClass("active");
+					$(this).addClass("active");
+					currentPage = "1";
+					$(".list").empty();
+					fetchFilter();
+				});
+
+				fetchFilter();
+			});
+		</script>
+	</head>
+	<body>
+		<header>
+			<nav>
+				<h1>Cryptocurrency</h1>
+			</nav>
+			<nav>
+				<a class="filter active" data-filter-name="exchange">Exchanges</a>
+				<a class="filter" data-filter-name="asset_platforms">Finance Platforms</a>
+			</nav>
+		</header>
+		<div class="list"></div>
+		<footer>
+			<img id="spinner" src="/images/spinner.gif" alt="" class="none" />
+			<button id="showTop">Show Top 100</button>
+		</footer>
+	</body>
+</html>

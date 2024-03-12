@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Color</title>
+		<link rel="stylesheet" href="/style.css" />
+		<script
+			src="https://code.jquery.com/jquery-3.7.1.min.js"
+			integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+			crossorigin="anonymous"></script>
+		<script type="text/javascript" src="/socket.io/socket.io.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function () {
+				const socket = io();
+
+				// Update text values on the DOM
+				socket.on("backgroundColor", function (data) {
+					$("body").css("background-color", `${data.bgColor}`);
+					console.log(`"${data.bgColor}"`);
+				});
+
+				// Event Handlers
+				$(".color-button").on("click", function () {
+					socket.emit($(this).attr("id"));
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<div class="container">
+			<h1>Color Theme</h1>
+			<div class="color-buttons">
+				<button class="color-button" id="lightMode">Light mode</button>
+				<button class="color-button" id="randomMode">Random mode</button>
+				<button class="color-button" id="darkMode">Dark mode</button>
+			</div>
+		</div>
+	</body>
+</html>

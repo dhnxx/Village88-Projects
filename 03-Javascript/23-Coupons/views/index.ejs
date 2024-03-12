@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Free Coupons</title>
+		<link rel="stylesheet" href="/style.css" />
+	</head>
+
+	<body>
+		<header>
+			<section class="welcome">
+				<h1>Welcome <%= (data["name"]) ? data["name"] : "" %></h1>
+				<p>
+					We're giving away <%= (data["count"]) ? data["count"] : "" %>
+					<span>free coupons</span>
+				</p>
+				<p>as token of appreciation</p>
+				<p></p>
+			</section>
+			<% if (!data["name"]) {%>
+			<section class="section-form">
+				<form action="/coupon" method="POST">
+					<label for="user_name">Kindly type your name:</label>
+					<input type="text" name="user_name" id="user_name" />
+					<input type="submit" value="Submit" id="submit" />
+				</form>
+			</section>
+			<% } %>
+		</header>
+		<% if (data["name"]) {%>
+		<main>
+			<section class="coupon">
+				<p class="discount"><%= (data["count"] > 0) ? "50% Discount" : "Sorry!" %></p>
+				<p class="coupon-number">
+					<%= (data["count"] > 0) ? data["randomNumber"] : "Unavailable" %>
+				</p>
+				<form action="/coupon" method="POST">
+					<input type="submit" name="reset" value="Reset Count" id="reset" />
+					<input type="submit" name="claim" value="Claim Again" id="claim" />
+				</form>
+			</section>
+		</main>
+		<% } %>
+	</body>
+</html>

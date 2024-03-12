@@ -1,0 +1,42 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+body {
+	background: rgb(238, 174, 202);
+	background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
+}
+h1 {
+	font-size: 2rem;
+}
+form,
+.submitted-form-entry {
+	background-color: white;
+	padding: 5vh 10vh;
+	border-radius: 15px;
+	width: 500px;
+	margin: 5vh auto;
+	box-shadow: 5px 10px black;
+}
+input,
+select,
+label,
+p {
+	display: block;
+	margin-top: 1vh;
+	width: 100%;
+	padding: 10px 0;
+}
+
+#submit {
+	width: 200px;
+}
+
+#user_reason {
+	height: 5vh;
+}
+
+.message {
+	background-color: azure;
+	text-align: center;
+}

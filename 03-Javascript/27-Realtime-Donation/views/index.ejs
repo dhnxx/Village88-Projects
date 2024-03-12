@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Donation Drive</title>
+		<link rel="stylesheet" href="/style.css" />
+		<script
+			src="https://code.jquery.com/jquery-3.7.1.min.js"
+			integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+			crossorigin="anonymous"></script>
+		<script type="text/javascript" src="/socket.io/socket.io.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function () {
+				const socket = io();
+
+				// Update text values on the DOM
+				socket.on("cashDonation", function (data) {
+					$("#donation-amount").text(data.cash);
+				});
+				socket.on("donationMessage", function (data) {
+					$("#notification-msg").text(data.message);
+				});
+
+				// Event Handlers
+
+				$("#donate-10").on("click", function () {
+					socket.emit("donate");
+				});
+				$("#redeem-10").on("click", function () {
+					socket.emit("redeem");
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<div class="notification"><p id="notification-msg"></p></div>
+		<div class="container">
+			<h1>Donation Drive</h1>
+
+			<div class="donation-total">
+				<h2>Total Cash Donation: $<span id="donation-amount"></span></h2>
+			</div>
+
+			<p class="quote">Give according to one's capacity; Take according to one's need</p>
+
+			<div class="donation-buttons">
+				<button class="donate-button" id="donate-10">Donate $10</button>
+				<button class="donate-button" id="redeem-10">Redeem $10</button>
+			</div>
+		</div>
+	</body>
+</html>

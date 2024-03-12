@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>World Chat Game</title>
+		<link rel="stylesheet" href="/style.css" />
+		<script
+			src="https://code.jquery.com/jquery-3.7.1.min.js"
+			integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+			crossorigin="anonymous"></script>
+		<script type="text/javascript" src="/socket.io/socket.io.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function () {
+				const socket = io();
+				let userName = prompt("Enter your name");
+
+				socket.on("guessWord", function (data) {
+					$("#guessWord").text(data.guessWord);
+					console.log(data); 
+				});
+
+				// Update text values on the DOM
+				socket.on("updateMessage", function (data) {
+					console.log(data);
+					$(".messages").append(
+						`<p class="message-user">${data.name}: ${data.message}</p>`
+					);
+				});
+
+				socket.on("systemMessage", function (data) {
+					$(".messages").append(
+						`<p class="system-message">${data.message}</p>`
+					);
+				});
+
+				socket.on("fetchMessages", function (data) {
+					data["messages"].forEach((message) => {
+						$(".messages").append(
+							`<p class="message-user">${message.name}: ${message.message}</p>`
+						);
+					});
+				});
+
+				// Send values to the server for verification
+				$("#submit").on("click", function () {
+					message = $("#guess").val();
+					socket.emit("message", { name: userName, message: message });
+					$("#guess").val("");
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<h1>Guess the Word: <span id="guessWord"></span></h1>
+		<div class="messages"></div>
+		<div class="input-box">
+			<input type="text" id="guess" placeholder="enter your guess word here" />
+			<button type="submit" id="submit">Submit</button>
+		</div>
+	</body>
+</html>

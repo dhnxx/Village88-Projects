@@ -1,0 +1,53 @@
+body {
+	font-family: Arial, sans-serif;
+	margin: 0;
+	padding: 20px;
+}
+
+h1 {
+	text-align: center;
+}
+
+.messages {
+	border: 1px solid #ddd;
+	border-radius: 5px;
+	padding: 10px;
+	margin-bottom: 20px;
+	height: 200px; /* Adjust height as needed */
+	overflow-y: scroll; /* Enable scroll bar for long chat history */
+}
+
+.message {
+	margin-bottom: 5px;
+	line-height: 1.5;
+}
+
+.message-user {
+	font-weight: bold;
+}
+
+.system-message {
+	color: green;
+	font-style: italic;
+}
+
+.input-box {
+	display: flex;
+	justify-content: space-between;
+}
+
+#guess {
+	padding: 10px;
+	border: 1px solid #ddd;
+	border-radius: 5px;
+	flex: 1;
+}
+
+#submit {
+	padding: 10px 20px;
+	background-color: #0095ff;
+	color: #fff;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
