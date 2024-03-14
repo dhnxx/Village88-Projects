@@ -425,7 +425,10 @@ window.addEventListener("resize", function () {
 // place initial defenders
 socket.on("initialDefenders", function (data) {
 	for (let i = 0; i < data.length; i++) {
-		defenders.push(new Defender(data[i].x, data[i].y));
+		// check if the defender is already placed
+		if (defenders[i].x !== data[i].x && defenders[i].y !== data[i].y) {
+			defenders.push(new Defender(data[i].x, data[i].y));
+		}
 	}
 });
 socket.on("serverPlacePlant", function (data) {
@@ -443,7 +446,6 @@ canvas.addEventListener("click", function () {
 		const gridPositionY = mouse.y - (mouse.y % cellSize) + cellGap;
 
 		if (gridPositionY < cellSize) return;
-		// Check if a defender is already placed on the grid
 		for (let i = 0; i < defenders.length; i++) {
 			if (defenders[i].x === gridPositionX && defenders[i].y === gridPositionY) return;
 		}
