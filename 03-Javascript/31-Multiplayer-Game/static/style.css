@@ -1,0 +1,168 @@
+@font-face {
+	font-family: pvz;
+	src: url("/pvz.ttf") format("truetype");
+}
+
+body {
+	background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+		url("/images/wallpaper.jpg") no-repeat center center fixed;
+	/* background-color: black; */
+	background-size: cover;
+	overflow: hidden;
+	color: white;
+	/* font-family: "Orbitron", sans-serif; */
+	font-family: pvz;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	margin: 0;
+}
+
+#canvas1 {
+	border-radius: 5px;
+	border: 5px solid black;
+}
+
+.container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.sidebar {
+	margin-right: 50px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.score-container,
+.card-selection,
+.player-list,
+.player-list-defender,
+.player-list-enemy,
+.card {
+	padding: 10px;
+	border-radius: 5px;
+	margin-bottom: 20px;
+	transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.score-container h2,
+.defender-selection h2,
+.player-list h2 {
+	text-align: center;
+	font-size: 24px;
+	margin: 10px 0;
+}
+
+.card {
+	/* background-color: #333; */
+	color: white;
+	padding: 10px;
+	cursor: pointer;
+	border-radius: 5px;
+	transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.card:hover {
+	background-color: #cacaca;
+}
+
+.join-button {
+	display: block;
+	margin: 10px auto;
+	padding: 5px 10px;
+	background-color: #4caf50;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	font-size: 16px;
+}
+
+.join-button:hover {
+	background-color: #45a049;
+}
+
+#mode-selector {
+	background: url("/images/uiwood3-s.png") no-repeat;
+	width: 320px;
+	height: 190px;
+	padding-left: 20px;
+	text-align: center;
+}
+
+.player-list h2 {
+	margin-bottom: 20px;
+}
+
+.container-both-side {
+	display: flex;
+	justify-content: space-around;
+}
+
+#defender-mode,
+#enemy-mode {
+	text-align: center;
+	width: 90px;
+	font-size: 0.8rem;
+	height: 100px;
+}
+
+.defender-selection {
+	height: 268px;
+}
+
+.score-container {
+	width: 280px;
+	padding: 70px 10px 25px 10px;
+	background: url("/images/uiwood1.png") no-repeat;
+}
+
+.score-container * {
+	transform: rotateY(15deg);
+}
+
+.card-selection {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 310px;
+	height: 280px;
+	padding: 10px 0px 10px 30px;
+	background: url("/images/uiwood2.png") no-repeat;
+}
+
+.card-selection * {
+	transform: rotateY(-5deg);
+	/* transform: rotateZ(-06.deg); */
+	/* transform: rotateX(2deg); */
+}
+
+.cards {
+	overflow-y: scroll;
+	scrollbar-width: none;
+	-ms-overflow-style: none;
+	height: 200px;
+}
+
+.cards::-webkit-scrollbar {
+	display: none; /* WebKit */
+}
+
+.card-selection .card {
+	width: 200px;
+	text-align: center;
+	height: 40px;
+}
+
+.bevel-text {
+	color: #fff;
+	text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000; /* Increased depth bevel effect */
+}
+
+.player {
+	margin-bottom: 5px;
+}

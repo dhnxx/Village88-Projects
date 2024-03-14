@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Plants VS. Zombies</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap"
+			rel="stylesheet" />
+		<link rel="stylesheet" href="/style.css" />
+		<script
+			src="https://code.jquery.com/jquery-3.7.1.min.js"
+			integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+			crossorigin="anonymous"></script>
+		<script src="/socket.io/socket.io.js"></script>
+		<script src="/script.js" defer></script>
+	</head>
+	<body>
+		<div class="container">
+			<aside class="sidebar">
+				<div class="score-container">
+					<h2 class="bevel-text">Score: <span id="score">0</span></h2>
+					<h2 class="bevel-text">Resources: <span id="resources">0</span></h2>
+				</div>
+				<div class="card-selection">
+					<h2 class="bevel-text">Defender Selection</h2>
+					<div class="cards">
+						<div class="card">Card 1</div>
+						<div class="card">Card 2</div>
+						<div class="card">Card 3</div>
+						<div class="card">Card 4</div>
+					</div>
+				</div>
+				<div id="mode-selector" class="bevel-text">
+					<h2><span id="mode"></span> Mode</h2>
+					<div class="container-both-side">
+						<div class="container-defender">
+							<div id="defender-mode"></div>
+						</div>
+						<div class="container-enemy">
+							<div id="enemy-mode"></div>
+						</div>
+					</div>
+				</div>
+			</aside>
+			<canvas id="canvas1" class="gradient-border"></canvas>
+		</div>
+	</body>
+</html>
