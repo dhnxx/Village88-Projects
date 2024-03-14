@@ -59,6 +59,9 @@ enemiesType.push(zombie);
 const gameInfo = new Image();
 gameInfo.src = "/images/brick.png";
 
+const grass = new Image();
+grass.src = "/images/grass.png";
+
 // Mouse object
 const mouse = {
 	x: 10,
@@ -72,9 +75,6 @@ const controlsBar = {
 	width: canvas.width,
 	height: cellSize,
 };
-
-const grass = new Image();
-grass.src = "/images/grass.png";
 
 class Cell {
 	constructor(x, y) {
@@ -161,7 +161,7 @@ class Defender {
 		this.width = cellSize - cellGap * 2;
 		this.height = cellSize - cellGap * 2;
 		this.shooting = false;
-		this.health = 100;
+		this.health = 700;
 		this.projectiles = [];
 		this.timer = 0;
 		this.currentFrame = 0;
@@ -249,10 +249,11 @@ function handleEnemies() {
 	for (let i = 0; i < enemies.length; i++) {
 		enemies[i].update();
 		enemies[i].draw();
-		if (enemies[i].x < 0) {
-			gameOver = true;
-		}
-		// if enemy dies
+		// if (enemies[i].x < 0) {
+		// 	gameOver = true;
+		// }
+
+		//? if enemy dies
 		if (enemies[i].health <= 0) {
 			let gainedResources = enemies[i].maxHealth / 10;
 			numberOfResources += gainedResources;
@@ -413,7 +414,7 @@ canvas.addEventListener("click", function () {
 		const gridPositionY = mouse.y - (mouse.y % cellSize) + cellGap;
 
 		let enemyCost = 50; // Set the cost for placing enemies
-		if (numberOfResources >= enemyCost) {
+		if (numberOfResources >= enemyCost && gridPositionY >= cellSize) {
 			socket.emit("clientPlaceEnemy", { y: gridPositionY });
 		}
 	}
@@ -435,28 +436,25 @@ Object.values(images).forEach(function (img) {
 // Switch game mode events
 displayMode.innerHTML = "Spectator";
 
+function switchMode(newMode, displayText, backgroundUrl) {
+	gameMode = newMode;
+	displayMode.innerHTML = displayText;
+	modeSelector.style.background = `url("${backgroundUrl}") no-repeat`;
+	console.log(gameMode);
+}
+
 defenderMode.addEventListener("mouseup", function () {
 	if (gameMode === "defender") {
-		gameMode = "spectator";
-		displayMode.innerHTML = "Spectator";
-		modeSelector.style.background = 'url("/images/uiwood3-s.png") no-repeat';
+		switchMode("spectator", "Spectator", "/images/uiwood3-s.png");
 	} else {
-		gameMode = "defender";
-		displayMode.innerHTML = "Plants";
-		modeSelector.style.background = 'url("/images/uiwood3-p.png") no-repeat';
+		switchMode("defender", "Plants", "/images/uiwood3-p.png");
 	}
-	console.log(gameMode);
 });
 
 enemyMode.addEventListener("mouseup", function () {
 	if (gameMode === "enemy") {
-		gameMode = "spectator";
-		displayMode.innerHTML = "Spectator";
-		modeSelector.style.background = 'url("/images/uiwood3-s.png") no-repeat';
+		switchMode("spectator", "Spectator", "/images/uiwood3-s.png");
 	} else {
-		gameMode = "enemy";
-		displayMode.innerHTML = "Zombies";
-		modeSelector.style.background = 'url("/images/uiwood3-z.png") no-repeat';
+		switchMode("enemy", "Zombies", "/images/uiwood3-z.png");
 	}
-	console.log(gameMode);
 });
