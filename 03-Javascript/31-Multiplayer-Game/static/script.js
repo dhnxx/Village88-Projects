@@ -424,11 +424,9 @@ window.addEventListener("resize", function () {
 
 // place initial defenders
 socket.on("initialDefenders", function (data) {
+	// check if the defender is already placed
 	for (let i = 0; i < data.length; i++) {
-		// check if the defender is already placed
-		if (defenders[i].x !== data[i].x && defenders[i].y !== data[i].y) {
-			defenders.push(new Defender(data[i].x, data[i].y));
-		}
+		defenders.push(new Defender(data[i].x, data[i].y));
 	}
 });
 socket.on("serverPlacePlant", function (data) {

@@ -16,10 +16,17 @@ let defenders = []; // keep track of all defenders
 
 io.on("connection", function (socket) {
 	// place all initial defenders
-	io.emit("initialDefenders", defenders);
+	socket.emit("initialDefenders", defenders);
+	console.log(defenders);
 
 	// place defender
 	socket.on("clientPlacePlant", function (data) {
+		for (let i = 0; i < defenders.length; i++) {
+			if (defenders[i].x == data.x && defenders[i].y == data.y) {
+				console.log("already placed");
+				return;
+			}
+		}
 		defenders.push({ x: data.x, y: data.y });
 		io.emit("serverPlacePlant", { x: data.x, y: data.y });
 	});
