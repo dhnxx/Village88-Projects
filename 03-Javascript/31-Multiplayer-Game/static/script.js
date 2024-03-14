@@ -46,21 +46,37 @@ for (let i = 1; i <= 25; i++) {
 defendersType.push(peashooter);
 
 // Enemies
-const enemiesType = [];
-const zombie = []; // Zombie sprites
+const enemiesType = {};
+const zombieWalking = []; // Zombie sprites
 for (let i = 46; i <= 138; i++) {
 	const imageName = `mustache${i.toString().padStart(4, "0")}.png`;
 	const image = new Image();
 	image.src = `/images/zombie/${imageName}`;
-	zombie.push(image);
+	zombieWalking.push(image);
 }
-enemiesType.push(zombie);
+enemiesType["walking"] = zombieWalking;
+const zombieAttacking = []; // Zombie attacking sprites
+for (let i = 139; i <= 178; i++) {
+	const imageName = `mustache${i.toString().padStart(4, "0")}.png`;
+	const image = new Image();
+	image.src = `/images/zombie/${imageName}`;
+	zombieAttacking.push(image);
+}
+enemiesType["attacking"] = zombieAttacking;
+
+console.log(enemiesType);
 
 const gameInfo = new Image();
 gameInfo.src = "/images/brick.png";
 
+const texture = [];
 const grass = new Image();
 grass.src = "/images/grass.png";
+
+const moss = new Image();
+moss.src = "/images/mossy.png";
+texture.push(grass);
+texture.push(moss);
 
 // Mouse object
 const mouse = {
@@ -84,7 +100,11 @@ class Cell {
 		this.height = cellSize;
 	}
 	draw() {
-		ctx.drawImage(grass, this.x, this.y, this.width, this.height);
+		if (this.x >= canvas.width - cellSize) {
+			ctx.drawImage(texture[1], this.x, this.y, this.width, this.height);
+		} else {
+			ctx.drawImage(texture[0], this.x, this.y, this.width, this.height);
+		}
 
 		// Check for mouse collision
 		if (gameMode === "defender") {
@@ -94,8 +114,9 @@ class Cell {
 			}
 		} else if (gameMode === "enemy") {
 			if (mouse.x && mouse.y && collision(this, mouse)) {
+				const fillX = canvas.width - cellSize;
 				ctx.fillStyle = "rgba(255, 0, 0, 0.5)";
-				ctx.fillRect(this.x, this.y, this.width, this.height);
+				ctx.fillRect(fillX, this.y, this.width, this.height);
 			}
 		}
 	}
@@ -204,12 +225,14 @@ function handleDefenders() {
 			if (defenders[i] && collision(defenders[i], enemies[j])) {
 				enemies[j].movement = 0;
 				defenders[i].health -= 1;
+				enemies[j].status = "attacking";
 			}
 			// defender dies
 			if (defenders[i] && defenders[i].health <= 0) {
 				defenders.splice(i, 1);
 				i--;
 				enemies[j].movement = enemies[j].speed;
+				enemies[j].status = "walking";
 			}
 		}
 	}
@@ -227,21 +250,35 @@ class Enemy {
 		this.health = 1000;
 		this.maxHealth = this.health;
 		this.currentFrame = 0;
+		this.status = "walking";
 	}
 	update() {
-		if (frame % 8 === 0) {
-			this.currentFrame = (this.currentFrame + 1) % enemiesType[0].length; // Cycle through frames
+		if (frame % 5 === 0) {
+			this.currentFrame++;
+			if (this.currentFrame >= enemiesType[`${this.status}`].length) {
+				this.currentFrame = 0;
+			}
 		}
 		this.x -= this.movement;
 	}
 	draw() {
-		ctx.drawImage(
-			enemiesType[0][this.currentFrame],
-			this.x - 100,
-			this.y - 30,
-			this.width + 50,
-			this.height + 50
-		);
+		if (this.status === "walking") {
+			ctx.drawImage(
+				enemiesType["walking"][this.currentFrame],
+				this.x,
+				this.y - 30,
+				this.width + 50,
+				this.height + 50
+			);
+		} else if (this.status === "attacking") {
+			ctx.drawImage(
+				enemiesType["attacking"][this.currentFrame],
+				this.x,
+				this.y - 30,
+				this.width + 50,
+				this.height + 50
+			);
+		}
 	}
 }
 
@@ -397,10 +434,16 @@ canvas.addEventListener("click", function () {
 	if (gameMode === "defender") {
 		const gridPositionX = mouse.x - (mouse.x % cellSize) + cellGap;
 		const gridPositionY = mouse.y - (mouse.y % cellSize) + cellGap;
+
 		if (gridPositionY < cellSize) return;
+		// Check if a defender is already placed on the grid
 		for (let i = 0; i < defenders.length; i++) {
 			if (defenders[i].x === gridPositionX && defenders[i].y === gridPositionY) return;
 		}
+
+		// Disable planting defenders on the last column
+		if (gridPositionX >= canvas.width - cellSize) return;
+
 		let defenderCost = 100;
 		//! Place defender and reduce resources
 		// if (numberOfResources >= defenderCost) {
@@ -421,17 +464,6 @@ canvas.addEventListener("click", function () {
 });
 
 //? Switch game mode events
-
-// Preload images
-let images = {
-	"/images/uiwood3-s.png": new Image(),
-	"/images/uiwood3-p.png": new Image(),
-	"/images/uiwood3-z.png": new Image(),
-};
-
-Object.values(images).forEach(function (img) {
-	img.src = img.src; // forces the browser to start loading the image
-});
 
 // Switch game mode events
 displayMode.innerHTML = "Spectator";
