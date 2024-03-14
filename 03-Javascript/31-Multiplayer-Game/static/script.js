@@ -225,7 +225,11 @@ function handleDefenders() {
 			if (defenders[i] && collision(defenders[i], enemies[j])) {
 				enemies[j].movement = 0;
 				defenders[i].health -= 1;
+
 				enemies[j].status = "attacking";
+				if (enemies[j].currentFrame >= enemiesType[`${enemies[j].status}`].length) {
+					enemies[j].currentFrame = 0;
+				}
 			}
 			// defender dies
 			if (defenders[i] && defenders[i].health <= 0) {
@@ -233,6 +237,9 @@ function handleDefenders() {
 				i--;
 				enemies[j].movement = enemies[j].speed;
 				enemies[j].status = "walking";
+				if (enemies[j].currentFrame >= enemiesType[`${enemies[j].status}`].length) {
+					enemies[j].currentFrame = 0;
+				}
 			}
 		}
 	}
@@ -265,7 +272,7 @@ class Enemy {
 		if (this.status === "walking") {
 			ctx.drawImage(
 				enemiesType["walking"][this.currentFrame],
-				this.x,
+				this.x - 100,
 				this.y - 30,
 				this.width + 50,
 				this.height + 50
@@ -273,7 +280,7 @@ class Enemy {
 		} else if (this.status === "attacking") {
 			ctx.drawImage(
 				enemiesType["attacking"][this.currentFrame],
-				this.x,
+				this.x - 100,
 				this.y - 30,
 				this.width + 50,
 				this.height + 50
