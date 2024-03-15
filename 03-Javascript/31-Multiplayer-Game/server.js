@@ -35,4 +35,14 @@ io.on("connection", function (socket) {
 	socket.on("clientPlaceEnemy", function (data) {
 		io.emit("serverPlaceEnemy", { y: data.y });
 	});
+
+	// Remove defender
+	socket.on("serverRemovePlant", function (data) {
+		for (let i = 0; i < defenders.length; i++) {
+			if (defenders[i].x === data.x && defenders[i].y === data.y) {
+				defenders.splice(i, 1);
+				return;
+			}
+		}
+	});
 });

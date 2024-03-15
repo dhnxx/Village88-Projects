@@ -231,15 +231,19 @@ function handleDefenders() {
 					enemies[j].currentFrame = 0;
 				}
 			}
-			// defender dies
+			// Defender dies
 			if (defenders[i] && defenders[i].health <= 0) {
-				defenders.splice(i, 1);
-				i--;
+				// Remove defender from the server
+				const removedDefender = defenders.splice(i, 1)[0];
+				// Emit an event to all clients to remove the defender
+				socket.emit("serverRemovePlant", { x: removedDefender.x, y: removedDefender.y });
+
 				enemies[j].movement = enemies[j].speed;
 				enemies[j].status = "walking";
 				if (enemies[j].currentFrame >= enemiesType[`${enemies[j].status}`].length) {
 					enemies[j].currentFrame = 0;
 				}
+				
 			}
 		}
 	}
@@ -343,14 +347,14 @@ function handleResources() {
 	}
 
 	//! Spawn resources
-	// for (let i = 0; i < resources.length; i++) {
-	// 	resources[i].draw();
-	// 	if (resources[i] && mouse.x && mouse.y && collision(resources[i], mouse)) {
-	// 		numberOfResources += resources[i].amount;
-	// 		resources.splice(i, 1);
-	// 		i--;
-	// 	}
-	// }
+	for (let i = 0; i < resources.length; i++) {
+		resources[i].draw();
+		if (resources[i] && mouse.x && mouse.y && collision(resources[i], mouse)) {
+			numberOfResources += resources[i].amount;
+			resources.splice(i, 1);
+			i--;
+		}
+	}
 }
 
 // Utilities
@@ -358,12 +362,12 @@ function handleGameStatus() {
 	displayScore.innerHTML = score;
 	displayResources.innerHTML = numberOfResources;
 	//! End game status
-	// if (gameOver) {
-	// 	ctx.fillStyle = "black";
-	// 	ctx.font = "90px Orbitron";
-	// 	ctx.fillText("GAME OVER", 135, 330);
-	// 	gameOver = false;
-	// }
+	if (gameOver) {
+		ctx.fillStyle = "black";
+		ctx.font = "90px Orbitron";
+		ctx.fillText("GAME OVER", 135, 330);
+		gameOver = false;
+	}
 	// if (score >= winningScore && enemies.length === 0) {
 	// 	ctx.fillStyle = "black";
 	// 	ctx.font = "60px Orbitron";
@@ -372,6 +376,7 @@ function handleGameStatus() {
 	// 	ctx.fillText("You win with " + score + " points!", 134, 340);
 	// }
 }
+
 
 function animate() {
 	ctx.clearRect(0, 0, canvas.width, canvas.height);
