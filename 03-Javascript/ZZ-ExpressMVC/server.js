@@ -2,8 +2,16 @@
 const express = require("express");
 const routes = require("./routes");
 const app = express();
-const bodyParser = require("body-parser");
-app.use(bodyParser.urlencoded({ extended: true }));
+const session = require("express-session");
+app.use(express.urlencoded({ extended: true }));
+app.use(
+	session({
+		secret: "test",
+		resave: false,
+		saveUninitialized: true,
+		cookie: { maxAge: 60000 },
+	})
+);
 
 /*
 |--------------------------------------------------------------------------
