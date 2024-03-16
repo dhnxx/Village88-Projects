@@ -4,61 +4,32 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Welcome to expressmvc</title>
-		<style>
-			body {
-				font-family: Arial, sans-serif;
-				background-color: #f5f5f5;
-				margin: 0;
-				padding: 0;
-			}
-			.container {
-				max-width: 800px;
-				margin: 50px auto;
-				background-color: #fff;
-				padding: 20px;
-				border-radius: 5px;
-				box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-			}
-			h1 {
-				color: #333;
-				text-align: center;
-			}
-			p {
-				color: #666;
-				text-align: center;
-			}
-			.links {
-				text-align: center;
-				margin-top: 20px;
-			}
-			.links a {
-				display: inline-block;
-				text-decoration: none;
-				color: #007bff;
-				padding: 10px 20px;
-				border: 1px solid #007bff;
-				border-radius: 5px;
-				margin-right: 10px;
-				transition: background-color 0.3s ease;
-			}
-			.links a:hover {
-				background-color: #007bff;
-				color: #fff;
-			}
-		</style>
+		<link rel="stylesheet" href="/stylesheets/style.css" />
 	</head>
 	<body>
-		<div class="container">
-			<h1>Welcome to expressmvc</h1>
-			<p>The MVC framework for Express.js.</p>
-			<div class="links">
-				<a href="https://github.com/dhnx/expressmvc" target="_blank">GitHub</a>
-			</div>
-			<p>Author: DHNX</p>
-			<p>
-				Please make modifications to this index page, which is situated in the views
-				directory.
-			</p>
-		</div>
+		<h1>Survey Form</h1>
+		<form action="/result" method="post">
+			<label for="name">Your Name:</label>
+			<input type="text" id="name" name="name" placeholder="Enter your name" />
+			<label for="dojo">Dojo Location:</label>
+			<select id="dojo" name="dojo">
+				<option value="mountain_view">Mountain View</option>
+				<option value="seattle">Seattle</option>
+				<option value="los_angeles">Los Angeles</option>
+			</select>
+			<label for="language">Favorite Language:</label>
+			<input
+				type="text"
+				id="language"
+				name="language"
+				placeholder="Enter your favorite language" />
+			<label for="comment">Comment (optional):</label>
+			<textarea
+				id="comment"
+				name="comment"
+				rows="4"
+				placeholder="Enter your comment here"></textarea>
+			<button type="submit">Submit</button>
+		</form>
 	</body>
 </html>

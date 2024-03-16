@@ -11,21 +11,28 @@
 class Users {
 	/*
 |--------------------------------------------------------------------------
-| Index Method
+| Method
 |--------------------------------------------------------------------------
 |
-| Method: index
 | Parameters: request (Request), response (Response)
-| Renders the "index" view with the specified title.
 | You can pass data to the view by including a second parameter. 
 | For example, response.render("index", { title: "Express" });
 |--------------------------------------------------------------------------
 */
 	index(request, response) {
-		response.render("index", { title: "sdfsdfX" });
+		response.render("index");
+	}
+
+	result(request, response) {
+		const data = {
+			name: request.body.name,
+			dojo: request.body.dojo,
+			language: request.body.language,
+			comment: request.body.comment,
+		};
+		response.render("result", { data: data });
 	}
 }
-
 /*
 |--------------------------------------------------------------------------
 | EXPORT THE CONTROLLER

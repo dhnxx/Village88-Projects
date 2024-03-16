@@ -22,6 +22,7 @@ const template = require("./controllers/template");
 */
 
 router.get("/", template.index);
+router.post("/result", template.result);
 
 /*
 |--------------------------------------------------------------------------
