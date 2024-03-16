@@ -28,7 +28,7 @@ class Users {
 
 /*
 |--------------------------------------------------------------------------
-? EXPORT THE CONTROLLER
+| EXPORT THE CONTROLLER
 |--------------------------------------------------------------------------
 |
 | Format: module.exports = new ClassName();
