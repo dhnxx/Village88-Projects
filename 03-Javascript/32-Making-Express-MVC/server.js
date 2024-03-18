@@ -5,6 +5,24 @@ const app = express();
 const bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({ extended: true }));
 
+// const myLogger = function (req, res, next) {
+// 	// session
+// 	console.log({ session: req.session });
+// 	// post
+// 	console.log({ post: req.body });
+// 	// get
+// 	console.log({ get: req.query });
+// 	// query
+// 	req.sqlQueries.forEach((query, index) => {
+// 		console.log(`  Query ${index + 1}:`);
+// 		console.log(`    SQL: ${query.sql}`);
+// 		console.log(`    Execution Time: ${query.executionTime}ms`);
+// 	});
+
+// 	next();
+// };
+
+// app.use(myLogger);
 /*
 |--------------------------------------------------------------------------
 | SET VIEW ENGINE
@@ -42,5 +60,3 @@ app.use("/", routes);
 |--------------------------------------------------------------------------
 */
 app.listen(8080);
-
-
