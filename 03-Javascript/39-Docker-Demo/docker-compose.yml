@@ -1,0 +1,11 @@
+version: "3.2"
+services:
+    web_app:
+      build: ./
+      restart: always
+      command: npm start
+      volumes:
+        - ./src:/var/www/app/src
+        - ./package.json:/var/www/app/package.json
+      ports:
+        - 3001:3000
