@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Auth</title>
+		<link rel="stylesheet" href="/css/main.css" />
+		<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+		<script>
+			$(document).ready(function () {
+				function getPlayers(formData) {
+					$("main").empty();
+					$.get("/filter", formData, function (data) {
+						let result = data[0];
+						for (let i = 0; i < data[0].length; i++) {
+							$("main").append(
+								`<div class="player">
+                        <img src="${data[0][i].image_url}" alt="" />
+                        <p>${data[0][i].name}</p>
+                    </div>`
+							);
+						}
+					});
+				}
+				getPlayers();
+
+				$("form").submit(function (e) {
+					e.preventDefault();
+					getPlayers($(this).serialize());
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<aside>
+			<form action="">
+				<label for="name">Search Players</label>
+				<div class="text">
+					<input
+						type="text"
+						name="name"
+						id="name"
+						placeholder="Enter player name..."
+						value="" />
+				</div>
+				<div class="gender">
+					<input type="checkbox" name="gender" id="female" value="1" />
+					<label for="female">Female</label>
+					<input type="checkbox" name="gender" id="male" value="0" />
+					<label for="male">Male</label>
+				</div>
+
+				<label for="sports">Choose Sports</label>
+				<div class="sports">
+					<div class="sport-list">
+						<div>
+							<input
+								type="checkbox"
+								name="sport"
+								id="basketball"
+								value="basketball" />
+							<label for="basketball">Basketball</label>
+						</div>
+					</div>
+					<div class="sport-list">
+						<div>
+							<input
+								type="checkbox"
+								name="sport"
+								id="volleyball"
+								value="volleyball" />
+							<label for="volleyball">Volleyball</label>
+						</div>
+					</div>
+					<div class="sport-list">
+						<div>
+							<input type="checkbox" name="sport" id="baseball" value="baseball" />
+							<label for="baseball">Baseball</label>
+						</div>
+					</div>
+					<div class="sport-list">
+						<div>
+							<input type="checkbox" name="sport" id="soccer" value="soccer" />
+							<label for="soccer">Soccer</label>
+						</div>
+					</div>
+					<div class="sport-list">
+						<div>
+							<input type="checkbox" name="sport" id="football" value="football" />
+							<label for="football">Football</label>
+						</div>
+					</div>
+					<input type="submit" value="Search" />
+				</div>
+			</form>
+		</aside>
+		<main></main>
+	</body>
+</html>

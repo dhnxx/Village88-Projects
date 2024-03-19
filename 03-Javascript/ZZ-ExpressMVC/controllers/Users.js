@@ -1,4 +1,4 @@
-const user = require("../models/user");
+const user = require("../models/User");
 /*
 |--------------------------------------------------------------------------
 | Users Controller
@@ -20,57 +20,16 @@ class Users {
 | For example, response.render("index", { title: "Express" });
 |--------------------------------------------------------------------------
 */
-	index(request, response) {
-		let data = {};
-		if (!request.session.message) {
-			request.session.message = {};
-		}
-		if (request.session.message && request.session.message.register) {
-			// Check if request.session.message exists
-			data.message = { register: request.session.message.register };
-			request.session.message.register = null;
-		}
-
-		response.render("auth", { data: data });
+	async index(request, response) {
+		response.render("main");
 	}
 
-	async register(request, response) {
-		let validation = await user.validateRegister(request.body);
-		if (validation) {
-			request.session.message = {};
-			request.session.message.register = validation;
-			response.redirect("/");
-			return;
+	async filter(request, response) {
+		if (!request.query.gender || request.query.gender.length > 1) {
+			request.query.gender = "all";
 		}
-		if (!request.session.user) {
-			request.session.user = {};
-		}
-		request.session.user = await user.registerUser(request.body);
-		await response.redirect("/students/profile");
-	}
-
-	async login(request, response) {
-		let result = await user.login(request.body);
-		if (!result) {
-			response.render("login", { message: "Invalid email or password" });
-			return;
-		}
-		if (!request.session.user) {
-			request.session.user = {};
-		}
-		request.session.user = result;
-		response.redirect("/students/profile");
-	}
-
-	async profile(request, response) {
-		if (!request.session.user) {
-			response.redirect("/");
-			return;
-		}
-
-
-		response.render("profile", { user: request.session.user });
-				console.log({user: request.session.user});
+		let data = await user.fetch(request.query.gender, request.query.sport, request.query.name);
+		response.json(data);
 	}
 }
 
