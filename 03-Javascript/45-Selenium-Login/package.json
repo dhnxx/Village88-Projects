@@ -1,0 +1,35 @@
+{
+  "name": "selenium-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "NODE_ENV=development ./node_modules/.bin/mocha src/test/*.test.js",
+    "start": "NODE_ENV=development nodemon src/app.js",
+    "debug": "NODE_ENV=development nodemon --inspect=0.0.0.0 src/app.js"
+  },
+  "author": "Oliver ",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.5",
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "faker": "^5.3.1",
+    "fs": "0.0.1-security",
+    "js-yaml": "^4.0.0",
+    "md5": "^2.3.0",
+    "mysql": "^2.18.1",
+    "mysql2": "^3.2.0",
+    "npm": "^7.5.3",
+    "serve-favicon": "^2.5.0",
+    "start": "^5.1.0"
+  },
+  "devDependencies": {
+    "chai": "^4.3.4",
+    "mocha": "^8.2.1",
+    "nodemon": "^2.0.7",
+    "selenium-webdriver": "^4.0.0-alpha.8"
+  }
+}

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title><%= PAGE.title %></title>
+		<% 
+			for (let index in PAGE.assets.javascripts){ %>
+				<script src="<%= PAGE.assets.javascripts[index].file %>"></script>
+		<%	}	%>
+	
+		<%
+			for (let index in PAGE.assets.stylesheets){ %>
+				<link rel="stylesheet" href="<%= PAGE.assets.stylesheets[index].file %>">
+		<%	}	%>
+	</head>
+	<body>
+		<%- include("../user/" + PAGE.view + ".ejs") %>
+	</body>
+</html>

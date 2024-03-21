@@ -1,0 +1,22 @@
+{
+	"name": "login-assignment",
+	"version": "1.0.0",
+	"description": "",
+	"main": "app.js",
+	"scripts": {
+		"test": "./node_modules/.bin/mocha src/test/*.test.js",
+		"start": "nodemon --inspect=0.0.0.0 src/app.js"
+	},
+	"author": "Oliver ",
+	"license": "ISC",
+	"dependencies": {
+		"express": "^4.17.1",
+		"mysql": "^2.18.1",
+		"mysql2": "^3.9.2"
+	},
+	"devDependencies": {
+		"chai": "^4.3.4",
+		"mocha": "^10.3.0",
+		"nodemon": "^2.0.7"
+	}
+}
