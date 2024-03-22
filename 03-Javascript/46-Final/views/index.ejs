@@ -10,36 +10,28 @@
 			integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
 			crossorigin="anonymous"></script>
 		<script type="text/javascript" src="/socket.io/socket.io.js"></script>
-		<script type="text/javascript">
-			$(document).ready(function () {
-				const socket = io();
-
-				socket.on("initial", function (data) {
-					data.logs.forEach(function (messages) {
-						$(".messages").append(
-							`<p class="${messages.status}">${messages.message}</p>`
-						);
-					});
-				});
-				socket.emit("joined");
-
-				socket.on("message", function (data) {
-					$(".messages").append(`<p class="${data.status}">${data.message}</p>`);
-				});
-
-				$("#submit").on("click", function () {
-					socket.emit("raise");
-				});
-			});
-		</script>
+		<script type="text/javascript"></script>
+		<script src="/scripts.js" defer></script>
 	</head>
 	<body>
 		<header>
-			<h1>Virtual Recitation</h1>
+			<h1>Build your empire</h1>
+			<div class="option-list">
+				<div id="brick" class="options brick">Brick</div>
+				<div id="grass" class="options grass">Grass</div>
+				<div id="gravel" class="options gravel">Gravel</div>
+				<div id="clear">Clear</div>
+			</div>
 		</header>
-		<section class="chat-container">
-			<div class="messages"></div>
-		</section>
-		<button type="submit" id="submit">👋</button>
+		<div id="container">
+			<div id="canvas"></div>
+			<aside id="active-list">
+				<div id="title">
+					<h2>List of Active Players</h2>
+				</div>
+				<div id="content"></div>
+			</aside>
+		</div>
+		<div id="cursor-list"></div>
 	</body>
 </html>

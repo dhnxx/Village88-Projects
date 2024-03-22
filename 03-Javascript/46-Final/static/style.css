@@ -7,51 +7,96 @@ body {
 }
 
 header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 10px;
+	padding: 25px; 
+}
+
+.options {
+	width: 50px;
+	height: 50px;
 	text-align: center;
-	padding: 20px;
-}
-
-.chat-container {
-	border: 3px solid #00aaff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 5px;
 	border-radius: 15px;
-	padding: 20px;
-	margin: 20px auto;
-	max-width: 600px;
-	background-color: rgba(0, 170, 255, 0.1);
-	overflow-y: auto;
-	height: 200px;
 }
 
-.messages {
-	margin-bottom: 10px;
+.option-list {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
 }
 
-.message {
-	margin-bottom: 10px;
-	line-height: 1.6;
+.brick {
+	background-color: #b45f06;
 }
 
-.join {
-	color: #00ff00;
+.grass {
+	background-color: #009e0f;
 }
 
-.leave {
-	color: #ff0000;
+.gravel {
+	background-color: #999999;
 }
 
-#submit {
-	margin: 20px auto;
-	display: block;
-	padding: 10px 20px;
-	background-color: #00aaff;
-	color: #ffffff;
-	border: none;
-	border-radius: 25px;
-	cursor: pointer;
-	font-size: 20px;
-	transition: background-color 0.3s ease;
+#clear {
+	width: 50px;
+	height: 50px;
+	background-color: #ff0000;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 5px;
+	border-radius: 15px;
 }
 
-#submit:hover {
-	background-color: #0077cc;
+#container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+}
+
+#canvas,
+aside {
+	padding: 25px;
+	height: 75vh;
+	background-color: gainsboro;
+}
+
+#canvas {
+	width: 75%;
+	color: black;
+	position: relative;
+	overflow: hidden;
+}
+
+aside {
+	width: 15%;
+	color: black;
+}
+
+.block {
+	position: absolute;
+	width: 100px;
+	height: 100px;
+}
+
+.cursor {
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	border-radius: 10px;
+}
+
+.name {
+	text-align: end;
+	font-size: large;
+	font-weight: bolder;
+	color: black;
 }
