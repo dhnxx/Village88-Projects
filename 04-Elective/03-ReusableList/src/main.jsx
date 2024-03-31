@@ -2,12 +2,12 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./style.css";
 import ReusableList from "./ReusableList.jsx";
-import message from "./assets/PostDetails.js";
+import messages from "./assets/List.js";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
 	<React.StrictMode>
 		<ul>
-			{message.map((msg, index) => (
+			{messages.map((msg, index) => (
 				<ReusableList value={msg} key={index} />
 			))}
 		</ul>
